@@ -1,5 +1,5 @@
 
-import { Home, User, LogIn, Menu } from "lucide-react";
+import { Home, User, LogIn, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,7 +27,7 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-1 hover:text-primary transition bg-transparent border-none p-0">
                   Challenges
-                  <Menu size={16} className="ml-1" />
+                  <Trophy size={16} className="ml-1" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40">
