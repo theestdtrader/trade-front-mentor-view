@@ -1,6 +1,12 @@
 
-import { Home, User, LogIn } from "lucide-react";
+import { Home, User, LogIn, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   return (
@@ -16,6 +22,27 @@ const Navbar = () => {
           <li className="hover:text-primary transition"><a href="#features">Features</a></li>
           <li className="hover:text-primary transition"><a href="#pricing">Pricing</a></li>
           <li className="hover:text-primary transition"><a href="#about">About</a></li>
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-1 hover:text-primary transition bg-transparent border-none p-0">
+                  Challenges
+                  <Menu size={16} className="ml-1" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40">
+                <DropdownMenuItem>
+                  <a href="#daily-challenge" className="w-full block">Daily</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="#weekly-challenge" className="w-full block">Weekly</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="#monthly-challenge" className="w-full block">Monthly</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
         </ul>
         <div className="flex gap-3 items-center">
           <Button variant="ghost" size="sm" className="text-gray-700 hover:text-primary gap-1">
@@ -36,3 +63,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
