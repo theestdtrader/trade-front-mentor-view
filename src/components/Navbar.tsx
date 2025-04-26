@@ -56,36 +56,6 @@ const Navbar = () => {
           <li className="hover:text-primary transition">
             <a href="#about">FAQs</a>
           </li>
-          <li>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-1 hover:text-primary transition bg-transparent border-none p-0">
-                  Challenges
-                  <Trophy size={16} className="ml-1" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40"
-              >
-                <DropdownMenuItem>
-                  <a href="#daily-challenge" className="w-full block">
-                    Daily Challenge
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#weekly-challenge" className="w-full block">
-                    Weekly Challenge
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#monthly-challenge" className="w-full block">
-                    Monthly Challenge
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </li>
         </ul>
         <div className="flex gap-3 items-center">
           <Button
