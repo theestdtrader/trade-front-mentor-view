@@ -1,5 +1,5 @@
-
-import { Home, User, LogIn, Trophy } from "lucide-react";
+import { Home, User, LogIn, Trophy, Image } from "lucide-react";
+import { logo } from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,42 +10,57 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 fixed top-0 left-0 z-40 shadow-sm">
+    <nav className="w-full bg-black/80 backdrop-blur-md border-b  fixed top-0 left-0 z-40 shadow-sm">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <div className="flex items-center gap-3">
           <span className="inline-block rounded-full bg-gradient-to-tr from-primary to-indigo-400 p-2">
             <Home size={24} className="text-white" />
           </span>
-          <span className="font-extrabold text-2xl text-primary tracking-tight">TradeMentor</span>
+
+          <span className="font-extrabold text-2xl text-primary tracking-tight"></span>
         </div>
-        <ul className="hidden md:flex gap-8 items-center font-medium text-gray-700">
-          <li className="hover:text-primary transition"><a href="#features">Features</a></li>
-          <li className="hover:text-primary transition"><a href="#pricing">Pricing</a></li>
-          <li className="hover:text-primary transition"><a href="#about">About</a></li>
+        <ul className="hidden md:flex gap-8 items-center font-medium text-white">
+          <li className="hover:text-primary transition">
+            <a href="#features">Home</a>
+          </li>
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-1 hover:text-primary transition bg-transparent border-none p-0">
-                  Challenges
+                  Programs
                   <Trophy size={16} className="ml-1" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40">
+              <DropdownMenuContent
+                align="start"
+                className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40"
+              >
                 <DropdownMenuItem>
-                  <a href="#daily-challenge" className="w-full block">Daily</a>
+                  <a href="#daily-challenge" className="w-full block">
+                    Forex
+                  </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="#weekly-challenge" className="w-full block">Weekly</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#monthly-challenge" className="w-full block">Monthly</a>
+                  <a href="#weekly-challenge" className="w-full block">
+                    Futures
+                  </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
+          <li className="hover:text-primary transition">
+            <a href="#pricing">Competition</a>
+          </li>
+          <li className="hover:text-primary transition">
+            <a href="#about">FAQs</a>
+          </li>
         </ul>
         <div className="flex gap-3 items-center">
-          <Button variant="ghost" size="sm" className="text-gray-700 hover:text-primary gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-white hover:text-primary gap-1"
+          >
             <LogIn size={18} />
             Login
           </Button>
@@ -54,7 +69,7 @@ const Navbar = () => {
             size="sm"
             className="hidden md:inline-block px-5 rounded-full shadow-md bg-gradient-to-r from-primary to-indigo-500 text-white"
           >
-            Get Started
+            Take Action
           </Button>
         </div>
       </div>
@@ -63,4 +78,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
