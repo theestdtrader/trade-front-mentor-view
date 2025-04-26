@@ -1,5 +1,4 @@
-
-import { Home, LogIn, Trophy } from "lucide-react";
+import { LogIn, Trophy } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +10,7 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-black/80 backdrop-blur-md border-b fixed top-0 left-0 z-40 shadow-sm">
+    <nav className="w-full bg-black/40 backdrop-blur-sm border-b border-white/10 fixed top-0 left-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <div className="flex items-center gap-3">
           <img 
