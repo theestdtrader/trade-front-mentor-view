@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { User, Home, ArrowRight } from "lucide-react";
@@ -7,23 +6,35 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f1f0fb] via-[#d6bcfa] to-[#fff] flex flex-col">
       <Navbar />
-      {/* Hero Section */}
+      {/* Hero Section with Background Image */}
       <section className="flex flex-1 items-center justify-center relative pt-28 pb-16">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/lovable-uploads/3430c3e3-1730-4e94-87dc-83ce0939b811.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay */}
+        </div>
+
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 relative z-10">
           {/* Left content */}
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
               Guide Your <span className="text-primary">Financial Journey</span><br /> with <span className="text-indigo-500">Confidence</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8">
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
               Access powerful, AI-driven trading insights and portfolio tracking to make smarter investments—beginner or pro.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-              <Button size="lg" className="px-8 py-5 rounded-full font-bold text-lg bg-gradient-to-r from-primary to-indigo-500 text-white shadow-lg hover-scale transition">
+              <Button size="lg" className="px-8 py-5 rounded-full font-bold text-lg bg-gradient-to-r from-primary to-indigo-500 text-white shadow-lg hover:scale-105 transition">
                 Start Now
                 <ArrowRight size={22} className="ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-5 rounded-full font-bold text-lg border-primary text-primary hover:bg-primary/10">
+              <Button variant="outline" size="lg" className="px-8 py-5 rounded-full font-bold text-lg border-white text-white hover:bg-white/10">
                 Learn More
               </Button>
             </div>
