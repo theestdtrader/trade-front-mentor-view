@@ -1,4 +1,5 @@
 
+import React from 'react';
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { User, Home, ArrowRight, FileText } from "lucide-react";
@@ -32,7 +33,7 @@ const Index = () => {
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 relative z-10">
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
-              <TypewriterText text="The Established" /> <span className="text-indigo-500"><TypewriterText text="Trader" speed={150} /></span>
+              <TypewriterText text="The Established" repeat={true} /> <span className="text-indigo-500"><TypewriterText text="Trader" speed={150} repeat={true} /></span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
               Fast funding for the New Age Trader
