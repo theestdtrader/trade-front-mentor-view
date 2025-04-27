@@ -1,17 +1,21 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { User, Home, ArrowRight } from "lucide-react";
+import { User, Home, ArrowRight, ChevronDown } from "lucide-react";
 import Banner1 from "@/assets/banner1.jpg";
 import trading from "@/assets/trading.jpg";
 import TabComponent from "@/components/Tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
   return (
     <div className="bg-gradient-to-br from-[#1A1F2C] via-[#221F26] to-[#2C2A31] flex flex-col">
       <Navbar />
-      {/* Hero Section with Background Image */}
       <section className="relative pt-32 pb-32 min-h-screen flex items-center justify-center">
-        {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -21,11 +25,10 @@ const Index = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/80" />
         </div>
 
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 relative z-10">
-          {/* Left content */}
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
               The Established<span className="text-indigo-500"> Trader</span>
@@ -46,15 +49,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="container mx-auto my-16 px-4 relative z-10">
         <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
           How It Works
         </h2>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          {/* Card 1 */}
           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
@@ -69,7 +69,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
@@ -84,7 +83,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Card 3 */}
           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
@@ -99,7 +97,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Card 4 */}
           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
@@ -140,10 +137,55 @@ const Index = () => {
         <TabComponent />
       </section>
 
-      {/* About/CTA Footer */}
+      <section className="container mx-auto px-4 py-16 relative z-10">
+        <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
+          Frequently Asked Questions
+        </h2>
+        
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                What is The Established Trader program?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                The Established Trader program is designed to provide fast funding for new age traders. We offer various account sizes and flexible trading conditions to help traders grow their portfolios.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                How do I qualify for funding?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                To qualify for funding, you need to complete our 1-step evaluation process. Meet the profit target of 10% while respecting the loss limits, and you'll be eligible for a funded account.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                What are the available account sizes?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                We offer account sizes ranging from $5,000 to $200,000. You can choose the size that best fits your trading style and experience level.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                How often can I request withdrawals?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                Traders can request withdrawals of their profits once every 30 days through their trader dashboard. There's no minimum withdrawal amount.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
       <footer
         id="about"
-        className="bg-gradient-to-t from-[#d6bcfa]/60   py-12 mt-auto"
+        className="bg-gradient-to-t from-[#d6bcfa]/60 py-12 mt-auto"
       >
         <div className="container mx-auto flex flex-col items-center justify-center gap-3 px-4">
           <span className="uppercase text-xs text-gray-400 tracking-widest mb-1">
@@ -159,7 +201,7 @@ const Index = () => {
           </p>
           <Button
             size="lg"
-            className="rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 text-white shadow hover-scale"
+            className="rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 shadow hover-scale text-white   py-3   hover:bg-primary/80 transition"
           >
             Get Started Now
           </Button>
