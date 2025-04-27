@@ -4,10 +4,10 @@ import { User, Home, ArrowRight } from "lucide-react";
 import Banner1 from "@/assets/banner1.jpg";
 import trading from "@/assets/trading.jpg";
 import TabComponent from "@/components/Tabs";
-//from-[#f1f0fb] via-[#3c3842] to-[#5f5964]
+
 const Index = () => {
   return (
-    <div className=" bg-gradient-to-br bg-[#ffffff] flex flex-col">
+    <div className="bg-gradient-to-br from-[#1A1F2C] via-[#221F26] to-[#2C2A31] flex flex-col">
       <Navbar />
       {/* Hero Section with Background Image */}
       <section className="relative pt-32 pb-32 min-h-screen flex items-center justify-center">
@@ -47,70 +47,74 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container bg-[#ccc] mx-auto my-16 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-[#892BFC] text-center">
+      <section id="features" className="container mx-auto my-16 px-4 relative z-10">
+        <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
           How It Works
         </h2>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {/* Card 1 */}
-
-          <div className="bg-white border-r-[#892BFC]  shadow-md p-7 text-center hover:scale-105 transition">
-            <div className="flex justify-center mb-3">
-              <span className="rounded-full bg-primary/10 p-3">
-                <Home className="text-primary" size={28} />
+          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+            <div className="flex justify-center mb-6">
+              <span className="rounded-full bg-[#892BFC]/10 p-4">
+                <Home className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="font-semibold text-xl mb-3 text-white">
               1. Choose your Program
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               We offer 1-step evolutions for both futures & Forex.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white border-r-[#892BFC] rounded-1xl shadow-md p-7 text-center hover:scale-105 transition">
-            <div className="flex justify-center mb-3">
-              <span className="rounded-full bg-primary/10 p-3">
-                <User className="text-primary" size={28} />
+          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+            <div className="flex justify-center mb-6">
+              <span className="rounded-full bg-[#892BFC]/10 p-4">
+                <User className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-2">2. Pick an Account</h3>
-            <p className="text-gray-600">
+            <h3 className="font-semibold text-xl mb-3 text-white">
+              2. Pick an Account
+            </h3>
+            <p className="text-gray-300">
               Our Account size ranges from 5,000 - 200,000.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white border-r-[#892BFC]  shadow-md p-7 text-center hover:scale-105 transition">
-            <div className="flex justify-center mb-3">
-              <span className="rounded-full bg-primary/10 p-3">
-                <ArrowRight className="text-primary" size={28} />
+          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+            <div className="flex justify-center mb-6">
+              <span className="rounded-full bg-[#892BFC]/10 p-4">
+                <ArrowRight className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="font-semibold text-xl mb-3 text-white">
               3. Trade & Meet the Objectives
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Understand the loss limit rules & hit the 10% profit target.
             </p>
           </div>
 
           {/* Card 4 */}
-          <div className="bg-white border-r-[#892BFC] shadow-md p-7 text-center hover:scale-105 transition">
-            <div className="flex justify-center mb-3">
-              <span className="rounded-full bg-primary/10 p-3">
-                <Home className="text-primary" size={28} />
+          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+            <div className="flex justify-center mb-6">
+              <span className="rounded-full bg-[#892BFC]/10 p-4">
+                <Home className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-2">4. Go Live</h3>
-            <p className="text-gray-600">
+            <h3 className="font-semibold text-xl mb-3 text-white">
+              4. Go Live
+            </h3>
+            <p className="text-gray-300">
               Trade the same way & request a healthy withdrawal every 30 days.
             </p>
           </div>
         </div>
+
         <div className="flex justify-center mb-10 mt-2">
           <button
             onClick={() => {
