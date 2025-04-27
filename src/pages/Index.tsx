@@ -1,9 +1,10 @@
+
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { User, Home, ArrowRight, ChevronDown, FileText } from "lucide-react";
+import { User, Home, ArrowRight, FileText } from "lucide-react";
 import Banner1 from "@/assets/banner1.jpg";
-import trading from "@/assets/trading.jpg";
 import TabComponent from "@/components/Tabs";
+import TypewriterText from "@/components/TypewriterText";
 import {
   Accordion,
   AccordionContent,
@@ -31,7 +32,7 @@ const Index = () => {
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 relative z-10">
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
-              The Established<span className="text-indigo-500"> Trader</span>
+              <TypewriterText text="The Established" /> <span className="text-indigo-500"><TypewriterText text="Trader" speed={150} /></span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
               Fast funding for the New Age Trader
