@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { User, Home, ArrowRight } from "lucide-react";
-import financialDiagrams from "@/assets/financial-diagrams.jpg";
+import Banner1 from "@/assets/banner1.jpg";
 import trading from "@/assets/trading.jpg";
 import TabComponent from "@/components/Tabs";
 //from-[#f1f0fb] via-[#3c3842] to-[#5f5964]
@@ -15,7 +15,7 @@ const Index = () => {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${financialDiagrams})`,
+            backgroundImage: `url(${Banner1})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -28,7 +28,7 @@ const Index = () => {
           {/* Left content */}
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
-              The <span className="text-indigo-500">Established Trader</span>
+              The Established<span className="text-indigo-500"> Trader</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
               Fast funding for the New Age Trader

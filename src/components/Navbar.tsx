@@ -69,7 +69,7 @@ const Navbar = () => {
             size="sm"
             className="hidden md:inline-block px-5 rounded-full shadow-md bg-gradient-to-r from-primary to-indigo-500 text-white"
           >
-            Take Action
+            Sign Up
           </Button>
         </div>
       </div>
