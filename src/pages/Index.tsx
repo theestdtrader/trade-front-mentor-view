@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { User, Home, ArrowRight, ChevronDown } from "lucide-react";
+import { User, Home, ArrowRight, ChevronDown, FileText } from "lucide-react";
 import Banner1 from "@/assets/banner1.jpg";
 import trading from "@/assets/trading.jpg";
 import TabComponent from "@/components/Tabs";
@@ -143,6 +143,17 @@ const Index = () => {
         </h2>
         
         <div className="max-w-3xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border-[#892BFC]/30 hover:border-[#892BFC]"
+              onClick={() => window.open('/faq-document.pdf', '_blank')}
+            >
+              <FileText className="w-5 h-5" />
+              Download Complete FAQ Guide
+            </Button>
+          </div>
+
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
               <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
