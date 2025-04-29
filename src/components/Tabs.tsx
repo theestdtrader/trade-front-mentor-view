@@ -12,7 +12,7 @@ const TabComponent = () => {
 
   // Data for Forex and Futures buttons
   const forexData = [
-    { name: "5 000", value: "$1000" },
+    { title: "Profit Target", name: "5 000", value: "$1000" },
     { name: "10 000", value: "$2000" },
     { name: "20 000", value: "$3000" },
     { name: "50 000", value: "$4000" },
@@ -20,7 +20,7 @@ const TabComponent = () => {
   ];
 
   const futuresData = [
-    { name: "5 000", value: "$1500" },
+    { title: "Profit Target", name: "5 000", value: "$1500" },
     { name: "10 000", value: "$2500" },
     { name: "20 000", value: "$3500" },
     { name: "50 000", value: "$4500" },
@@ -98,14 +98,19 @@ const TabComponent = () => {
         <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr className="bg-gray-100">
+              <th className="py-3 px-4 text-left">Title</th>
               <th className="py-3 px-4 text-left">Name</th>
               <th className="py-3 px-4 text-left">Value</th>
+            </tr>
+            <tr>
+              <th className="py-3 px-4 text-left">Name</th>
             </tr>
           </thead>
           <tbody>
             {tableData.length > 0 ? (
               tableData.map((item, index) => (
                 <tr key={index} className="border-t hover:bg-gray-50">
+                  <td className="py-3 px-4">{item.title}</td>
                   <td className="py-3 px-4">{item.name}</td>
                   <td className="py-3 px-4">{item.value}</td>
                 </tr>

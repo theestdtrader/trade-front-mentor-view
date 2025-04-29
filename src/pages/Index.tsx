@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { User, Home, ArrowRight, FileText } from "lucide-react";
@@ -33,7 +32,10 @@ const Index = () => {
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 relative z-10">
           <div className="flex-1 text-center md:text-left max-w-xl animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white mb-6">
-              <TypewriterText text="The Established" repeat={true} /> <span className="text-indigo-500"><TypewriterText text="Trader" speed={150} repeat={true} /></span>
+              <TypewriterText text="The Established" repeat={true} />{" "}
+              <span className="text-indigo-500">
+                <TypewriterText text="Trader" speed={150} repeat={true} />
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
               Fast funding for the New Age Trader
@@ -51,7 +53,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="features" className="container mx-auto my-16 px-4 relative z-10">
+      <section
+        id="features"
+        className="container mx-auto my-16 px-4 relative z-10"
+      >
         <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
           How It Works
         </h2>
@@ -131,9 +136,8 @@ const Index = () => {
         id="programs"
         className="container from-[#cfcfcf] to-[#d7d7d7]  mx-auto my-16 px-4"
       >
-        <h2 className="text-3xl font-bold mb-8 text-[#892BFC] text-center">
-          Access trading capital in record time.... and take your trading to the
-          next level
+        <h2 className="text-3xl font-bold mb-8 text-[#ffffff] text-center">
+          Programs
         </h2>
 
         <TabComponent />
@@ -141,58 +145,124 @@ const Index = () => {
 
       <section className="container mx-auto px-4 py-16 relative z-10">
         <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
-          Frequently Asked Questions
+          Trading Rules - Frequently Asked Questions
         </h2>
-        
+
         <div className="max-w-3xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border-[#892BFC]/30 hover:border-[#892BFC]"
-              onClick={() => window.open('/faq-document.pdf', '_blank')}
-            >
-              <FileText className="w-5 h-5" />
-              Download Complete FAQ Guide
-            </Button>
-          </div>
-
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+            <AccordionItem
+              value="item-1"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
               <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
-                What is The Established Trader program?
+                What is the difference between a Hard Breach and Soft Breach
+                rule?
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                The Established Trader program is designed to provide fast funding for new age traders. We offer various account sizes and flexible trading conditions to help traders grow their portfolios.
+                Soft breach means that we will close all trades that have
+                violated the rule. However, you can continue trading in your
+                Assessment or Funded Account.
+                <br />
+                <br></br>
+                Hard breach means that you violated either the Daily Loss Limit
+                or Max Drawdown rule. Both rules constitute a hard breach. In
+                the event you have a hard breach, you will fail the Assessment
+                or have your Funded Account taken away.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+            <AccordionItem
+              value="item-2"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
               <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
-                How do I qualify for funding?
+                How do you calculate the 4% Daily Loss Limit?
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                To qualify for funding, you need to complete our 1-step evaluation process. Meet the profit target of 10% while respecting the loss limits, and you'll be eligible for a funded account.
+                The Daily Loss Limit is the maximum your account can lose in any
+                given day. Daily Loss Limit is calculated using the previous day
+                balance which resets at 5 PM EST. Unlike other firms, we do NOT
+                base our calculations on previous day equity since the balance
+                only model allows you to scale profits without fear of losing
+                your account. The Daily Stop compounds with the increase in your
+                account.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+            <AccordionItem
+              value="item-3"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
               <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
-                What are the available account sizes?
+                How do you calculate the 8% Max Drawdown?
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                We offer account sizes ranging from $5,000 to $200,000. You can choose the size that best fits your trading style and experience level.
+                Maximum drawdown is the maximum your account can drawdown before
+                you would hard breach your account. When you open the account,
+                your Maximum Drawdown is set at 8% of your starting balance.
+                This 8% is static and does not trail.<br></br> <br></br>The
+                Maximum Trailing Drawdown is initially set at 6% and trails
+                (using CLOSED BALANCE - NOT equity) your account until you have
+                achieved a 6% return in your account. Once you have achieved a
+                6% return the Maximum Trailing Drawdown no longer trails and is
+                permanently locked in at your starting balance. This allows for
+                more trading flexibility.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6">
+            <AccordionItem
+              value="item-4"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
               <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
-                How often can I request withdrawals?
+                Why do I have to place a stop loss on trades?
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                Traders can request withdrawals of their profits once every 30 days through their trader dashboard. There's no minimum withdrawal amount.
+                We believe in sound risk management using stop losses. To that
+                end, we require a stop loss on every trade. If you fail to place
+                a stop loss at the time of placing the trade/order, we will
+                close the trade. This is only a soft breach rule, so you can
+                continue trading in your account.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem
+              value="item-5"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                Can I hold positions over the weekend?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                We require all trades to be closed by 3:45pm EST on Friday. Any
+                trades left open after this time will automatically be closed.
+                Note, this is only a soft breach and you will be able to
+                continue trading once the markets reopen
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem
+              value="item-6"
+              className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 px-6"
+            >
+              <AccordionTrigger className="text-white hover:text-[#892BFC] text-left">
+                Is there a breach for inactivity?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300">
+                Yes. If you do not place a trade at least once every 30 days on
+                your account, we will consider you inactive and your account
+                will be breached.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+          <div className="flex justify-center mb-8 mt-3">
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border-[#892BFC]/30 hover:border-[#892BFC]"
+              onClick={() => window.open("/faq-document.pdf", "_blank")}
+            >
+              <FileText className="w-5 h-5" />
+              Download the Complete Guidelines
+            </Button>
+          </div>
         </div>
       </section>
 

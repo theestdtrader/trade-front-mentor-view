@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface TypewriterTextProps {
   text: string;
@@ -7,13 +6,17 @@ interface TypewriterTextProps {
   repeat?: boolean;
 }
 
-const TypewriterText = ({ text, speed = 100, repeat = false }: TypewriterTextProps) => {
-  const [displayText, setDisplayText] = useState('');
-  const [isComplete, setIsComplete] = useState(false);
+const TypewriterText = ({
+  text,
+  speed = 200,
+  repeat = false,
+}: TypewriterTextProps) => {
+  const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
     let currentIndex = 0;
     let intervalId: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout;
 
     const typeText = () => {
       intervalId = setInterval(() => {
@@ -22,16 +25,12 @@ const TypewriterText = ({ text, speed = 100, repeat = false }: TypewriterTextPro
           currentIndex++;
         } else {
           clearInterval(intervalId);
-          setIsComplete(true);
-
-          // If repeat is true, reset after a short pause
           if (repeat) {
-            setTimeout(() => {
+            timeoutId = setTimeout(() => {
               currentIndex = 0;
-              setDisplayText('');
-              setIsComplete(false);
+              setDisplayText("");
               typeText();
-            }, 2000); // 2-second pause before restarting
+            }, 10000); // 10-second pause before restarting
           }
         }
       }, speed);
@@ -39,8 +38,11 @@ const TypewriterText = ({ text, speed = 100, repeat = false }: TypewriterTextPro
 
     typeText();
 
-    return () => clearInterval(intervalId);
-  }, [text, speed, repeat, isComplete]);
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+  }, [text, speed, repeat]);
 
   return <span>{displayText}</span>;
 };
