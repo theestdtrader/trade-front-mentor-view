@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Table,
@@ -81,7 +80,7 @@ const TabComponent = () => {
     },
   ];
 
-  // Data for Forex accounts - updated to match the image
+  // Data for Forex accounts
   const forexAccounts: Record<string, AccountDetails> = {
     "10 000": {
       accountSize: "$10,000",
@@ -145,7 +144,7 @@ const TabComponent = () => {
     },
   };
 
-  // Data for Futures accounts - updated to match the image
+  // Data for Futures accounts
   const futuresAccounts: Record<string, AccountDetails> = {
     "10 000": {
       accountSize: "$10,000",
@@ -215,13 +214,15 @@ const TabComponent = () => {
 
   return (
     <div className="container mx-auto px-2 md:px-4">
-      {/* Tabs for selecting account type */}
+      {/* Tabs for selecting account type - now centered */}
       <div className="flex justify-center mb-8">
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "forex" | "futures")} className="w-full">
-          <TabsList className="w-full max-w-md mx-auto mb-4">
-            <TabsTrigger value="forex" className="flex-1">Forex</TabsTrigger>
-            <TabsTrigger value="futures" className="flex-1">Futures</TabsTrigger>
-          </TabsList>
+          <div className="flex justify-center">
+            <TabsList className="w-full max-w-md mb-4">
+              <TabsTrigger value="forex" className="flex-1">Forex</TabsTrigger>
+              <TabsTrigger value="futures" className="flex-1">Futures</TabsTrigger>
+            </TabsList>
+          </div>
         </Tabs>
       </div>
 

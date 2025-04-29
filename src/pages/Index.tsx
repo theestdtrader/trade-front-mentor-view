@@ -5,12 +5,18 @@ import { User, Home, ArrowRight, FileText } from "lucide-react";
 import Banner1 from "@/assets/banner1.jpg";
 import TabComponent from "@/components/Tabs";
 import TypewriterText from "@/components/TypewriterText";
+import SignUpForm from "@/components/SignUpForm";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+import {
+  Card,
+  CardContent
+} from "@/components/ui/card";
 
 const Index = () => {
   return (
@@ -41,13 +47,7 @@ const Index = () => {
               Fast funding for the New Age Trader
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-              <Button
-                size="lg"
-                className="px-8 py-5 rounded-full font-bold text-lg bg-gradient-to-r from-primary to-indigo-500 text-white shadow-lg hover:scale-105 transition"
-              >
-                Start Now
-                <ArrowRight size={22} className="ml-2" />
-              </Button>
+              <SignUpForm />
             </div>
           </div>
         </div>
@@ -62,61 +62,69 @@ const Index = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+          <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
                 <Home className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-3 text-white">
-              1. Choose your Program
-            </h3>
-            <p className="text-gray-300">
-              We offer 1-step evolutions for both futures & Forex.
-            </p>
-          </div>
+            <CardContent className="p-0">
+              <h3 className="font-semibold text-xl mb-3 text-white">
+                1. Choose your Program
+              </h3>
+              <p className="text-gray-300">
+                We offer 1-step evolutions for both futures & Forex.
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+          <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
                 <User className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-3 text-white">
-              2. Pick an Account
-            </h3>
-            <p className="text-gray-300">
-              Our Account size ranges from 5,000 - 200,000.
-            </p>
-          </div>
+            <CardContent className="p-0">
+              <h3 className="font-semibold text-xl mb-3 text-white">
+                2. Pick an Account
+              </h3>
+              <p className="text-gray-300">
+                Our Account size ranges from 5,000 - 200,000.
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+          <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
                 <ArrowRight className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-3 text-white">
-              3. Trade & Meet the Objectives
-            </h3>
-            <p className="text-gray-300">
-              Understand the loss limit rules & hit the 10% profit target.
-            </p>
-          </div>
+            <CardContent className="p-0">
+              <h3 className="font-semibold text-xl mb-3 text-white">
+                3. Trade & Meet the Objectives
+              </h3>
+              <p className="text-gray-300">
+                Understand the loss limit rules & hit the 10% profit target.
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] rounded-xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-[#892BFC]/20 backdrop-blur-sm">
+          <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
             <div className="flex justify-center mb-6">
               <span className="rounded-full bg-[#892BFC]/10 p-4">
                 <Home className="text-[#892BFC]" size={32} />
               </span>
             </div>
-            <h3 className="font-semibold text-xl mb-3 text-white">
-              4. Go Live
-            </h3>
-            <p className="text-gray-300">
-              Trade the same way & request a healthy withdrawal every 30 days.
-            </p>
-          </div>
+            <CardContent className="p-0">
+              <h3 className="font-semibold text-xl mb-3 text-white">
+                4. Go Live
+              </h3>
+              <p className="text-gray-300">
+                Trade the same way & request a healthy withdrawal every 30 days.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="flex justify-center mb-10 mt-2">
@@ -125,7 +133,7 @@ const Index = () => {
               const programsSection = document.getElementById("programs");
               programsSection?.scrollIntoView({ behavior: "smooth" });
             }}
-            className=" rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 shadow hover-scale text-white   py-3   hover:bg-primary/80 transition"
+            className=" rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 shadow hover-scale text-white py-3 hover:bg-primary/80 transition"
           >
             Select a Program
           </button>
