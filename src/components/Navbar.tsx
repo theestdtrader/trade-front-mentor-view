@@ -1,3 +1,4 @@
+
 import { LogIn, Trophy, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import SignUpForm from "@/components/SignUpForm";
 
 const Navbar = () => {
   return (
@@ -64,13 +66,9 @@ const Navbar = () => {
             <LogIn size={18} />
             Login
           </Button>
-          <Button
-            variant="default"
-            size="sm"
-            className="hidden md:inline-block px-5 rounded-full shadow-md bg-gradient-to-r from-primary to-indigo-500 text-white"
-          >
-            Sign Up
-          </Button>
+          <div className="hidden md:block">
+            <SignUpForm />
+          </div>
         </div>
       </div>
     </nav>

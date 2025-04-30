@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Home, User, ArrowRight } from "lucide-react";
+import { Home, User, ArrowRight, CheckCircle } from "lucide-react";
 
 const FeaturesSection = () => {
   return (
@@ -11,9 +11,9 @@ const FeaturesSection = () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-        <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
+        <Card className="overflow-hidden rounded-xl shadow-lg shadow-[#892BFC]/10 border-[#892BFC]/20 p-6 hover:shadow-[#892BFC]/20 hover:border-[#892BFC]/30 transition-all duration-300">
           <div className="flex justify-center mb-6">
-            <span className="rounded-full bg-[#892BFC]/10 p-4">
+            <span className="rounded-full bg-[#892BFC]/10 p-4 border border-[#892BFC]/10">
               <Home className="text-[#892BFC]" size={32} />
             </span>
           </div>
@@ -27,9 +27,9 @@ const FeaturesSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
+        <Card className="overflow-hidden rounded-xl shadow-lg shadow-[#892BFC]/10 border-[#892BFC]/20 p-6 hover:shadow-[#892BFC]/20 hover:border-[#892BFC]/30 transition-all duration-300">
           <div className="flex justify-center mb-6">
-            <span className="rounded-full bg-[#892BFC]/10 p-4">
+            <span className="rounded-full bg-[#892BFC]/10 p-4 border border-[#892BFC]/10">
               <User className="text-[#892BFC]" size={32} />
             </span>
           </div>
@@ -43,9 +43,9 @@ const FeaturesSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
+        <Card className="overflow-hidden rounded-xl shadow-lg shadow-[#892BFC]/10 border-[#892BFC]/20 p-6 hover:shadow-[#892BFC]/20 hover:border-[#892BFC]/30 transition-all duration-300">
           <div className="flex justify-center mb-6">
-            <span className="rounded-full bg-[#892BFC]/10 p-4">
+            <span className="rounded-full bg-[#892BFC]/10 p-4 border border-[#892BFC]/10">
               <ArrowRight className="text-[#892BFC]" size={32} />
             </span>
           </div>
@@ -59,10 +59,10 @@ const FeaturesSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="p-8 text-center hover:scale-105 transition-all duration-300">
+        <Card className="overflow-hidden rounded-xl shadow-lg shadow-[#892BFC]/10 border-[#892BFC]/20 p-6 hover:shadow-[#892BFC]/20 hover:border-[#892BFC]/30 transition-all duration-300">
           <div className="flex justify-center mb-6">
-            <span className="rounded-full bg-[#892BFC]/10 p-4">
-              <Home className="text-[#892BFC]" size={32} />
+            <span className="rounded-full bg-[#892BFC]/10 p-4 border border-[#892BFC]/10">
+              <CheckCircle className="text-[#892BFC]" size={32} />
             </span>
           </div>
           <CardContent className="p-0">
@@ -76,13 +76,13 @@ const FeaturesSection = () => {
         </Card>
       </div>
 
-      <div className="flex justify-center mb-10 mt-2">
+      <div className="flex justify-center mb-10 mt-10">
         <button
           onClick={() => {
             const programsSection = document.getElementById("programs");
             programsSection?.scrollIntoView({ behavior: "smooth" });
           }}
-          className=" rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 shadow hover-scale text-white py-3 hover:bg-primary/80 transition"
+          className="rounded-full px-8 font-bold bg-gradient-to-r from-[#892BFC] to-indigo-500 shadow-lg shadow-[#892BFC]/20 text-white py-3 hover:bg-primary/80 transition-all duration-300 hover:scale-105"
         >
           Select a Program
         </button>

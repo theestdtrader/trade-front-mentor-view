@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { ArrowRight, Mail, User } from "lucide-react";
+import { ArrowRight, Mail, User, Lock } from "lucide-react";
 
 // Define form schema with Zod
 const formSchema = z.object({
@@ -67,7 +67,7 @@ const SignUpForm = () => {
       <DialogTrigger asChild>
         <Button
           size="lg"
-          className="px-8 py-5 rounded-full font-bold text-lg bg-gradient-to-r from-primary to-indigo-500 text-white shadow-lg hover:scale-105 transition"
+          className="px-8 py-5 rounded-full font-bold text-lg bg-gradient-to-r from-[#892BFC] to-indigo-500 text-white shadow-lg shadow-[#892BFC]/20 hover:scale-105 transition-all duration-300"
         >
           Start Now
           <ArrowRight size={22} className="ml-2" />
@@ -133,12 +133,15 @@ const SignUpForm = () => {
                 <FormItem>
                   <FormLabel className="text-white">Password</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Create a secure password"
-                      className="bg-[#38225b]/50 border-[#892BFC]/20 text-white placeholder:text-gray-500"
-                      type="password"
-                      {...field}
-                    />
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                      <Input
+                        placeholder="Create a secure password"
+                        className="pl-10 bg-[#38225b]/50 border-[#892BFC]/20 text-white placeholder:text-gray-500"
+                        type="password"
+                        {...field}
+                      />
+                    </div>
                   </FormControl>
                   <FormMessage className="text-red-400" />
                 </FormItem>
