@@ -11,20 +11,33 @@ interface PlanFeature {
   info?: string;
 }
 
-const PricingTable = () => {
+export interface PricingTableProps {
+  accountType: "forex" | "futures";
+}
+
+const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
+  // Base account sizes for both types
   const accountSizes = ["$6,000", "$15,000", "$25,000", "$50,000", "$100,000", "$200,000"];
-  const fees = ["$59", "$119", "$199", "$299", "$549", "$999"];
-  const profitShare = ["$117", "$292.50", "$487.50", "$975", "$1,950", "$3,900"];
+  
+  // Fees - slightly different for forex vs futures
+  const fees = accountType === "forex" 
+    ? ["$59", "$119", "$199", "$299", "$549", "$999"]
+    : ["$69", "$129", "$219", "$319", "$569", "$1,019"];
+  
+  // Profit share calculations
+  const profitShare = accountType === "forex"
+    ? ["$117", "$292.50", "$487.50", "$975", "$1,950", "$3,900"]
+    : ["$135", "$315.00", "$525.00", "$1,050", "$2,100", "$4,200"];
   
   const features: PlanFeature[] = [
     {
-      label: "15% Profit Share",
+      label: accountType === "forex" ? "15% Profit Share" : "17% Profit Share",
       values: profitShare,
       info: "From Challenge Phase"
     },
     {
       label: "Phase 1 Profit Target",
-      values: Array(6).fill("8%")
+      values: Array(6).fill(accountType === "forex" ? "8%" : "10%")
     },
     {
       label: "Phase 2 Profit Target",
@@ -45,7 +58,7 @@ const PricingTable = () => {
     },
     {
       label: "Profit Split Upto",
-      values: Array(6).fill("95%")
+      values: Array(6).fill(accountType === "forex" ? "95%" : "90%")
     },
     {
       label: "Minimum Trading Days",
@@ -53,7 +66,7 @@ const PricingTable = () => {
     },
     {
       label: "First withdrawal",
-      values: Array(6).fill("21 Days")
+      values: Array(6).fill(accountType === "forex" ? "21 Days" : "14 Days")
     },
     {
       label: "Refundable Fee",
