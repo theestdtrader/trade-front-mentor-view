@@ -1,6 +1,6 @@
 
 import React from "react";
-import TabComponent from "@/components/Tabs";
+import PricingTable from "@/components/PricingTable";
 
 const ProgramsSection = () => {
   return (
@@ -9,8 +9,8 @@ const ProgramsSection = () => {
         Programs
       </h2>
 
-      <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg shadow-[#892BFC]/10">
-        <TabComponent />
+      <div className="w-full mx-auto rounded-xl overflow-hidden">
+        <PricingTable />
       </div>
     </section>
   );
