@@ -1,6 +1,6 @@
-
 import { LogIn, Trophy, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import SignUpForm from "@/components/SignUpForm";
 import LoginForm from "@/components/LoginForm";
+import AffiliatePage from "../pages/AffiliatePage";
 import { useState } from "react";
 
 const Navbar = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  
+
   return (
     <nav className="w-full bg-black/40 backdrop-blur-sm border-b border-white/10 fixed top-0 left-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -60,6 +61,9 @@ const Navbar = () => {
           <li className="hover:text-primary transition">
             <a href="#about">FAQs</a>
           </li>
+          <li className="hover:text-primary transition">
+            <Link to="/affiliate">Affiliate</Link>
+          </li>
         </ul>
         <div className="flex gap-3 items-center">
           <Button
@@ -74,7 +78,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <SignUpForm />
           </div>
-          
+
           <LoginForm isOpen={isLoginOpen} onOpenChange={setIsLoginOpen} />
         </div>
       </div>
