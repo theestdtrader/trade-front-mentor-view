@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,7 +26,9 @@ import { Mail, Lock } from "lucide-react";
 // Define form schema with Zod
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-  password: z.string().min(8, { message: "Password must be at least 8 characters" }),
+  password: z
+    .string()
+    .min(8, { message: "Password must be at least 8 characters" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -50,7 +51,7 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
   const onSubmit = (data: FormValues) => {
     // This is where you would handle form submission
     console.log("Login form submitted:", data);
-    
+
     // Show success toast and close dialog
     toast.success("Login successful!");
     onOpenChange(false);
@@ -61,7 +62,9 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px] bg-gradient-to-br from-[#2A2D3E] to-[#2E2B36] text-white border border-[#892BFC]/30">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-white">Login</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-white">
+            Login
+          </DialogTitle>
           <DialogDescription className="text-gray-300">
             Enter your credentials to access your account
           </DialogDescription>
@@ -90,7 +93,7 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="password"
@@ -112,7 +115,7 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
                 </FormItem>
               )}
             />
-            
+
             <DialogFooter className="pt-4">
               <Button
                 type="submit"
@@ -123,11 +126,11 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
             </DialogFooter>
           </form>
         </Form>
-        
-        <div className="text-center text-sm text-gray-400 mt-2">
+
+        {/* <div className="text-center text-sm text-gray-400 mt-2">
           <span>Don't have an account? </span>
-          <button 
-            className="text-[#892BFC] hover:underline font-medium" 
+          <button
+            className="text-[#892BFC] hover:underline font-medium"
             onClick={() => {
               onOpenChange(false);
               // Here you could trigger sign up dialog if needed
@@ -135,7 +138,7 @@ const LoginForm = ({ isOpen, onOpenChange }: LoginFormProps) => {
           >
             Sign Up
           </button>
-        </div>
+        </div> */}
       </DialogContent>
     </Dialog>
   );
