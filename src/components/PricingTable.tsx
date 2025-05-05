@@ -24,24 +24,10 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
     ? ["$59", "$119", "$199", "$299", "$549", "$999"]
     : ["$69", "$129", "$219", "$319", "$569", "$1,019"];
   
-  // Profit share calculations
-  const profitShare = accountType === "forex"
-    ? ["$117", "$292.50", "$487.50", "$975", "$1,950", "$3,900"]
-    : ["$135", "$315.00", "$525.00", "$1,050", "$2,100", "$4,200"];
-  
   const features: PlanFeature[] = [
-    {
-      label: accountType === "forex" ? "15% Profit Share" : "17% Profit Share",
-      values: profitShare,
-      info: "From Challenge Phase"
-    },
     {
       label: "Phase 1 Profit Target",
       values: Array(6).fill(accountType === "forex" ? "8%" : "10%")
-    },
-    {
-      label: "Phase 2 Profit Target",
-      values: Array(6).fill("5%")
     },
     {
       label: "Maximum Overall Loss",
@@ -67,11 +53,6 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
     {
       label: "First withdrawal",
       values: Array(6).fill(accountType === "forex" ? "21 Days" : "14 Days")
-    },
-    {
-      label: "Refundable Fee",
-      values: fees,
-      info: "We refund the full price"
     }
   ];
 
