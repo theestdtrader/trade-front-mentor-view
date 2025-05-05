@@ -9,8 +9,12 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import SignUpForm from "@/components/SignUpForm";
+import LoginForm from "@/components/LoginForm";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  
   return (
     <nav className="w-full bg-black/40 backdrop-blur-sm border-b border-white/10 fixed top-0 left-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -62,6 +66,7 @@ const Navbar = () => {
             variant="ghost"
             size="sm"
             className="text-white hover:text-primary gap-1"
+            onClick={() => setIsLoginOpen(true)}
           >
             <LogIn size={18} />
             Login
@@ -69,6 +74,8 @@ const Navbar = () => {
           <div className="hidden md:block">
             <SignUpForm />
           </div>
+          
+          <LoginForm isOpen={isLoginOpen} onOpenChange={setIsLoginOpen} />
         </div>
       </div>
     </nav>
