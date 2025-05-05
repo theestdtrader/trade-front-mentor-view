@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -16,8 +16,14 @@ export interface PricingTableProps {
 }
 
 const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
+  // For futures plan selection
+  const [selectedFuturesPlan, setSelectedFuturesPlan] = useState(0); // Default to first plan
+  
   // Base account sizes for both types
   const accountSizes = ["$6,000", "$15,000", "$25,000", "$50,000", "$100,000", "$200,000"];
+  
+  // Futures plan sizes
+  const futuresPlanSizes = ["$5,000", "$10,000", "$15,000", "$25,000", "$50,000", "$100,000"];
   
   // Fees - slightly different for forex vs futures
   const fees = accountType === "forex" 
@@ -52,6 +58,18 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
       values: Array(6).fill("21 Days")
     }
   ];
+  
+  // Define futures features with dynamic data for different plan sizes
+  const futuresFeaturesData = {
+    "Target": ["10%", "10%", "10%", "10%", "10%", "10%"],
+    "Min./Max. Trading Days": ["3 months", "3 months", "3 months", "3 months", "3 months", "3 months"],
+    "Max Daily Loss": ["3%", "3%", "3%", "3%", "3%", "3%"],
+    "Max Loss Trailing Drawdown": ["6%", "6%", "6%", "6%", "6%", "6%"],
+    "Available Leverage": ["1:10", "1:10", "1:10", "1:10", "1:10", "1:10"],
+    "Live Account Gains": ["75%", "75%", "75%", "75%", "75%", "75%"],
+    "Consistency Score": ["25%", "25%", "25%", "25%", "25%", "25%"],
+    "Platform/Data Fees": ["None", "None", "None", "None", "None", "None"]
+  };
   
   const futuresFeatures: PlanFeature[] = [
     {
@@ -94,9 +112,6 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
   
   const features = accountType === "forex" ? forexFeatures : futuresFeatures;
 
-  // Futures plan sizes
-  const futuresPlanSizes = ["$5,000", "$10,000", "$15,000", "$25,000", "$50,000", "$100,000"];
-
   return (
     <div className="bg-gradient-to-br from-[#35208f] to-[#12032e] rounded-2xl overflow-hidden border border-purple-500/30 shadow-xl">
       <div className="overflow-x-auto">
@@ -114,12 +129,36 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
                 ))
               ) : (
                 <th className="py-8 px-6 text-center font-bold text-xl border-b border-purple-500/20">
-                  Details
+                  {futuresPlanSizes[selectedFuturesPlan]}
                 </th>
               )}
             </tr>
           </thead>
           <tbody>
+            {/* For Futures, show plan selection buttons at the top */}
+            {accountType === "futures" && (
+              <tr>
+                <td className="py-6 px-6 font-medium">Available Plans</td>
+                <td className="py-6 px-6">
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {futuresPlanSizes.map((size, index) => (
+                      <Button 
+                        key={index}
+                        onClick={() => setSelectedFuturesPlan(index)}
+                        className={`px-4 py-2 rounded-xl ${
+                          selectedFuturesPlan === index 
+                            ? "bg-[#892BFC] hover:bg-[#892BFC]/90" 
+                            : "bg-[#4C6EF5] hover:bg-[#4C6EF5]/90"
+                        } text-white`}
+                      >
+                        {size}
+                      </Button>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+            )}
+            
             {accountType === "forex" && (
               <tr>
                 <td className="py-2 px-6"></td>
@@ -137,6 +176,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
                 ))}
               </tr>
             )}
+            
             {features.map((feature, index) => (
               <tr key={index} className="border-t border-purple-500/10">
                 <td className="py-6 px-6 flex items-center gap-2">
@@ -158,46 +198,28 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
                     </td>
                   ))
                 ) : (
-                  // Render single column for futures
+                  // Render single column for futures with the selected plan
                   <td className="py-6 px-6 text-center">
                     {feature.icon ? <Check className="mx-auto text-green-400" size={20} /> : feature.values[0]}
                   </td>
                 )}
               </tr>
             ))}
+            
             {accountType === "futures" && (
-              <>
-                <tr>
-                  <td className="py-2 px-6"></td>
-                  <td className="py-2 px-4 text-center">
-                    <div className="flex flex-col items-center justify-center my-6">
-                      <Button 
-                        className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white w-full max-w-[140px] rounded-xl mb-1 py-6"
-                      >
-                        Get Plan
-                      </Button>
-                      <span className="text-sm text-gray-300">Fee: {fees[0]}</span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colSpan={2} className="px-6 py-8">
-                    <div className="border-t border-purple-500/20 pt-8">
-                      <h3 className="text-xl font-bold mb-4 text-center">Available Plans</h3>
-                      <div className="flex flex-wrap justify-center gap-4">
-                        {futuresPlanSizes.map((size, index) => (
-                          <Button 
-                            key={index}
-                            className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white px-6 py-4 rounded-xl"
-                          >
-                            {size}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </>
+              <tr>
+                <td className="py-2 px-6"></td>
+                <td className="py-2 px-4 text-center">
+                  <div className="flex flex-col items-center justify-center my-6">
+                    <Button 
+                      className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white w-full max-w-[140px] rounded-xl mb-1 py-6"
+                    >
+                      Get Plan
+                    </Button>
+                    <span className="text-sm text-gray-300">Fee: {fees[0]}</span>
+                  </div>
+                </td>
+              </tr>
             )}
           </tbody>
         </table>
