@@ -22,12 +22,13 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
   // Fees - slightly different for forex vs futures
   const fees = accountType === "forex" 
     ? ["$59", "$119", "$199", "$299", "$549", "$999"]
-    : ["$69", "$129", "$219", "$319", "$569", "$1,019"];
+    : ["$250", "$250", "$250", "$250", "$250", "$250"];
   
-  const features: PlanFeature[] = [
+  // Define features based on account type
+  const forexFeatures: PlanFeature[] = [
     {
       label: "Phase 1 Profit Target",
-      values: Array(6).fill(accountType === "forex" ? "8%" : "10%")
+      values: Array(6).fill("8%")
     },
     {
       label: "Maximum Overall Loss",
@@ -44,7 +45,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
     },
     {
       label: "Profit Split Upto",
-      values: Array(6).fill(accountType === "forex" ? "95%" : "90%")
+      values: Array(6).fill("95%")
     },
     {
       label: "Minimum Trading Days",
@@ -52,9 +53,50 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
     },
     {
       label: "First withdrawal",
-      values: Array(6).fill(accountType === "forex" ? "21 Days" : "14 Days")
+      values: Array(6).fill("21 Days")
     }
   ];
+  
+  const futuresFeatures: PlanFeature[] = [
+    {
+      label: "Target",
+      values: Array(6).fill("1-Step Evaluation = 10%")
+    },
+    {
+      label: "Min./Max. Trading Days",
+      values: Array(6).fill("Max time limit: 3 months on evaluation, unlimited in live")
+    },
+    {
+      label: "Max Daily Loss",
+      values: Array(6).fill("$750 (3%) / $600")
+    },
+    {
+      label: "Max Loss Trailing Drawdown",
+      values: Array(6).fill("$1,500 (6%) / $1,200")
+    },
+    {
+      label: "Available Leverage",
+      values: Array(6).fill("1 contracts/15 micro")
+    },
+    {
+      label: "Live Account Gains",
+      values: Array(6).fill("Keep 75% (90% with upgrade), first withdrawal whenever you want")
+    },
+    {
+      label: "Consistency Score",
+      values: Array(6).fill("25%")
+    },
+    {
+      label: "Platform/Data Fees",
+      values: Array(6).fill("No platform or monthly fees / $52/month")
+    },
+    {
+      label: "One Time Fee",
+      values: Array(6).fill("$250 / $300")
+    }
+  ];
+  
+  const features = accountType === "forex" ? forexFeatures : futuresFeatures;
 
   return (
     <div className="bg-gradient-to-br from-[#35208f] to-[#12032e] rounded-2xl overflow-hidden border border-purple-500/30 shadow-xl">
@@ -63,31 +105,39 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
           <thead>
             <tr>
               <th className="py-8 px-6 text-left font-bold text-xl border-b border-purple-500/20">
-                Account Size
+                {accountType === "forex" ? "Account Size" : "Features"}
               </th>
-              {accountSizes.map((size, index) => (
-                <th key={index} className="py-8 px-6 text-center font-bold text-xl border-b border-purple-500/20">
-                  {size}
+              {accountType === "forex" ? (
+                accountSizes.map((size, index) => (
+                  <th key={index} className="py-8 px-6 text-center font-bold text-xl border-b border-purple-500/20">
+                    {size}
+                  </th>
+                ))
+              ) : (
+                <th className="py-8 px-6 text-center font-bold text-xl border-b border-purple-500/20">
+                  Details
                 </th>
-              ))}
+              )}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="py-2 px-6"></td>
-              {fees.map((fee, index) => (
-                <td key={index} className="py-2 px-4 text-center">
-                  <div className="flex flex-col items-center justify-center mb-6">
-                    <Button 
-                      className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white w-full max-w-[140px] rounded-xl mb-1 py-6"
-                    >
-                      Get Plan
-                    </Button>
-                    <span className="text-sm text-gray-300">Fee: {fee}</span>
-                  </div>
-                </td>
-              ))}
-            </tr>
+            {accountType === "forex" && (
+              <tr>
+                <td className="py-2 px-6"></td>
+                {fees.map((fee, index) => (
+                  <td key={index} className="py-2 px-4 text-center">
+                    <div className="flex flex-col items-center justify-center mb-6">
+                      <Button 
+                        className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white w-full max-w-[140px] rounded-xl mb-1 py-6"
+                      >
+                        Get Plan
+                      </Button>
+                      <span className="text-sm text-gray-300">Fee: {fee}</span>
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            )}
             {features.map((feature, index) => (
               <tr key={index} className="border-t border-purple-500/10">
                 <td className="py-6 px-6 flex items-center gap-2">
@@ -101,13 +151,36 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
                     </div>
                   </div>
                 </td>
-                {feature.values.map((value, valueIndex) => (
-                  <td key={valueIndex} className="py-6 px-6 text-center">
-                    {feature.icon ? <Check className="mx-auto text-green-400" size={20} /> : value}
+                {accountType === "forex" ? (
+                  // Render individual values for each account size (Forex)
+                  feature.values.map((value, valueIndex) => (
+                    <td key={valueIndex} className="py-6 px-6 text-center">
+                      {feature.icon ? <Check className="mx-auto text-green-400" size={20} /> : value}
+                    </td>
+                  ))
+                ) : (
+                  // Render single column for futures
+                  <td className="py-6 px-6 text-center">
+                    {feature.icon ? <Check className="mx-auto text-green-400" size={20} /> : feature.values[0]}
                   </td>
-                ))}
+                )}
               </tr>
             ))}
+            {accountType === "futures" && (
+              <tr>
+                <td className="py-2 px-6"></td>
+                <td className="py-2 px-4 text-center">
+                  <div className="flex flex-col items-center justify-center my-6">
+                    <Button 
+                      className="bg-[#4C6EF5] hover:bg-[#4C6EF5]/90 text-white w-full max-w-[140px] rounded-xl mb-1 py-6"
+                    >
+                      Get Plan
+                    </Button>
+                    <span className="text-sm text-gray-300">Fee: {fees[0]}</span>
+                  </div>
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
