@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import PricingTable from "@/components/PricingTable";
 import ForexTable from "@/components/ForexTable";
+import FuturesTable from "@/components/FuturesTable";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ProgramsSection = () => {
@@ -28,7 +29,7 @@ const ProgramsSection = () => {
         {activeTab === "forex" ? (
           <ForexTable />
         ) : (
-          <PricingTable accountType={activeTab} />
+          <FuturesTable />
         )}
       </div>
     </section>
