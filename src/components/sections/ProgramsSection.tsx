@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import PricingTable from "@/components/PricingTable";
+import ForexTable from "@/components/ForexTable";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ProgramsSection = () => {
@@ -24,7 +25,11 @@ const ProgramsSection = () => {
       </div>
 
       <div className="w-full mx-auto rounded-xl overflow-hidden">
-        <PricingTable accountType={activeTab} />
+        {activeTab === "forex" ? (
+          <ForexTable />
+        ) : (
+          <PricingTable accountType={activeTab} />
+        )}
       </div>
     </section>
   );
