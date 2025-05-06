@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { ArrowRight, Mail, User, Lock } from "lucide-react";
+import { ArrowRight, Mail, User, Lock, Ticket } from "lucide-react";
 
 // Define form schema with Zod
 const formSchema = z.object({
@@ -35,6 +35,7 @@ const formSchema = z.object({
     .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
     .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
     .regex(/[0-9]/, { message: "Password must contain at least one number" }),
+  affiliateCode: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -49,6 +50,7 @@ const SignUpForm = () => {
       name: "",
       email: "",
       password: "",
+      affiliateCode: "",
     },
   });
 
@@ -56,8 +58,14 @@ const SignUpForm = () => {
     // This is where you would handle form submission
     console.log("Form submitted:", data);
     
-    // Show success toast and close dialog
-    toast.success("Account created successfully!");
+    // Check if affiliate code was used
+    if (data.affiliateCode) {
+      console.log("Affiliate code used:", data.affiliateCode);
+      toast.success("Account created with affiliate discount!");
+    } else {
+      toast.success("Account created successfully!");
+    }
+    
     setIsOpen(false);
     form.reset();
   };
@@ -139,6 +147,27 @@ const SignUpForm = () => {
                         placeholder="Create a secure password"
                         className="pl-10 bg-[#38225b]/50 border-[#892BFC]/20 text-white placeholder:text-gray-500"
                         type="password"
+                        {...field}
+                      />
+                    </div>
+                  </FormControl>
+                  <FormMessage className="text-red-400" />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="affiliateCode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Affiliate Code (optional)</FormLabel>
+                  <FormControl>
+                    <div className="relative">
+                      <Ticket className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                      <Input
+                        placeholder="Enter affiliate code if you have one"
+                        className="pl-10 bg-[#38225b]/50 border-[#892BFC]/20 text-white placeholder:text-gray-500"
                         {...field}
                       />
                     </div>

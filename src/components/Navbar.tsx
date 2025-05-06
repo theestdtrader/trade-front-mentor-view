@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
         <ul className="hidden md:flex gap-8 items-center font-medium text-white">
           <li className="hover:text-primary transition">
-            <a href="#features">Home</a>
+            <RouterLink to="/">Home</RouterLink>
           </li>
           <li>
             <DropdownMenu>
