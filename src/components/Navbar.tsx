@@ -1,6 +1,7 @@
-import { LogIn, Trophy, ChevronDown } from "lucide-react";
+
+import { LogIn, Trophy, ChevronDown, Link } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,7 +11,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import SignUpForm from "@/components/SignUpForm";
 import LoginForm from "@/components/LoginForm";
-import AffiliatePage from "../pages/AffiliatePage";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
             <a href="#about">FAQs</a>
           </li>
           <li className="hover:text-primary transition">
-            <Link to="/affiliate">Affiliate</Link>
+            <RouterLink to="/affiliate">Affiliate</RouterLink>
           </li>
         </ul>
         <div className="flex gap-3 items-center">
