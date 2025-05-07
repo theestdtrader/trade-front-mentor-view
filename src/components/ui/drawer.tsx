@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
 
@@ -102,6 +103,15 @@ const DrawerDescription = React.forwardRef<
 ))
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName
 
+// Add aliases for Sheet components
+const Sheet = Drawer
+const SheetTrigger = DrawerTrigger
+const SheetContent = DrawerContent
+const SheetHeader = DrawerHeader
+const SheetFooter = DrawerFooter
+const SheetTitle = DrawerTitle
+const SheetDescription = DrawerDescription
+
 export {
   Drawer,
   DrawerPortal,
@@ -113,4 +123,12 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
+  // Export Sheet aliases
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription
 }
