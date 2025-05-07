@@ -25,22 +25,50 @@ const ProgramsSection = () => {
 
   return (
     <section id="programs" className="container mx-auto my-8 md:my-16 px-4 relative z-10">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-[#892BFC] text-center">
+      <h2 
+        className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-[#892BFC] text-center"
+        style={{
+          opacity: 1,
+          transform: 'translateY(0)',
+          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
+        }}
+      >
         Programs
       </h2>
 
       <div className="flex justify-center mb-6 md:mb-8">
-        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "forex" | "futures")} className="w-full">
+        <Tabs 
+          value={activeTab} 
+          onValueChange={(value) => setActiveTab(value as "forex" | "futures")} 
+          className="w-full transition-all duration-300"
+        >
           <div className="flex justify-center">
             <TabsList className="w-full max-w-xs md:max-w-md">
-              <TabsTrigger value="forex" className="flex-1 text-sm md:text-base">Forex</TabsTrigger>
-              <TabsTrigger value="futures" className="flex-1 text-sm md:text-base">Futures</TabsTrigger>
+              <TabsTrigger 
+                value="forex" 
+                className="flex-1 text-sm md:text-base transition-all duration-300"
+              >
+                Forex
+              </TabsTrigger>
+              <TabsTrigger 
+                value="futures"
+                className="flex-1 text-sm md:text-base transition-all duration-300"
+              >
+                Futures
+              </TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
       </div>
 
-      <div className="w-full mx-auto rounded-xl overflow-hidden">
+      <div 
+        className="w-full mx-auto rounded-xl overflow-hidden transition-all duration-500 ease-in-out"
+        style={{
+          opacity: 1,
+          transform: 'translateY(0)',
+          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
+        }}
+      >
         {activeTab === "forex" ? (
           <ForexTable onGetPlan={handleGetPlan} />
         ) : (

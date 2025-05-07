@@ -1,5 +1,5 @@
 
-import { LogIn, Trophy, ChevronDown, Link, Menu } from "lucide-react";
+import { LogIn, Trophy, ChevronDown, Link, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Link as RouterLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,13 +12,26 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/drawer";
 import SignUpForm from "@/components/SignUpForm";
 import LoginForm from "@/components/LoginForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="w-full bg-black/40 backdrop-blur-sm border-b border-white/10 fixed top-0 left-0 z-40">
@@ -84,43 +97,74 @@ const Navbar = () => {
           </Button>
         )}
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu with Dark Overlay and Animation */}
         {isMobile && (
-          <div className={`fixed inset-0 bg-black/80 z-50 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div 
+            className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
+              isMobileMenuOpen 
+              ? 'opacity-100 pointer-events-auto' 
+              : 'opacity-0 pointer-events-none'
+            }`}
+          >
             <div className="flex justify-end p-4">
               <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white"
+                className="text-white hover:text-primary transition-colors"
               >
-                <ChevronDown size={24} />
+                <X size={24} />
               </Button>
             </div>
-            <ul className="flex flex-col items-center gap-6 font-medium text-white py-12">
-              <li className="hover:text-primary transition text-lg">
-                <RouterLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</RouterLink>
-              </li>
-              <li className="hover:text-primary transition text-lg">
-                <a href="#daily-challenge" onClick={() => setIsMobileMenuOpen(false)}>Forex</a>
-              </li>
-              <li className="hover:text-primary transition text-lg">
-                <a href="#weekly-challenge" onClick={() => setIsMobileMenuOpen(false)}>Future</a>
-              </li>
-              <li className="hover:text-primary transition text-lg">
-                <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>Competition</a>
-              </li>
-              <li className="hover:text-primary transition text-lg">
-                <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>FAQs</a>
-              </li>
-              <li className="hover:text-primary transition text-lg">
-                <RouterLink to="/affiliate" onClick={() => setIsMobileMenuOpen(false)}>Affiliate</RouterLink>
-              </li>
-              <li className="mt-6">
+            <ul className="flex flex-col items-center gap-6 font-medium text-white py-8">
+              {[
+                { title: "Home", path: "/" },
+                { title: "Forex", path: "#daily-challenge" },
+                { title: "Future", path: "#weekly-challenge" },
+                { title: "Competition", path: "#pricing" },
+                { title: "FAQs", path: "#about" },
+                { title: "Affiliate", path: "/affiliate" }
+              ].map((item, i) => (
+                <li 
+                  key={item.title}
+                  className="hover:text-primary transition text-lg transform hover:scale-105"
+                  style={{
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `all 0.3s ease-in-out ${i * 0.1}s`
+                  }}
+                >
+                  {item.path.startsWith('#') ? (
+                    <a 
+                      href={item.path} 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="nav-link-hover"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <RouterLink 
+                      to={item.path} 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="nav-link-hover"
+                    >
+                      {item.title}
+                    </RouterLink>
+                  )}
+                </li>
+              ))}
+              <li 
+                className="mt-8"
+                style={{
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.3s ease-in-out 0.6s`
+                }}
+              >
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-white hover:text-primary gap-1"
+                  className="text-white hover:text-primary gap-1 hover:scale-105 transition-all"
                   onClick={() => {
                     setIsLoginOpen(true);
                     setIsMobileMenuOpen(false);
@@ -130,7 +174,13 @@ const Navbar = () => {
                   Login
                 </Button>
               </li>
-              <li>
+              <li 
+                style={{
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.3s ease-in-out 0.7s`
+                }}
+              >
                 <SignUpForm />
               </li>
             </ul>
@@ -142,7 +192,7 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="text-white hover:text-primary gap-1"
+            className="text-white hover:text-primary gap-1 transition-all hover:scale-105"
             onClick={() => setIsLoginOpen(true)}
           >
             <LogIn size={18} />
