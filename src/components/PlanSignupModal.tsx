@@ -54,8 +54,8 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 animate-fade-in">
-      <Card className="w-full max-w-md bg-gradient-to-br from-[#35208f] to-[#12032e] border-purple-500/30 shadow-xl overflow-hidden">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in">
+      <Card className="w-full max-w-md bg-gradient-to-br from-[#35208f] to-[#12032e] border-purple-500/30 shadow-xl overflow-hidden rounded-xl scale-90 transform-gpu">
         <CardHeader className="relative pb-3">
           <Button
             variant="ghost"
@@ -65,37 +65,37 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
           >
             <X className="h-4 w-4" />
           </Button>
-          <CardTitle className="text-2xl text-white flex items-center gap-2">
+          <CardTitle className="text-xl text-white flex items-center gap-2">
             <span className="text-[#892BFC]">Apply for</span> {planType === "forex" ? "Forex" : "Futures"} Plan
           </CardTitle>
           <div className="flex justify-between items-center mt-2">
             <div className="text-white">
               <div className="text-sm opacity-80">Account Size</div>
-              <div className="font-bold text-xl">{planSize}</div>
+              <div className="font-bold text-lg">{planSize}</div>
             </div>
             <div className="text-white">
               <div className="text-sm opacity-80">Fee</div>
-              <div className="font-bold text-xl">{planFee}</div>
+              <div className="font-bold text-lg">{planFee}</div>
             </div>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="py-2">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
               <FormField
                 control={form.control}
                 name="fullName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Full Name</FormLabel>
+                    <FormLabel className="text-white text-sm">Full Name</FormLabel>
                     <FormControl>
                       <input
                         {...field}
-                        className="w-full px-3 py-2 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full px-3 py-1.5 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
                         placeholder="John Doe"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -104,16 +104,16 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Email</FormLabel>
+                    <FormLabel className="text-white text-sm">Email</FormLabel>
                     <FormControl>
                       <input
                         {...field}
-                        className="w-full px-3 py-2 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full px-3 py-1.5 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
                         placeholder="johndoe@example.com"
                         type="email"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -122,15 +122,15 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Phone Number</FormLabel>
+                    <FormLabel className="text-white text-sm">Phone Number</FormLabel>
                     <FormControl>
                       <input
                         {...field}
-                        className="w-full px-3 py-2 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full px-3 py-1.5 bg-white/10 text-white border border-purple-500/30 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
                         placeholder="(555) 123-4567"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -138,7 +138,7 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
                 control={form.control}
                 name="terms"
                 render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-1">
                     <FormControl>
                       <input
                         type="checkbox"
@@ -147,16 +147,16 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
                         className="h-4 w-4 accent-[#892BFC]"
                       />
                     </FormControl>
-                    <FormLabel className="text-sm text-white font-normal">
+                    <FormLabel className="text-xs text-white font-normal">
                       I agree to the terms and conditions
                     </FormLabel>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
               <Button
                 type="submit"
-                className="w-full bg-[#892BFC] hover:bg-[#892BFC]/90 text-white py-2"
+                className="w-full bg-[#892BFC] hover:bg-[#892BFC]/90 text-white py-1.5 text-sm"
               >
                 Submit Application
               </Button>
