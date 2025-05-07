@@ -4,6 +4,7 @@ import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
 import PlanSignupModal from "@/components/PlanSignupModal";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProgramsSection = () => {
   const [activeTab, setActiveTab] = useState<"forex" | "futures">("forex");
@@ -12,6 +13,7 @@ const ProgramsSection = () => {
     size: "",
     fee: ""
   });
+  const isMobile = useIsMobile();
 
   const handleGetPlan = (planSize: string, planFee: string) => {
     setSelectedPlan({
@@ -22,17 +24,17 @@ const ProgramsSection = () => {
   };
 
   return (
-    <section id="programs" className="container mx-auto my-16 px-4 relative z-10">
-      <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
+    <section id="programs" className="container mx-auto my-8 md:my-16 px-4 relative z-10">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-[#892BFC] text-center">
         Programs
       </h2>
 
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-6 md:mb-8">
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "forex" | "futures")} className="w-full">
           <div className="flex justify-center">
-            <TabsList className="w-full max-w-md">
-              <TabsTrigger value="forex" className="flex-1">Forex</TabsTrigger>
-              <TabsTrigger value="futures" className="flex-1">Futures</TabsTrigger>
+            <TabsList className="w-full max-w-xs md:max-w-md">
+              <TabsTrigger value="forex" className="flex-1 text-sm md:text-base">Forex</TabsTrigger>
+              <TabsTrigger value="futures" className="flex-1 text-sm md:text-base">Futures</TabsTrigger>
             </TabsList>
           </div>
         </Tabs>

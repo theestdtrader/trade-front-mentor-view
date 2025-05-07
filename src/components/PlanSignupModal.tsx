@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface PlanSignupModalProps {
   isOpen: boolean;
@@ -34,6 +35,8 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
   planSize,
   planFee,
 }) => {
+  const isMobile = useIsMobile();
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -55,7 +58,7 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in">
-      <Card className="w-full max-w-md bg-gradient-to-br from-[#35208f] to-[#12032e] border-purple-500/30 shadow-xl overflow-hidden rounded-xl scale-90 transform-gpu">
+      <Card className={`w-full ${isMobile ? 'max-w-xs' : 'max-w-md'} bg-gradient-to-br from-[#35208f] to-[#12032e] border-purple-500/30 shadow-xl overflow-hidden rounded-xl scale-90 transform-gpu`}>
         <CardHeader className="relative pb-3">
           <Button
             variant="ghost"
@@ -65,17 +68,17 @@ const PlanSignupModal: React.FC<PlanSignupModalProps> = ({
           >
             <X className="h-4 w-4" />
           </Button>
-          <CardTitle className="text-xl text-white flex items-center gap-2">
+          <CardTitle className={`${isMobile ? 'text-lg' : 'text-xl'} text-white flex items-center gap-2`}>
             <span className="text-[#892BFC]">Apply for</span> {planType === "forex" ? "Forex" : "Futures"} Plan
           </CardTitle>
           <div className="flex justify-between items-center mt-2">
             <div className="text-white">
               <div className="text-sm opacity-80">Account Size</div>
-              <div className="font-bold text-lg">{planSize}</div>
+              <div className={`font-bold ${isMobile ? 'text-base' : 'text-lg'}`}>{planSize}</div>
             </div>
             <div className="text-white">
               <div className="text-sm opacity-80">Fee</div>
-              <div className="font-bold text-lg">{planFee}</div>
+              <div className={`font-bold ${isMobile ? 'text-base' : 'text-lg'}`}>{planFee}</div>
             </div>
           </div>
         </CardHeader>
