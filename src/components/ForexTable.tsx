@@ -9,8 +9,17 @@ import {
   TableRow 
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-const ForexTable = () => {
+interface ForexTableProps {
+  onGetPlan: (planSize: string, planFee: string) => void;
+}
+
+const ForexTable: React.FC<ForexTableProps> = ({ onGetPlan }) => {
+  // Account sizes and fees
+  const accountSizes = ["$5,000", "$10,000", "$25,000", "$50,000", "$100,000"];
+  const fees = ["$35", "$75", "$190", "$375", "$750"];
+
   return (
     <div className="space-y-6">
       {/* Account Size and Fee Table */}
@@ -20,21 +29,31 @@ const ForexTable = () => {
             <TableHeader>
               <TableRow className="bg-[#4a307a] border-b-0">
                 <TableHead className="text-white font-bold">Account Size</TableHead>
-                <TableHead className="text-white font-bold text-center">$5,000</TableHead>
-                <TableHead className="text-white font-bold text-center">$10,000</TableHead>
-                <TableHead className="text-white font-bold text-center">$25,000</TableHead>
-                <TableHead className="text-white font-bold text-center">$50,000</TableHead>
-                <TableHead className="text-white font-bold text-center">$100,000</TableHead>
+                {accountSizes.map((size, index) => (
+                  <TableHead key={index} className="text-white font-bold text-center">{size}</TableHead>
+                ))}
               </TableRow>
             </TableHeader>
             <TableBody>
               <TableRow>
                 <TableCell className="font-medium">FEE</TableCell>
-                <TableCell className="text-center">$35</TableCell>
-                <TableCell className="text-center">$75</TableCell>
-                <TableCell className="text-center">$190</TableCell>
-                <TableCell className="text-center">$375</TableCell>
-                <TableCell className="text-center">$750</TableCell>
+                {fees.map((fee, index) => (
+                  <TableCell key={index} className="text-center">{fee}</TableCell>
+                ))}
+              </TableRow>
+              {/* Get Plan Button Row */}
+              <TableRow>
+                <TableCell className="font-medium"></TableCell>
+                {accountSizes.map((size, index) => (
+                  <TableCell key={index} className="text-center">
+                    <Button 
+                      onClick={() => onGetPlan(size, fees[index])}
+                      className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white"
+                    >
+                      Get Plan
+                    </Button>
+                  </TableCell>
+                ))}
               </TableRow>
             </TableBody>
           </Table>

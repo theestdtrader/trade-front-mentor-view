@@ -1,12 +1,25 @@
 
 import React, { useState } from "react";
-import PricingTable from "@/components/PricingTable";
 import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
+import PlanSignupModal from "@/components/PlanSignupModal";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ProgramsSection = () => {
   const [activeTab, setActiveTab] = useState<"forex" | "futures">("forex");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState({
+    size: "",
+    fee: ""
+  });
+
+  const handleGetPlan = (planSize: string, planFee: string) => {
+    setSelectedPlan({
+      size: planSize,
+      fee: planFee
+    });
+    setModalOpen(true);
+  };
 
   return (
     <section id="programs" className="container mx-auto my-16 px-4 relative z-10">
@@ -27,11 +40,19 @@ const ProgramsSection = () => {
 
       <div className="w-full mx-auto rounded-xl overflow-hidden">
         {activeTab === "forex" ? (
-          <ForexTable />
+          <ForexTable onGetPlan={handleGetPlan} />
         ) : (
-          <FuturesTable />
+          <FuturesTable onGetPlan={handleGetPlan} />
         )}
       </div>
+
+      <PlanSignupModal 
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        planType={activeTab}
+        planSize={selectedPlan.size}
+        planFee={selectedPlan.fee}
+      />
     </section>
   );
 };

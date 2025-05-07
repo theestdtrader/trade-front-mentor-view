@@ -9,8 +9,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-const FuturesTable = () => {
+interface FuturesTableProps {
+  onGetPlan: (planSize: string, planFee: string) => void;
+}
+
+const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
   // Account sizes and details
   const accountSizes = ["$25,000", "$50,000", "$100,000"];
   const fees = ["$265.00", "$525.00", "$1000.00"];
@@ -88,6 +93,20 @@ const FuturesTable = () => {
               {positions.map((position, index) => (
                 <TableCell key={index} className="text-center">
                   {position}
+                </TableCell>
+              ))}
+            </TableRow>
+            {/* Get Plan Button Row */}
+            <TableRow>
+              <TableCell className="font-medium"></TableCell>
+              {accountSizes.map((size, index) => (
+                <TableCell key={index} className="text-center">
+                  <Button 
+                    onClick={() => onGetPlan(size, fees[index])}
+                    className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white"
+                  >
+                    Get Plan
+                  </Button>
                 </TableCell>
               ))}
             </TableRow>
