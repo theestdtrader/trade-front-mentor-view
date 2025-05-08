@@ -19,14 +19,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
   const [selectedFuturesPlan, setSelectedFuturesPlan] = useState(0); // Default to first plan
 
   // Base account sizes for both types
-  const accountSizes = [
-    "$5,000",
-    "$15,000",
-    "$25,000",
-    "$50,000",
-    "$100,000",
-    "$200,000",
-  ];
+  const accountSizes = ["$5,000", "$15,000", "$25,000", "$50,000", "$100,000"];
 
   // Futures plan sizes
   const futuresPlanSizes = [
@@ -40,14 +33,14 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
   // Fees - slightly different for forex vs futures
   const fees =
     accountType === "forex"
-      ? ["$59", "$119", "$199", "$299", "$549", "$999"]
+      ? ["$35", "$75", "$190", "$375", "$750"]
       : ["$250", "$250", "$250", "$250", "$250", "$250"];
 
   // Define features based on account type
   const forexFeatures: PlanFeature[] = [
     {
-      label: "Phase 1 Profit Target",
-      values: Array(6).fill("8%"),
+      label: "Profit Target",
+      values: Array(5).fill("10%"),
     },
     {
       label: "Maximum Overall Loss",
@@ -57,7 +50,6 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
         "10% ($2,500)",
         "10% ($5,000)",
         "10% ($10,000)",
-        "10% ($20,000)",
       ],
     },
     {
@@ -68,21 +60,20 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
         "5% ($1,250)",
         "5% ($2,500)",
         "5% ($5,000)",
-        "5% ($10,000)",
       ],
     },
     {
       label: "News Trading",
-      values: Array(6).fill(""),
+      values: Array(5).fill(""),
       icon: true,
     },
     {
       label: "Minimum Trading Days",
-      values: Array(6).fill("5 Days"),
+      values: Array(5).fill("5 Days"),
     },
     {
       label: "First withdrawal",
-      values: Array(6).fill("21 Days"),
+      values: Array(5).fill("21 Days"),
     },
   ];
 

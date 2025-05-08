@@ -1,4 +1,3 @@
-
 import { LogIn, Trophy, ChevronDown, Link, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Link as RouterLink } from "react-router-dom";
@@ -19,17 +18,17 @@ const Navbar = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  
+
   // Prevent body scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -87,9 +86,9 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         {isMobile && (
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => setIsMobileMenuOpen(true)}
             className="md:hidden text-white"
           >
@@ -99,52 +98,54 @@ const Navbar = () => {
 
         {/* Mobile Menu with Black Background and Animation */}
         {isMobile && (
-          <div 
+          <div
             className={`fixed inset-0 bg-black backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
-              isMobileMenuOpen 
-              ? 'opacity-100 pointer-events-auto' 
-              : 'opacity-0 pointer-events-none'
+              isMobileMenuOpen
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
             }`}
           >
             <div className="flex justify-end p-4">
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-white hover:text-primary transition-colors"
               >
                 <X size={24} />
               </Button>
             </div>
-            <ul className="flex flex-col items-center gap-6 font-medium text-white py-8">
+            <ul className="flex flex-col items-center gap-6 bg-black font-medium text-white py-8">
               {[
                 { title: "Home", path: "/" },
                 { title: "Forex", path: "#daily-challenge" },
                 { title: "Future", path: "#weekly-challenge" },
                 { title: "Competition", path: "#pricing" },
                 { title: "FAQs", path: "#about" },
-                { title: "Affiliate", path: "/affiliate" }
+                { title: "Affiliate", path: "/affiliate" },
               ].map((item, i) => (
-                <li 
+                <li
                   key={item.title}
                   className="hover:text-primary transition text-lg transform hover:scale-105"
                   style={{
                     opacity: isMobileMenuOpen ? 1 : 0,
-                    transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-                    transition: `all 0.3s ease-in-out ${i * 0.1}s`
+                    transform: isMobileMenuOpen
+                      ? "translateY(0)"
+                      : "translateY(20px)",
+                    transition: `all 0.3s ease-in-out ${i * 0.1}s`,
                   }}
                 >
-                  {item.path.startsWith('#') ? (
-                    <a 
-                      href={item.path} 
+                  {item.path.startsWith("#") ? (
+                    <a
+                      href={item.path}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="nav-link-hover"
                     >
                       {item.title}
                     </a>
                   ) : (
-                    <RouterLink 
-                      to={item.path} 
+                    <RouterLink
+                      to={item.path}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="nav-link-hover"
                     >
@@ -153,12 +154,14 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
-              <li 
+              <li
                 className="mt-8"
                 style={{
                   opacity: isMobileMenuOpen ? 1 : 0,
-                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-                  transition: `all 0.3s ease-in-out 0.6s`
+                  transform: isMobileMenuOpen
+                    ? "translateY(0)"
+                    : "translateY(20px)",
+                  transition: `all 0.3s ease-in-out 0.6s`,
                 }}
               >
                 <Button
@@ -174,11 +177,13 @@ const Navbar = () => {
                   Login
                 </Button>
               </li>
-              <li 
+              <li
                 style={{
                   opacity: isMobileMenuOpen ? 1 : 0,
-                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-                  transition: `all 0.3s ease-in-out 0.7s`
+                  transform: isMobileMenuOpen
+                    ? "translateY(0)"
+                    : "translateY(20px)",
+                  transition: `all 0.3s ease-in-out 0.7s`,
                 }}
               >
                 <SignUpForm />
