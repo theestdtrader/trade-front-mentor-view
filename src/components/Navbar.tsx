@@ -97,10 +97,10 @@ const Navbar = () => {
           </Button>
         )}
 
-        {/* Mobile Menu with Black Background and Animation */}
+        {/* Mobile Menu with Website Theme Background and Animation */}
         {isMobile && (
           <div 
-            className={`fixed inset-0 bg-black backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
+            className={`fixed inset-0 bg-primary/95 backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
               isMobileMenuOpen 
               ? 'opacity-100 pointer-events-auto' 
               : 'opacity-0 pointer-events-none'
@@ -111,12 +111,12 @@ const Navbar = () => {
                 variant="ghost" 
                 size="sm" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white hover:text-primary transition-colors"
+                className="text-primary-foreground hover:text-primary-foreground/80 transition-colors"
               >
                 <X size={24} />
               </Button>
             </div>
-            <ul className="flex flex-col items-center gap-6 font-medium text-white py-8">
+            <ul className="flex flex-col items-center gap-6 font-medium text-primary-foreground py-8">
               {[
                 { title: "Home", path: "/" },
                 { title: "Forex", path: "#daily-challenge" },
@@ -127,7 +127,7 @@ const Navbar = () => {
               ].map((item, i) => (
                 <li 
                   key={item.title}
-                  className="hover:text-primary transition text-lg transform hover:scale-105"
+                  className="hover:text-primary-foreground/80 transition text-lg transform hover:scale-105"
                   style={{
                     opacity: isMobileMenuOpen ? 1 : 0,
                     transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -164,7 +164,7 @@ const Navbar = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-white hover:text-primary gap-1 hover:scale-105 transition-all"
+                  className="text-primary-foreground hover:text-primary-foreground/80 gap-1 hover:scale-105 transition-all"
                   onClick={() => {
                     setIsLoginOpen(true);
                     setIsMobileMenuOpen(false);
