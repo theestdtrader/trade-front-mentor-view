@@ -97,10 +97,10 @@ const Navbar = () => {
           </Button>
         )}
 
-        {/* Mobile Menu with Dark Overlay and Animation */}
+        {/* Mobile Menu with Black Background and Animation */}
         {isMobile && (
           <div 
-            className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
+            className={`fixed inset-0 bg-black backdrop-blur-sm z-50 transition-all duration-300 ease-in-out ${
               isMobileMenuOpen 
               ? 'opacity-100 pointer-events-auto' 
               : 'opacity-0 pointer-events-none'
