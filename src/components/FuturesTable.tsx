@@ -76,13 +76,13 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     <div className="space-y-8">
       {/* Account Sizes Table */}
       <Card className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto hide-scrollbar">
           <Table>
             <TableHeader>
               <TableRow className="bg-[#4a307a] border-b-0">
-                <TableHead className="w-1/4 text-white/90 text-sm md:text-base">Account Size:</TableHead>
+                <TableHead className="w-1/4 text-white/90 text-xs sm:text-sm md:text-base">Account Size:</TableHead>
                 {visibleSizes.map((size, index) => (
-                  <TableHead key={index} className="text-center text-white text-sm md:text-base">
+                  <TableHead key={index} className="text-center text-white text-xs sm:text-sm md:text-base">
                     {size}
                   </TableHead>
                 ))}
@@ -90,17 +90,17 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="font-medium text-sm md:text-base">FEE:</TableCell>
+                <TableCell className="font-medium text-xs sm:text-sm md:text-base">FEE:</TableCell>
                 {visibleFees.map((fee, index) => (
-                  <TableCell key={index} className="text-center text-sm md:text-base">
+                  <TableCell key={index} className="text-center text-xs sm:text-sm md:text-base">
                     {fee}
                   </TableCell>
                 ))}
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium text-sm md:text-base">Max Positions:</TableCell>
+                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Max Positions:</TableCell>
                 {visiblePositions.map((position, index) => (
-                  <TableCell key={index} className="text-center text-sm md:text-base">
+                  <TableCell key={index} className="text-center text-xs sm:text-sm md:text-base">
                     {position}
                   </TableCell>
                 ))}
@@ -112,7 +112,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                   <TableCell key={index} className="text-center">
                     <Button 
                       onClick={() => onGetPlan(size, visibleFees[index])}
-                      className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white text-xs md:text-sm py-1 px-2 md:px-4"
+                      className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white text-xs sm:text-sm py-1 px-2 md:px-4 min-h-0"
                       size={isMobile ? "sm" : "default"}
                     >
                       Get Plan
@@ -127,25 +127,25 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
 
       {/* Trading Rules Table */}
       <Card className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto hide-scrollbar">
           <Table>
             <TableHeader>
               <TableRow className="bg-[#4a307a] border-b-0">
-                <TableHead className="w-1/4 text-white/90 text-sm md:text-base">Rule Area</TableHead>
-                <TableHead className="text-center text-white text-sm md:text-base">Assessment</TableHead>
-                <TableHead className="text-center text-white text-sm md:text-base">Funded</TableHead>
-                {!isMobile && <TableHead className="text-center text-white text-sm md:text-base">Notes</TableHead>}
+                <TableHead className="w-1/4 text-white/90 text-xs sm:text-sm md:text-base">Rule Area</TableHead>
+                <TableHead className="text-center text-white text-xs sm:text-sm md:text-base">Assessment</TableHead>
+                <TableHead className="text-center text-white text-xs sm:text-sm md:text-base">Funded</TableHead>
+                {!isMobile && <TableHead className="text-center text-white text-xs sm:text-sm md:text-base">Notes</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
               {tradingRules.map((rule, index) => (
                 <TableRow key={index} className={rule.highlighted ? "bg-purple-900/30" : ""}>
-                  <TableCell className={`font-medium text-sm md:text-base ${rule.highlighted ? "text-red-300" : ""}`}>
+                  <TableCell className={`font-medium text-xs sm:text-sm md:text-base ${rule.highlighted ? "text-red-300" : ""}`}>
                     {rule.area}
                   </TableCell>
-                  <TableCell className="text-center text-sm md:text-base">{rule.assessment}</TableCell>
-                  <TableCell className="text-center text-sm md:text-base">{rule.funded}</TableCell>
-                  {!isMobile && <TableCell className="text-center text-sm md:text-base">{rule.notes}</TableCell>}
+                  <TableCell className="text-center text-xs sm:text-sm md:text-base">{rule.assessment}</TableCell>
+                  <TableCell className="text-center text-xs sm:text-sm md:text-base">{rule.funded}</TableCell>
+                  {!isMobile && <TableCell className="text-center text-xs sm:text-sm md:text-base">{rule.notes}</TableCell>}
                 </TableRow>
               ))}
             </TableBody>

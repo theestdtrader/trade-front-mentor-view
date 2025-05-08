@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
 import PlanSignupModal from "@/components/PlanSignupModal";
@@ -14,6 +14,25 @@ const ProgramsSection = () => {
     fee: ""
   });
   const isMobile = useIsMobile();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Add animation triggers based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("programs");
+      if (section) {
+        const sectionPosition = section.getBoundingClientRect();
+        const isVisible = sectionPosition.top < window.innerHeight * 0.75;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Trigger on initial load
+    setTimeout(handleScroll, 100);
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleGetPlan = (planSize: string, planFee: string) => {
     setSelectedPlan({
@@ -24,35 +43,35 @@ const ProgramsSection = () => {
   };
 
   return (
-    <section id="programs" className="container mx-auto my-8 md:my-16 px-4 relative z-10">
+    <section id="programs" className="container mx-auto my-6 md:my-12 px-3 md:px-4 relative z-10">
       <h2 
-        className="text-2xl md:text-3xl font-bold mb-6 md:mb-12 text-[#892BFC] text-center"
+        className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-[#892BFC] text-center"
         style={{
-          opacity: 1,
-          transform: 'translateY(0)',
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
         }}
       >
         Programs
       </h2>
 
-      <div className="flex justify-center mb-6 md:mb-8">
+      <div className="flex justify-center mb-4 md:mb-6">
         <Tabs 
           value={activeTab} 
           onValueChange={(value) => setActiveTab(value as "forex" | "futures")} 
           className="w-full transition-all duration-300"
         >
           <div className="flex justify-center">
-            <TabsList className="w-full max-w-xs md:max-w-md">
+            <TabsList className="w-full max-w-[280px] md:max-w-md">
               <TabsTrigger 
                 value="forex" 
-                className="flex-1 text-sm md:text-base transition-all duration-300"
+                className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
               >
                 Forex
               </TabsTrigger>
               <TabsTrigger 
                 value="futures"
-                className="flex-1 text-sm md:text-base transition-all duration-300"
+                className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
               >
                 Futures
               </TabsTrigger>
@@ -64,9 +83,10 @@ const ProgramsSection = () => {
       <div 
         className="w-full mx-auto rounded-xl overflow-hidden transition-all duration-500 ease-in-out"
         style={{
-          opacity: 1,
-          transform: 'translateY(0)',
-          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
+          transitionDelay: '0.1s'
         }}
       >
         {activeTab === "forex" ? (
