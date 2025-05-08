@@ -23,9 +23,58 @@ const ForexTable: React.FC<ForexTableProps> = ({ onGetPlan }) => {
   const accountSizes = ["$5,000", "$10,000", "$25,000", "$50,000", "$100,000"];
   const fees = ["$35", "$75", "$190", "$375", "$750"];
 
-  // For mobile view, we'll only show a subset of the plans
-  const visibleSizes = isMobile ? accountSizes.slice(0, 3) : accountSizes;
-  const visibleFees = isMobile ? fees.slice(0, 3) : fees;
+  // For mobile view, we'll show all plans but in card format
+  const visibleSizes = isMobile ? accountSizes : accountSizes;
+  const visibleFees = isMobile ? fees : fees;
+
+  // Rules for both desktop and mobile views
+  const rules = [
+    { area: "Profit Target", assessment: "10%", funded: "-", note: "Funded account has no profit limit" },
+    { area: "Daily Loss Limit", assessment: "5%", funded: "5%", note: "Equity-based, based on prior day balance (Hard Breach)" },
+    { area: "Max Drawdown", assessment: "6%", funded: "6%", note: "Equity-based, does not trail (Hard Breach)" },
+    { area: "Inactivity Period", assessment: "30 Days", funded: "30 Days", note: "Must place trade (Hard Breach)" },
+    { area: "Leverage", assessment: "1:50", funded: "1:50", note: "" },
+    { area: "Max Time", assessment: "-", funded: "-", note: "No Max Time requirements" },
+  ];
+
+  if (isMobile) {
+    return (
+      <div className="grid grid-cols-1 gap-6">
+        {accountSizes.map((size, index) => (
+          <Card 
+            key={index} 
+            className="overflow-hidden border-purple-500/20 shadow-md hover:border-purple-500/40 transition-all"
+          >
+            <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
+              <h3 className="text-xl font-bold text-white">{size}</h3>
+              <p className="text-white/80 mt-1 text-sm">Fee: {fees[index]}</p>
+            </div>
+
+            <div className="p-4 space-y-3">
+              {rules.map((rule, ruleIndex) => (
+                <div key={ruleIndex} className="pb-2 border-b border-purple-500/10 last:border-b-0">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-white/90 font-medium text-sm">{rule.area}</span>
+                    <span className="text-white text-sm">{rule.assessment}</span>
+                  </div>
+                  {rule.note && <p className="text-white/70 text-xs">{rule.note}</p>}
+                </div>
+              ))}
+            </div>
+            
+            <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20">
+              <Button 
+                onClick={() => onGetPlan(size, fees[index])}
+                className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2"
+              >
+                Get Plan
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -85,42 +134,14 @@ const ForexTable: React.FC<ForexTableProps> = ({ onGetPlan }) => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Profit Target</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">10%</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">-</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">Funded account has no profit limit</TableCell>}
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Daily Loss Limit</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">5%</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">5%</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">Equity-based, based on prior day balance (Hard Breach)</TableCell>}
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Max Drawdown</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">6%</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">6%</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">Equity-based, does not trail (Hard Breach)</TableCell>}
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Inactivity Period</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">30 Days</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">30 Days</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">Must place trade (Hard Breach)</TableCell>}
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Leverage</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">1:50</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">1:50</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base"></TableCell>}
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium text-xs sm:text-sm md:text-base">Max Time</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">-</TableCell>
-                <TableCell className="text-center text-xs sm:text-sm md:text-base">-</TableCell>
-                {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">No Max Time requirements</TableCell>}
-              </TableRow>
+              {rules.map((rule, index) => (
+                <TableRow key={index}>
+                  <TableCell className="font-medium text-xs sm:text-sm md:text-base">{rule.area}</TableCell>
+                  <TableCell className="text-center text-xs sm:text-sm md:text-base">{rule.assessment}</TableCell>
+                  <TableCell className="text-center text-xs sm:text-sm md:text-base">{rule.funded}</TableCell>
+                  {!isMobile && <TableCell className="text-xs sm:text-sm md:text-base">{rule.note}</TableCell>}
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </div>
