@@ -68,100 +68,55 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
 
   return (
     <div className="w-full space-y-6">
-      {isMobile ? (
-        // Mobile view with carousel
-        <Carousel className="w-full">
-          <CarouselContent>
-            {accountSizes.map((size, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card 
-                    className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col"
-                  >
-                    <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
-                      <h3 className="text-xl font-bold text-white">{size}</h3>
-                      <p className="text-white/80 mt-1">Fee: {fees[index]}</p>
-                      <p className="text-white/70 text-sm mt-1">Max Positions: {positions[index]}</p>
-                    </div>
-
-                    <div className="p-4 space-y-3 flex-1">
-                      {tradingRules.map((rule, ruleIndex) => (
-                        <div 
-                          key={ruleIndex} 
-                          className={`pb-3 border-b border-purple-500/10 last:border-b-0 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
-                        >
-                          <div className="flex justify-between items-center mb-1">
-                            <span className={`${rule.highlighted ? "text-red-300" : "text-white/90"} font-medium text-sm`}>
-                              {rule.area}
-                            </span>
-                            <span className="text-white text-sm">{rule.assessment}</span>
-                          </div>
-                          <p className="text-white/70 text-xs">{rule.notes}</p>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
-                      <Button 
-                        onClick={() => onGetPlan(size, fees[index])}
-                        className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2"
-                      >
-                        Get Plan
-                      </Button>
-                    </div>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex justify-center gap-2 mt-4">
-            <CarouselPrevious className="relative static left-auto translate-y-0 h-8 w-8" />
-            <CarouselNext className="relative static right-auto translate-y-0 h-8 w-8" />
-          </div>
-        </Carousel>
-      ) : (
-        // Desktop view with grid layout
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <Carousel className="w-full">
+        <CarouselContent>
           {accountSizes.map((size, index) => (
-            <Card 
-              key={index} 
-              className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col"
-            >
-              <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
-                <h3 className="text-xl font-bold text-white">{size}</h3>
-                <p className="text-white/80 mt-1">Fee: {fees[index]}</p>
-                <p className="text-white/70 text-sm mt-1">Max Positions: {positions[index]}</p>
-              </div>
-              
-              <div className="p-4 space-y-3 flex-1">
-                {tradingRules.map((rule, ruleIndex) => (
-                  <div 
-                    key={ruleIndex}
-                    className={`pb-3 border-b border-purple-500/10 last:border-b-0 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
-                  >
-                    <div className="flex justify-between items-center mb-1">
-                      <span className={`${rule.highlighted ? "text-red-300" : "text-white/90"} font-medium`}>
-                        {rule.area}
-                      </span>
-                      <span className="text-white">{rule.assessment}</span>
-                    </div>
-                    <p className="text-white/70 text-xs">{rule.notes}</p>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
-                <Button 
-                  onClick={() => onGetPlan(size, fees[index])}
-                  className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white"
+            <CarouselItem key={index} className={isMobile ? "basis-full" : "md:basis-1/3"}>
+              <div className="p-1">
+                <Card 
+                  className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col"
                 >
-                  Get Plan
-                </Button>
+                  <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
+                    <h3 className="text-xl font-bold text-white">{size}</h3>
+                    <p className="text-white/80 mt-1">Fee: {fees[index]}</p>
+                    <p className="text-white/70 text-sm mt-1">Max Positions: {positions[index]}</p>
+                  </div>
+
+                  <div className="p-4 space-y-3 flex-1">
+                    {tradingRules.map((rule, ruleIndex) => (
+                      <div 
+                        key={ruleIndex} 
+                        className={`pb-3 border-b border-purple-500/10 last:border-b-0 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
+                      >
+                        <div className="flex justify-between items-center mb-1">
+                          <span className={`${rule.highlighted ? "text-red-300" : "text-white/90"} font-medium text-sm`}>
+                            {rule.area}
+                          </span>
+                          <span className="text-white text-sm">{rule.assessment}</span>
+                        </div>
+                        <p className="text-white/70 text-xs">{rule.notes}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
+                    <Button 
+                      onClick={() => onGetPlan(size, fees[index])}
+                      className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2"
+                    >
+                      Get Plan
+                    </Button>
+                  </div>
+                </Card>
               </div>
-            </Card>
+            </CarouselItem>
           ))}
+        </CarouselContent>
+        <div className="flex justify-center gap-2 mt-4">
+          <CarouselPrevious className="relative static left-auto translate-y-0 h-8 w-8" />
+          <CarouselNext className="relative static right-auto translate-y-0 h-8 w-8" />
         </div>
-      )}
+      </Carousel>
     </div>
   );
 };
