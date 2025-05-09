@@ -1,11 +1,13 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, User, ArrowRight, CheckCircle } from "lucide-react";
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="container mx-auto my-16 px-4 relative z-10">
+    <section
+      id="features"
+      className="container mx-auto my-16 px-4 relative z-10"
+    >
       <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
         How It Works
       </h2>
@@ -22,7 +24,7 @@ const FeaturesSection = () => {
               1. Choose your Program
             </h3>
             <p className="text-gray-300">
-              We offer 1-step evolutions for both futures & Forex.
+              We offer 1-step evaluations for both futures & Forex.
             </p>
           </CardContent>
         </Card>
@@ -38,7 +40,7 @@ const FeaturesSection = () => {
               2. Pick an Account
             </h3>
             <p className="text-gray-300">
-              Our Account size ranges from 5,000 - 200,000.
+              Our Account size ranges from 5,000 - 100,000.
             </p>
           </CardContent>
         </Card>
