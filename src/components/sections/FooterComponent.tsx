@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-
+import { Instagram, Twitter } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-[#1A1F2C] text-white py-12">
@@ -67,27 +67,34 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>Email: support@The Established Trader.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Hours: Mon-Fri, 9am-5pm EST</li>
+              <li>Email: info@theestablishedtrader.com</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Subscribe</h3>
+            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <p className="text-gray-400 text-sm mb-4">
               Stay updated with our latest news and offers.
             </p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="rounded-md px-3 py-2 text-sm bg-gray-800 border border-gray-700 text-white flex-grow focus:outline-none focus:ring-1 focus:ring-[#892BFC]"
-              />
-              <Button size="sm" className="bg-[#892BFC] hover:bg-[#892BFC]/80">
-                Subscribe
-              </Button>
-            </form>
+
+            <div className="flex gap-4 items-center">
+              <a
+                href="https://instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://twitter.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <Twitter size={20} />
+              </a>
+            </div>
           </div>
         </div>
 
