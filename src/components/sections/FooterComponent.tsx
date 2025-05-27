@@ -79,7 +79,7 @@ const Footer = () => {
 
             <div className="flex gap-4 items-center">
               <a
-                href="https://instagram.com/yourprofile"
+                href="https://www.instagram.com/estdtrader?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -87,7 +87,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://twitter.com/yourprofile"
+                href="https://x.com/TheESTDtrader"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
