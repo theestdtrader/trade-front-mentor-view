@@ -45,7 +45,7 @@ const Preloader = () => {
           <h1 className="text-2xl font-bold mb-2 text-white">
             <span className="text-[#892BFC]">The Established</span> Trader
           </h1>
-          <p className="text-gray-400 text-sm mb-4">Loading your experience...</p>
+          <p className="text-gray-400 text-sm mb-4">Loading your experience..</p>
         </div>
         <div className="w-64">
           <Progress value={progress} className="h-2 bg-gray-800">
