@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -9,6 +10,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FuturesTableProps {
   onGetPlan: (planSize: string, planFee: string) => void;
@@ -16,6 +25,7 @@ interface FuturesTableProps {
 
 const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
   const isMobile = useIsMobile();
+  const [expandedPayouts, setExpandedPayouts] = useState<Record<number, boolean>>({});
 
   // Account sizes and details
   const accountSizes = ["$25,000", "$50,000", "$100,000", "$150,000"];
@@ -25,6 +35,30 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     "3 contracts/30 micro",
     "6 contracts/60 micro",
     "9 contracts/90 micro",
+  ];
+
+  // Payout phases data from the image
+  const payoutPhases = [
+    {
+      phase: "Phase 1 Payout",
+      amounts: ["$500", "$1,000", "$2,000", "$3,000"],
+    },
+    {
+      phase: "Phase 2 Payout",
+      amounts: ["$750", "$1,500", "$3,000", "$4,500"],
+    },
+    {
+      phase: "Phase 3 Payout",
+      amounts: ["$750", "$1,500", "$3,000", "$4,500"],
+    },
+    {
+      phase: "Phase 4 Payout",
+      amounts: ["$1,500", "$3,000", "$6,000", "$9,000"],
+    },
+    {
+      phase: "Phase 5 Payout",
+      amounts: ["Live Funded", "Live Funded", "Live Funded", "Live Funded"],
+    },
   ];
 
   // Trading rules
@@ -67,6 +101,14 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
   ];
 
+  // Toggle payout details
+  const togglePayouts = (index: number) => {
+    setExpandedPayouts(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <div className="w-full space-y-6">
       <Carousel className="w-full">
@@ -90,7 +132,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                     {tradingRules.map((rule, ruleIndex) => (
                       <div
                         key={ruleIndex}
-                        className={`pb-3 border-b border-purple-500/10 last:border-b-0 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
+                        className={`pb-3 border-b border-purple-500/10 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
                       >
                         <div className="flex justify-between items-center mb-1">
                           <span
@@ -105,6 +147,36 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                         <p className="text-white/70 text-xs">{rule.notes}</p>
                       </div>
                     ))}
+                    
+                    {/* Payout Phases Dropdown */}
+                    <div className="pb-3 border-b border-purple-500/10 last:border-b-0">
+                      <button 
+                        onClick={() => togglePayouts(index)}
+                        className="w-full flex justify-between items-center mb-1 text-left"
+                      >
+                        <span className="text-white/90 font-medium text-sm">
+                          Payout Phases
+                        </span>
+                        {expandedPayouts[index] ? 
+                          <ChevronUp className="h-4 w-4 text-white/80" /> : 
+                          <ChevronDown className="h-4 w-4 text-white/80" />
+                        }
+                      </button>
+                      
+                      {expandedPayouts[index] && (
+                        <div className="mt-2 space-y-2 bg-purple-900/20 p-2 rounded">
+                          {payoutPhases.map((phase, phaseIndex) => (
+                            <div key={phaseIndex} className="flex justify-between items-center text-xs">
+                              <span className="text-white/80">{phase.phase}</span>
+                              <span className="text-white font-medium">{phase.amounts[index]}</span>
+                            </div>
+                          ))}
+                          <div className="text-xs text-white/60 mt-1">
+                            Futures Account. T&C apply
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
