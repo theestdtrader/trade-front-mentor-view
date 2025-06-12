@@ -40,7 +40,7 @@ const FeaturesSection = () => {
               2. Pick an Account
             </h3>
             <p className="text-gray-300">
-              Our Account size ranges from 5,000 - 100,000.
+              Our Account size ranges from 5,000 - 150,000.
             </p>
           </CardContent>
         </Card>

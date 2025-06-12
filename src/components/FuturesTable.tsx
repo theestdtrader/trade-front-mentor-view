@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,21 +16,22 @@ interface FuturesTableProps {
 
 const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
   const isMobile = useIsMobile();
-  
+
   // Account sizes and details
-  const accountSizes = ["$25,000", "$50,000", "$100,000"];
-  const fees = ["$265.00", "$525.00", "$1000.00"];
+  const accountSizes = ["$25,000", "$50,000", "$100,000", "$150,000"];
+  const fees = ["$280", "$550", "$1000", "$1,595"];
   const positions = [
     "1 contracts/15 micro",
     "3 contracts/30 micro",
     "6 contracts/60 micro",
+    "9 contracts/90 micro",
   ];
 
   // Trading rules
   const tradingRules = [
     {
       area: "Profit Target",
-      assessment: "10%",
+      assessment: "9%",
       funded: "-",
       notes: "Funded account has no profit limit",
       highlighted: false,
@@ -61,7 +61,8 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
       area: "Consistency Score",
       assessment: "25%",
       funded: "25%",
-      notes: "A single day's profit cannot make up more than 25% of the total profit (Soft Breach)",
+      notes:
+        "A single day's profit cannot make up more than 25% of the total profit (Soft Breach)",
       highlighted: true,
     },
   ];
@@ -71,36 +72,43 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
       <Carousel className="w-full">
         <CarouselContent>
           {accountSizes.map((size, index) => (
-            <CarouselItem key={index} className={isMobile ? "basis-full" : "md:basis-1/3"}>
+            <CarouselItem
+              key={index}
+              className={isMobile ? "basis-full" : "md:basis-1/3"}
+            >
               <div className="p-1">
-                <Card 
-                  className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col"
-                >
+                <Card className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col">
                   <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
                     <h3 className="text-xl font-bold text-white">{size}</h3>
                     <p className="text-white/80 mt-1">Fee: {fees[index]}</p>
-                    <p className="text-white/70 text-sm mt-1">Max Positions: {positions[index]}</p>
+                    <p className="text-white/70 text-sm mt-1">
+                      Max Positions: {positions[index]}
+                    </p>
                   </div>
 
                   <div className="p-4 space-y-3 flex-1">
                     {tradingRules.map((rule, ruleIndex) => (
-                      <div 
-                        key={ruleIndex} 
+                      <div
+                        key={ruleIndex}
                         className={`pb-3 border-b border-purple-500/10 last:border-b-0 ${rule.highlighted ? "bg-purple-900/30 -mx-4 px-4 py-2 rounded" : ""}`}
                       >
                         <div className="flex justify-between items-center mb-1">
-                          <span className={`${rule.highlighted ? "text-red-300" : "text-white/90"} font-medium text-sm`}>
+                          <span
+                            className={`${rule.highlighted ? "text-red-300" : "text-white/90"} font-medium text-sm`}
+                          >
                             {rule.area}
                           </span>
-                          <span className="text-white text-sm">{rule.assessment}</span>
+                          <span className="text-white text-sm">
+                            {rule.assessment}
+                          </span>
                         </div>
                         <p className="text-white/70 text-xs">{rule.notes}</p>
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
-                    <Button 
+                    <Button
                       onClick={() => onGetPlan(size, fees[index])}
                       className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2"
                     >

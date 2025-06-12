@@ -33,7 +33,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ accountType }) => {
   // Fees - slightly different for forex vs futures
   const fees =
     accountType === "forex"
-      ? ["$35", "$75", "$190", "$375", "$750"]
+      ? ["$40", "$75", "$190", "$375", "$750"]
       : ["$250", "$250", "$250", "$250", "$250", "$250"];
 
   // Define features based on account type
