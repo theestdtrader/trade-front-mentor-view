@@ -30,24 +30,22 @@ const FAQSection = () => {
         "The rules for the Funded Account are exactly the same as your Assessment account. However, with a Funded Account, there is no profit target.",
     },
     {
-      id: "item-5",
+      id: "item-2",
       category: "funded-account",
       question:
         "If I have a hard breach in my Funded Account and there are gains in the account, do I forfeit those gains?",
-      answer: `If you have gains in your funded account at the time of a hard breach, you will still receive your portion of those gains.
-
-For example, if you have a $100,000 account and you grow that account to $110,000. Should you then have a hard breach we would close the account. Of the $10,000 in gains in your funded account, you would be paid your portion thereof.`,
+      answer: `If you have gains in your funded account at the time of a hard breach, you will still receive your portion of those gains.\n\n For example, if you have a $100,000 account and you grow that account to $110,000. Should you then have a hard breach we would close the account. Of the $10,000 in gains in your funded account, you would be paid your portion thereof.`,
     },
     {
-      id: "item-10",
+      id: "item-3",
       category: "funded-account",
       question: "Am I subject to any position limits?",
-      answer: `The maximum position that you may open is determined by your available margin.
-
-We reserve the right to increase the margin requirement, limit the number of open positions you may enter or maintain in the Funded Account at any time, and to revise in response to market conditions the drawdown levels at which trading in the Funded Account will be halted. We or the Broker reserve the right to refuse to accept any order.`,
+      answer:
+        `The maximum position that you may open is determined by your available margin.\n\n` +
+        `We reserve the right to increase the margin requirement, limit the number of open positions you may enter or maintain in the Funded Account at any time, and to revise in response to market conditions the drawdown levels at which trading in the Funded Account will be halted. We or the Broker reserve the right to refuse to accept any order.`,
     },
     {
-      id: "item-11",
+      id: "item-4",
       category: "funded-account",
       question:
         "Do we manipulate the pricing or executions you receive in your Funded Account?",
@@ -55,28 +53,28 @@ We reserve the right to increase the margin requirement, limit the number of ope
         "No. We do not have any control over pricing from the liquidity provider or on the executions on your trades.",
     },
     {
-      id: "item-12",
+      id: "item-5",
       category: "funded-account",
       question: "How do I withdraw the gains in my Funded Account?",
-      answer: `Traders can request a withdrawal of the gains in their funded account at any time in their trader dashboard, but no more frequently than once per thirty (30) days. So, if you make gain in your funded account, you can request a withdrawal.
-
-When you are ready to withdraw the gains from your funded account, click the Withdraw Profits button in your trader dashboard and enter the amount to withdraw. All such gains are distributed via the available outbound payment solutions offered from time to time. Once your withdrawal request is approved, we will pay the monies owed to you. We reserve the right to change the withdrawal methods and options at any time.`,
+      answer:
+        `Traders can request a withdrawal of the gains in their funded account at any time in their trader dashboard, but no more frequently than once per thirty (30) days. So, if you make gain in your funded account, you can request a withdrawal.\n\n` +
+        `When you are ready to withdraw the gains from your funded account, click the Withdraw Profits button in your trader dashboard and enter the amount to withdraw. All such gains are distributed via the available outbound payment solutions offered from time to time. Once your withdrawal request is approved, we will pay the monies owed to you. We reserve the right to change the withdrawal methods and options at any time.`,
     },
     {
-      id: "item-13",
+      id: "item-6",
       category: "funded-account",
       question: "How Long does it take to receive my Funded Account?",
       answer: `Upon passing your Assessment, you will receive an email with instructions on how to access and complete both your "Know Your Customer" verification and your "Trader Agreement". Once both are completed and supporting documentation is provided, your Funded Account will be created, funded and issued to you typically within 24-48 business hours. You will receive a confirmation email once this account is being enabled.`,
     },
     {
-      id: "item-14",
+      id: "item-7",
       category: "funded-account",
       question:
         "Once I pass the Assessment am I provided with a demo or live account?",
       answer: `Once you pass the Assessment, we provide you with a funded account, backed by our capital. The capital in your funded Account is notional and may not match the amount of capital on deposit with the Liquidity Provider. A Funded Account is notionally funded when actual funds in the account (i.e., the equity in a Funded Account represented by the amount of capital) differs from the nominal account size (i.e., the size of the Funded Account that establishes the initial account value and level of trading). Notional funds are the difference between nominal account size and actual capital in a Funded Account use of notional funding does not impact your trading conditions in any way.`,
     },
     {
-      id: "item-15",
+      id: "item-8",
       category: "funded-account",
       question:
         "When can I withdraw the gains in my Funded Account and how does that affect my maximum drawdown?",
@@ -84,7 +82,7 @@ When you are ready to withdraw the gains from your funded account, click the Wit
         "Your first withdrawal can be requested at any time. Thereafter, you can request a withdrawal of the gains in your account every 30 days. When a withdrawal is approved, we will also withdraw our share of the gains, and your max drawdown will remain unaffected. The drawdown does not reset when you request a withdrawal.",
     },
     {
-      id: "item-16",
+      id: "item-9",
       category: "funded-account",
       question: "Who is the counterparty to my trades?",
       answer:
@@ -93,28 +91,28 @@ When you are ready to withdraw the gains from your funded account, click the Wit
 
     // General Questions FAQs
     {
-      id: "item-2",
+      id: "item-10",
       category: "general",
       question: "Can I use an Automated Strategy?",
       answer:
         "Subject to our policy on Prohibited Trading as described below, you can trade using an automated strategy.",
     },
     {
-      id: "item-6",
+      id: "item-11",
       category: "general",
       question: "How are taxes handled?",
       answer:
         "When trading a Funded Account for our firm, you are treated as an independent contractor. As a result, you are responsible for any and all taxes on your gains.",
     },
     {
-      id: "item-9",
+      id: "item-12",
       category: "general",
       question: "Can I trade during News Events?",
       answer:
         "Opening a position within 3 minutes before or after a News Event is prohibited. Any traders identified as having opened a position during a News Event are subject to having that position closed and the associated P&L removed from their account, having the leverage on their account reduced or having their account breached altogether. The Company has sole and absolute discretion in determining what constitutes a News Event. This rule is intended to protect the integrity of our program and is not meant to penalize traders who inadvertently trade through a news event.",
     },
     {
-      id: "item-10",
+      id: "item-13",
       category: "general",
       question:
         "Do I have to use one of your accounts for the Assessment or can I use my own?",
@@ -122,27 +120,27 @@ When you are ready to withdraw the gains from your funded account, click the Wit
         "We have risk management software that is synced with the accounts we create. This allows us to analyze your performance in real time for achievements or rule violations. As such, you must use an account that we provide to you.",
     },
     {
-      id: "item-11",
+      id: "item-14",
       category: "general",
       question: "Do your accounts charge commissions?",
       answer:
         "Funded accounts receive the same pricing and commissions as charged by our Liquidity Provider to other, self-funded, retail trading accounts.",
     },
     {
-      id: "item-16",
+      id: "item-15",
       category: "general",
       question: "How are affiliates credited?",
       answer:
         "Affiliates are credited for referrals when a user creates an account using a link or discount code provided by the Affiliate.",
     },
     {
-      id: "item-7",
+      id: "item-16",
       category: "general",
       question: "How will I see the charge on my Statement?",
       answer: "Charges come across in the name of dashboardanalytx.com.",
     },
     {
-      id: "item-8",
+      id: "item-17",
       category: "general",
       question: "What is the minimum age I must be to be part of your program?",
       answer:
@@ -156,49 +154,49 @@ When you are ready to withdraw the gains from your funded account, click the Wit
         "Trading hours are generally set by the Liquidity Provider, unless set by our rules. We do not have any control over the trading hours. You can see the trading hours for each product by using the following methods: DXtrade – Right click symbol, select “Instrument Info” MatchTrader – Click symbol to expand, select “Info” cTrader – Navigate to Symbol Window, scroll down to see “Market Hours” for selected symbol",
     },
     {
-      id: "item-20",
+      id: "item-19",
       category: "general",
       question: "What Countries are accepted?",
       answer:
         "Subject to compliance with applicable laws and regulations, traders from all countries, excluding OFAC listed countries, can take part in our program, unless otherwise limited at the Company’s discretion.",
     },
     {
-      id: "item-21",
+      id: "item-20",
       category: "general",
       question: "What is the leverage?",
       answer:
         "We offer up to 50:1 leverage on Forex and Metals, up to 10:1 leverage on Indices, up to 5:1 leverage on Oil and up to 2:1 leverage on Cryptocurrencies.",
     },
     {
-      id: "item-22",
+      id: "item-21",
       category: "general",
       question: "What is the policy on Prohibited Trading Activity?",
       answer:
-        " You are prohibited from using any trading strategy expressly prohibited by the Company or its Liquidity Providers. Prohibited Trading includes but is not limited to:\n" +
-        "  - Exploiting errors or latency in the pricing and/or platform(s) provided by the Liquidity Provider.\n" +
-        "  - Utilizing non-public and/or insider information.\n" +
-        "  - Front-running of trades placed elsewhere.\n" +
-        "  - Trading in any way that jeopardizes the relationship between the Company and a Liquidity Provider or may result in trade cancellations.\n" +
-        "  - Trading in any way that creates regulatory issues for the Liquidity Provider.\n" +
-        "  - Utilizing third-party strategies, off-the-shelf strategies, or strategies marketed to pass challenge accounts.\n" +
-        "  - Using one strategy to pass an assessment and switching to a different strategy in a funded account (as determined by the Company and Prop Account, LLC).\n" +
-        "  - Attempting to arbitrage an assessment account with another account (with the Company or any third-party), as determined by the Company.\n" +
-        "  - Opening a position within 3 minutes before or after a News Event. If this occurs:\n" +
-        "    - The position may be closed.\n" +
-        "    - Associated P&L may be removed.\n" +
-        "    - Account leverage may be reduced.\n" +
-        "    - The account may be breached.\n" +
-        "    - The Company has sole discretion in defining what constitutes a News Event.\n" +
-        "- If the Company detects Prohibited Trading:\n" +
-        "  - Participation in the program will be terminated.\n" +
-        "  - Any fees paid may be forfeited.\n" +
-        "  - Before receiving a funded account, trading activity will be reviewed by the Company and the Liquidity Provider.\n" +
-        "  - If deemed Prohibited Trading, the Trader will not receive a funded account.\n" +
-        "- The Company reserves the right to disallow or block any Trader from participating in the program at its sole and absolute discretion.\n" +
+        " You are prohibited from using any trading strategy expressly prohibited by the Company or its Liquidity Providers. Prohibited Trading includes but is not limited to:" +
+        "  - Exploiting errors or latency in the pricing and/or platform(s) provided by the Liquidity Provider.\n\n" +
+        "  - Utilizing non-public and/or insider information.\n\n" +
+        "  - Front-running of trades placed elsewhere.\n\n" +
+        "  - Trading in any way that jeopardizes the relationship between the Company and a Liquidity Provider or may result in trade cancellations.\n\n" +
+        "  - Trading in any way that creates regulatory issues for the Liquidity Provider.\n\n" +
+        "  - Utilizing third-party strategies, off-the-shelf strategies, or strategies marketed to pass challenge accounts.\n\n" +
+        "  - Using one strategy to pass an assessment and switching to a different strategy in a funded account (as determined by the Company and Prop Account, LLC).\n\n" +
+        "  - Attempting to arbitrage an assessment account with another account (with the Company or any third-party), as determined by the Company.\n\n" +
+        "  - Opening a position within 3 minutes before or after a News Event. If this occurs:\n\n" +
+        "    - The position may be closed.\n\n" +
+        "    - Associated P&L may be removed.\n\n" +
+        "    - Account leverage may be reduced.\n\n" +
+        "    - The account may be breached.\n\n" +
+        "    - The Company has sole discretion in defining what constitutes a News Event.\n\n" +
+        "- If the Company detects Prohibited Trading:\n\n" +
+        "  - Participation in the program will be terminated.\n\n" +
+        "  - Any fees paid may be forfeited.\n\n" +
+        "  - Before receiving a funded account, trading activity will be reviewed by the Company and the Liquidity Provider.\n\n" +
+        "  - If deemed Prohibited Trading, the Trader will not receive a funded account.\n\n" +
+        "- The Company reserves the right to disallow or block any Trader from participating in the program at its sole and absolute discretion.\n\n" +
         "- For full details, review the Terms and Conditions: https://dashboardanalytix.com/client-terms-and-policies/?v=3acf83834396",
     },
     {
-      id: "item-43",
+      id: "item-22",
       category: "general",
       question: "What Platform can I trade on?",
       answer:
@@ -219,40 +217,214 @@ When you are ready to withdraw the gains from your funded account, click the Wit
         "Upon purchasing an Assessment, you will receive access to a trader dashboard where you can monitor your Assessment and Funded Accounts. The dashboard is updated every time we calculate metrics, which occurs roughly every 60 seconds. It is your responsibility to monitor your breach levels.",
     },
     {
-      id: "item-28",
+      id: "item-25",
       category: "general",
       question:
         "How many Assessments and/or Funded accounts may I have active at one time",
       answer:
-        "Evaluation Limits:\n" +
-        "● You are allowed to take only one evaluation of a specific account size and a specific plan tier at a time across all trading platforms.\n" +
-        "● Example: You can have one 100k One Step Plan and one 100k Two Step Plan active simultaneously. However, you cannot have one 100k One Step Plan on DXTrade and another 100k One Step Plan on cTrader, or 2+ 100k 1 Step plans on any combination of platforms.\n" +
-        "Maximum Assessment Limits:\n" +
-        "● A maximum of $1 million in active evaluation plans per person is permitted. This can be composed of multiple assessments, provided that none are the same account size and are within the same Step framework as described above.\n" +
-        "Maximum Funded Limits:\n" +
-        "● A maximum of $1 million in active funded plans per person is permitted.\n" +
-        "● If a customer passes multiple assessments and has 2 active funded accounts of the same account size, they will have 2 options:\n" +
-        "1. Only have one funded account of that size open at a time and wait for the account to be breached before making the other funded account active.\n" +
-        "2. If no trading has taken place in either account, the customer can opt to combine the 2 accounts into a s ingleaccount of double the size.\n" +
-        "Compounding Limits:\n" +
-        "● There are no limits on compounding.\n" +
+        "Evaluation Limits:\n\n" +
+        "● You are allowed to take only one evaluation of a specific account size and a specific plan tier at a time across all trading platforms.\n\n" +
+        "● Example: You can have one 100k One Step Plan and one 100k Two Step Plan active simultaneously. However, you cannot have one 100k One Step Plan on DXTrade and another 100k One Step Plan on cTrader, or 2+ 100k 1 Step plans on any combination of platforms.\n\n" +
+        "Maximum Assessment Limits:\n\n" +
+        "● A maximum of $1 million in active evaluation plans per person is permitted. This can be composed of multiple assessments, provided that none are the same account size and are within the same Step framework as described above.\n\n" +
+        "Maximum Funded Limits:\n\n" +
+        "● A maximum of $1 million in active funded plans per person is permitted.\n\n" +
+        "● If a customer passes multiple assessments and has 2 active funded accounts of the same account size, they will have 2 options:\n\n" +
+        "1. Only have one funded account of that size open at a time and wait for the account to be breached before making the other funded account active.\n\n" +
+        "2. If no trading has taken place in either account, the customer can opt to combine the 2 accounts into a s ingleaccount of double the size.\n\n" +
+        "Compounding Limits:\n\n" +
+        "● There are no limits on compounding.\n\n" +
         "● You can start with up to $1 million of initial funding and grow the account to any balance you desire, including $10 million, $20 million, and beyond.",
     },
 
     // Trading Rules FAQs
     {
+      id: "item-53",
+      category: "trading-rules",
+      question: "How does the Live Funded account phase differ from Phase 1-4?",
+      answer:
+        "The Live Funded Futures account operates under a different set of rules compared to Phases 1-4. Once you reach this level, the following changes apply:\n\n\n\nn" +
+        "• Risk Parameters: The Max Loss is capped at 50% of your starting balance. There are no longer any profit targets, consistency rules, or time limits.\n\n\n\nn" +
+        "• Inactivity Rule: You must place at least one executed trade every 7 calendar days to retain your account.\n\n\n\nn" +
+        "• Live Market Conditions: You are now trading in a live environment, which means you may encounter real-market factors such as slippage, partial fills, and varying liquidity.\n\n\n\nn" +
+        "Profit Split: You no longer have a fixed payout and are eligible to keep 90% of your profits in the Live Funded Futures phase.",
+    },
+    {
+      id: "item-52",
+      category: "trading-rules",
+      question: "How do I withdraw my Payout once I complete each Phase?",
+      answer:
+        "If you achieve the profit target for your current phase and meet the consistency requirements, you’ll be eligible to request that phase’s payout. This payout must be completed before your account is upgraded to the next phase.",
+    },
+    {
+      id: "item-51",
+      category: "trading-rules",
+      question:
+        "If I have a breach in my Live Funded Account and there are gains in the account, do I forfeit those gains?",
+      answer:
+        "If you have gains in your Live Funded Futures (Phase 5) account at the time of a breach, you will still receive your portion of those gains.",
+    },
+    {
+      id: "item-50",
+      category: "trading-rules",
+      question: "Am I subject to any position limits?",
+      answer:
+        "The total number of contracts you can hold at one time is limited by both your account size and the exchange margin requirements for each product. Your account balance must be sufficient to cover the required margin for all open positions. Refer to Appendix A for a full breakdown of per-product margin requirements.",
+    },
+
+    {
+      id: "item-49",
+      category: "trading-rules",
+      question:
+        "Do we manipulate the pricing or executions you receive in your Funded Futures accounts?",
+      answer:
+        "No. We operate at arm&#39;s lengths with the liquidity providers/Exchanges. All market pricing and trade executions are provided by third parties and are not changed or modified by us. Additionally, we do not markup transaction costs established through adjusting bid-offer spreads, markups/markdowns, commission charges or swaps.",
+    },
+    {
+      id: "item-48",
+      category: "trading-rules",
+      question: "What happens if I do not pass KYC?",
+      answer:
+        "If you do not pass the KYC process, your account will be closed.",
+    },
+    {
+      id: "item-47",
+      category: "trading-rules",
+      question:
+        "Do I need to complete KYC or sign a trader contract to start trading in a Funded Futures Plan?",
+      answer:
+        "You will be required to complete our Know Your Customer (KYC) program and sign our Trader Agreement prior to requesting a payout.",
+    },
+    {
+      id: "item-46",
+      category: "trading-rules",
+      question: "Can I pause the inactivity timer at any account Phase?",
+      answer:
+        "No, unfortunately we cannot pause the inactivity timer at any account phase.",
+    },
+    {
+      id: "item-45",
+      category: "trading-rules",
+      question: "Is there a breach for inactivity in the Funded Account?",
+      answer:
+        "If you reach the Live Funded account level, you must place an executed trade once every 7 days to retain the account.",
+    },
+    {
+      id: "item-44",
+      category: "trading-rules",
+      question: "What is the 60 Day Maximum Time rule?",
+      answer:
+        "Each Phase (1-4) has a maximum time limit of 60 calendar days. This means you must meet all the requirements for a given phase within 60 days of starting that phase. If you do not complete a phase within the 60-day window, your account will be deactivated, regardless of your progress or profit level at that point. You will need to purchase a new Futures plan to continue.\n\n\n\nn" +
+        "The timer begins on the day you place your first trade and continues uninterrupted. There are no extensions or pauses.\n\n\n\nn" +
+        "Please plan your trading accordingly to stay on track throughout all four phases.\n\n\n\nn" +
+        "Is there a breach for inactivity in Phases 1-4. For Phases 1-4, you must place an executed trade once every 14 days to retain the account.",
+    },
+    {
+      id: "item-43",
+      category: "trading-rules",
+      question: "What are the Market Data Fees?",
+      answer:
+        "Market data fees cover the cost of accessing real-time price data from the exchanges. These fees are included in your purchase price during Phases 1 through 4. Once you reach the Live Funded Futures phase, any applicable market data or platform fees will be deducted from your account balance on a monthly basis.",
+    },
+    {
+      id: "item-42",
+      category: "trading-rules",
+      question:
+        "How do I complete the CME market data attestation for Rithmic?",
+      answer:
+        "You must complete the CME market data attestation using the R | Trader Pro desktop app—this cannot be done through mobile or web platforms. Once you've completed the attestation in R | Trader Pro, you&#39;ll be able to log in and trade through mobile or web apps. Please note: you must attest as a non- professional; we do not accept professional status in this program.",
+    },
+    {
+      id: "item-41",
+      category: "trading-rules",
+      question: "What is a Futures contract?",
+      answer:
+        "A futures contract represents a standardized amount of an underlying asset. For example, one E-mini S&amp;P 500 futures contract (ES) represents $50 times the index price, while one crude oil (CL) contract represents 1,000 barrels of oil.\n\n\n\nn" +
+        "Download the Complete Guidelines for the product table",
+    },
+    {
+      id: "item-40",
+      category: "trading-rules",
+      question: "Can I hold positions over the weekend?",
+      answer:
+        "No. All positions must be closed and all open orders cancelled at 1510 CST each weekday.",
+    },
+    {
+      id: "item-39",
+      category: "trading-rules",
+      question: "Can I reset my account if I lose it?",
+      answer:
+        "No. You will need to purchase a new account if you breach it for any reason.",
+    },
+    {
+      id: "item-38",
+      category: "trading-rules",
+      question: "How do you calculate the Maximum Trailing Loss?",
+      answer:
+        "The Maximum Trailing Loss for each phase trails using End of Day Balance. Example: If your starting balance is $100,000, and there is a 5% Max Trailing Loss, you can drawdown to $95,000 before you violate the Maximum Trailing Loss rule. Then for example let&#39;s say you take your end of day balance to $102,000.\n\n\n\nn" +
+        "This is your new End of Day High-Water Mark, which would mean your new Maximum Trailing Loss would be $97,000. Once you generate a 5% return in the account, the Max Trailing Loss will lock at the starting balance (i.e. the Max Loss Limit will never increase above your starting balance). For the purpose of all calculations, the end of day is defined as 1600 CST.",
+    },
+    {
+      id: "item-37",
+      category: "trading-rules",
+      question: "Is there a Daily Loss Limit?",
+      answer:
+        "There is no specific Daily Loss Limit, but traders must always stay within the Max Trailing Loss.",
+    },
+    {
+      id: "item-36",
+      category: "trading-rules",
+      question: "What is a Profit Target?",
+      answer:
+        "This is the predetermined profit amount you need to achieve in order to pass to the next phase of the program and be eligible to receive the payout.",
+    },
+    {
+      id: "item-35",
+      category: "trading-rules",
+      question:
+        "Do I lose my account if I don’t meet the Consistency Requirement?",
+      answer:
+        "Once you complete a Phase and meet the 25% consistency rule you will be eligible to make a request for that Phase’s payout. You will not be able to advance to the next phase until the payout is requested and completed.No. But in order to complete the phase and be entitled to receive the payout, you will need to achieve both the profit target and the consistency requirement.",
+    },
+    {
+      id: "item-34",
+      category: "trading-rules",
+      question: "What is the Consistency Requirement**?",
+      answer:
+        "We have a Consistency Requirement to ensure traders aren't hitting profit targets through a few lucky trades. This promotes consistent behavior and punishes YOLO style trading. The calculation is: (best trading day PnL/Total PnL) x 100.\n\n\n\nn" +
+        "A lower value means profits are generated more consistently across multiple trading days. A higher value means profits are concentrated on fewer trading days. For example, a consistency requirement of 25% means you cannot achieve your entire profit target in less than 4 days (100% / 25% = 4).\n\n\n\nn" +
+        "You must meet both the profit target and the consistency requirement — maintaining a consistency ratio at or below 25% — to hit your profit target, be eligible for a payout, and to advance to the next Phase.\n\n\n\nn" +
+        "•Example 1: On a $100k account with a profit target of $8,000, if you earn $2,000 per day over 4 days, you meet the consistency requirement. Your best day is $2,000, and total profit is $8,000 — resulting in a consistency ratio of 25% ($2,000 / $8,000).\n\n\n\nn" +
+        "•Example 2: On a $100k account with a profit target of $8,000, if your profits across 4 days are $3,000, $1,000, $2,000, and $2,000, you violate the consistency requirement. Your best day is $3,000, and total profit is $8,000 — which gives a consistency ratio of 37.5% ($3,000 / $8,000).\n\n" +
+        "To meet the consistency requirement of 25%, you would now need to reach a total profit of $12,000 while keeping your best day at or below $3,000.\n\n",
+    },
+    {
+      id: "item-33",
+      category: "trading-rules",
+      question: "When do I get the payout for each Phase?",
+      answer:
+        "Once you complete a Phase and meet the 25% consistency rule you will be eligible to make a request for that Phase’s payout. You will not be able to advance to the next phase until the payout is requested and completed.",
+    },
+    {
+      id: "item-32",
+      category: "trading-rules",
+      question: "How do the phases work?",
+      answer:
+        "Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase. At each new Phase your account will begin with a fresh starting balance.",
+    },
+    {
       id: "item-30",
       category: "trading-rules",
       question: "What is 1 lot equal to on the Trading Platform?",
       answer:
-        "Forex: 1 lot = $100k notional\n" +
-        "● Index: 1 lot = 1 Contract\n" +
-        "Exceptions:\n" +
-        "● SPX500: 1 lot = 10 contracts\n" +
-        "● JPN225: 1 lot = 500 contracts\n" +
-        "● Cryptos: 1 lot = 1 coin\n" +
-        "● Silver: 1 lot = 5000 ounces\n" +
-        "● Gold: 1 lot = 100 ounces\n" +
+        "Forex: 1 lot = $100k notional\n\n" +
+        "● Index: 1 lot = 1 Contract\n\n" +
+        "Exceptions:\n\n" +
+        "● SPX500: 1 lot = 10 contracts\n\n" +
+        "● JPN225: 1 lot = 500 contracts\n\n" +
+        "● Cryptos: 1 lot = 1 coin\n\n" +
+        "● Silver: 1 lot = 5000 ounces\n\n" +
+        "● Gold: 1 lot = 100 ounces\n\n" +
         "● Oil: 1 lot = 100 barrels",
     },
     {
@@ -260,25 +432,25 @@ When you are ready to withdraw the gains from your funded account, click the Wit
       category: "trading-rules",
       question: "What is 1 lot equal to on the Trading Platform?",
       answer:
-        "Forex: 1 lot = $100k notional\n" +
-        "● Index: 1 lot = 1 Contract\n" +
-        "Exceptions:\n" +
-        "● SPX500: 1 lot = 10 contracts\n" +
-        "● JPN225: 1 lot = 500 contracts\n" +
-        "● Cryptos: 1 lot = 1 coin\n" +
-        "● Silver: 1 lot = 5000 ounces\n" +
-        "● Gold: 1 lot = 100 ounces\n" +
+        "Forex: 1 lot = $100k notional\n\n" +
+        "● Index: 1 lot = 1 Contract\n\n" +
+        "Exceptions:\n\n" +
+        "● SPX500: 1 lot = 10 contracts\n\n" +
+        "● JPN225: 1 lot = 500 contracts\n\n" +
+        "● Cryptos: 1 lot = 1 coin\n\n" +
+        "● Silver: 1 lot = 5000 ounces\n\n" +
+        "● Gold: 1 lot = 100 ounces\n\n" +
         "● Oil: 1 lot = 100 barrels",
     },
     {
-      id: "item-existing-6",
+      id: "item-63",
       category: "trading-rules",
       question: "Is there a breach for inactivity?",
       answer:
         "Yes. If you do not place a trade at least once every 30 days on your account, we will consider you inactive and your account will be breached.",
     },
     {
-      id: "item-3",
+      id: "item-67",
       category: "trading-rules",
       question: "How do you calculate the Daily Loss Limit?",
       answer: `The Daily Loss Limit is the maximum your account can lose in any given day. Daily Loss Limit is calculated using the previous day balance which resets at 5 PM EST. Unlike other firms, we do NOT base our calculations on previous day equity since the balance only model allows you to scale profits without fear of losing your account. The Daily Stop compounds with the increase in your account.
@@ -286,22 +458,20 @@ When you are ready to withdraw the gains from your funded account, click the Wit
 Example: If your prior day's end of day balance (5pm EST) was $100,000, your account would violate the daily stop loss limit if your equity reached $95,000 during the day. If your floating equity is +$5,000 on a $100,000 account, your new-day (5pm EST) max loss is based on your balance from the previous day ($100,000). So, your daily loss limit would still be $95,000.`,
     },
     {
-      id: "item-4",
+      id: "item-69",
       category: "trading-rules",
       question: "How do you calculate the Max Drawdown (STATIC)?",
-      answer: `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at a defined % of your starting balance. This % is static and does not trail.
-
-If you have gains in your funded account at the time of a hard breach, you will still receive your portion of those gains.`,
+      answer: `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at a defined % of your starting balance. This % is static and does not trail. If you have gains in your funded account at the time of a hard breach, you will still receive your portion of those gains.`,
     },
     {
-      id: "item-9",
+      id: "item-83",
       category: "trading-rules",
       question: "Is there a breach for inactivity?",
       answer:
         "Yes. We will consider you inactive and your account will be breached if you do not have any trading activity on your account for 30 consecutive days.",
     },
     {
-      id: "item-existing-1",
+      id: "item-90",
       category: "trading-rules",
       question:
         "What is the difference between a Hard Breach and Soft Breach rule?",
@@ -310,32 +480,26 @@ If you have gains in your funded account at the time of a hard breach, you will 
 Hard breach means that you violated either the Daily Loss Limit or Max Drawdown rule. Both rules constitute a hard breach. In the event you have a hard breach, you will fail the Assessment or have your Funded Account taken away.`,
     },
     {
-      id: "item-existing-2",
+      id: "item-91",
       category: "trading-rules",
       question: "How do you calculate the 4% Daily Loss Limit?",
       answer:
         "The Daily Loss Limit is the maximum your account can lose in any given day. Daily Loss Limit is calculated using the previous day balance which resets at 5 PM EST. Unlike other firms, we do NOT base our calculations on previous day equity since the balance only model allows you to scale profits without fear of losing your account. The Daily Stop compounds with the increase in your account.",
     },
     {
-      id: "item-existing-3",
+      id: "item-92",
       category: "trading-rules",
       question: "How do you calculate the 8% Max Drawdown?",
-      answer: `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 8% of your starting balance. This 8% is static and does not trail.
-
-The Maximum Trailing Drawdown is initially set at 6% and trails (using CLOSED BALANCE - NOT equity) your account until you have achieved a 6% return in your account. Once you have achieved a 6% return the Maximum Trailing Drawdown no longer trails and is permanently locked in at your starting balance. This allows for more trading flexibility.`,
+      answer:
+        `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 8% of your starting balance. This 8% is static and does not trail.\n\n` +
+        `The Maximum Trailing Drawdown is initially set at 6% and trails (using CLOSED BALANCE - NOT equity) your account until you have achieved a 6% return in your account. Once you have achieved a 6% return the Maximum Trailing Drawdown no longer trails and is permanently locked in at your starting balance. This allows for more trading flexibility.`,
     },
     {
-      id: "item-existing-4",
+      id: "item-93",
       category: "trading-rules",
       question: "Why do I have to place a stop loss on trades?",
       answer:
         "We believe in sound risk management using stop losses. To that end, we require a stop loss on every trade. If you fail to place a stop loss at the time of placing the trade/order, we will close the trade. This is only a soft breach rule, so you can continue trading in your account.",
-    },
-    {
-      id: "item-existing-5",
-      category: "trading-rules",
-      question: "Can I hold positions over the weekend?",
-      answer: "Positions can be held over the weekend",
     },
   ];
 

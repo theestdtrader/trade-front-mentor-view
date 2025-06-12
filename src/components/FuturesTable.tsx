@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,7 +24,9 @@ interface FuturesTableProps {
 
 const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
   const isMobile = useIsMobile();
-  const [expandedPayouts, setExpandedPayouts] = useState<Record<number, boolean>>({});
+  const [expandedPayouts, setExpandedPayouts] = useState<
+    Record<number, boolean>
+  >({});
 
   // Account sizes and details
   const accountSizes = ["$25,000", "$50,000", "$100,000", "$150,000"];
@@ -57,7 +58,12 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
     {
       phase: "Phase 5 Payout",
-      amounts: ["Live Funded", "Live Funded", "Live Funded", "Live Funded"],
+      amounts: [
+        "Live Funded Futures Account. T&C apply",
+        "Live Funded Futures Account. T&C apply",
+        "Live Funded  Futures Account. T&C apply",
+        "Live Funded  Futures Account. T&C apply",
+      ],
     },
   ];
 
@@ -103,9 +109,9 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
 
   // Toggle payout details
   const togglePayouts = (index: number) => {
-    setExpandedPayouts(prev => ({
+    setExpandedPayouts((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
@@ -147,33 +153,38 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                         <p className="text-white/70 text-xs">{rule.notes}</p>
                       </div>
                     ))}
-                    
+
                     {/* Payout Phases Dropdown */}
                     <div className="pb-3 border-b border-purple-500/10 last:border-b-0">
-                      <button 
+                      <button
                         onClick={() => togglePayouts(index)}
                         className="w-full flex justify-between items-center mb-1 text-left"
                       >
                         <span className="text-white/90 font-medium text-sm">
                           Payout Phases
                         </span>
-                        {expandedPayouts[index] ? 
-                          <ChevronUp className="h-4 w-4 text-white/80" /> : 
+                        {expandedPayouts[index] ? (
+                          <ChevronUp className="h-4 w-4 text-white/80" />
+                        ) : (
                           <ChevronDown className="h-4 w-4 text-white/80" />
-                        }
+                        )}
                       </button>
-                      
+
                       {expandedPayouts[index] && (
                         <div className="mt-2 space-y-2 bg-purple-900/20 p-2 rounded">
                           {payoutPhases.map((phase, phaseIndex) => (
-                            <div key={phaseIndex} className="flex justify-between items-center text-xs">
-                              <span className="text-white/80">{phase.phase}</span>
-                              <span className="text-white font-medium">{phase.amounts[index]}</span>
+                            <div
+                              key={phaseIndex}
+                              className="flex justify-between items-center text-xs"
+                            >
+                              <span className="text-white/80">
+                                {phase.phase}
+                              </span>
+                              <span className="text-white font-medium">
+                                {phase.amounts[index]}
+                              </span>
                             </div>
                           ))}
-                          <div className="text-xs text-white/60 mt-1">
-                            Futures Account. T&C apply
-                          </div>
                         </div>
                       )}
                     </div>
