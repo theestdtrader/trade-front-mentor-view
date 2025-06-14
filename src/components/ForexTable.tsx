@@ -96,12 +96,16 @@ const ForexTable: React.FC<ForexTableProps> = ({ onGetPlan }) => {
                   </div>
 
                   <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
-                    <Button
-                      onClick={() => onGetPlan(size, fees[index])}
-                      className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2"
+                    <a
+                      href="https://theestablishedtraderdashboard.propaccount.com/challenges"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
                     >
-                      Get Plan
-                    </Button>
+                      <Button className="bg-[#892BFC] hover:bg-[#892BFC]/90 text-white w-full py-2">
+                        Get Plan
+                      </Button>
+                    </a>
                   </div>
                 </Card>
               </div>

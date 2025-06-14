@@ -61,12 +61,12 @@ const Navbar = () => {
                 className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40"
               >
                 <DropdownMenuItem>
-                  <a href="#daily-challenge" className="w-full block">
+                  <a href="#programs" className="w-full block">
                     Forex
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="#weekly-challenge" className="w-full block">
+                  <a href="#programs" className="w-full block">
                     Future
                   </a>
                 </DropdownMenuItem>
@@ -79,7 +79,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className="hover:text-primary transition">
-            <a href="#about">FAQs</a>
+            <a href="#faqs">FAQs</a>
           </li>
           <li className="hover:text-primary transition">
             <RouterLink to="/affiliate">Affiliate</RouterLink>

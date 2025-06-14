@@ -86,14 +86,6 @@ const PayoutsSection = () => {
                     We offer flat (USD) via Rise and Crypto (BTC, ETH, USDC) to
                     ERC-20 wallets
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="font-medium text-[#892BFC]">•</span>
-                    PayPal
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="font-medium text-[#892BFC]">•</span>
-                    Cryptocurrency (BTC, ETH)
-                  </li>
                 </ul>
               </div>
             </CardContent>
@@ -118,8 +110,8 @@ const PayoutsSection = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  Maximum: 80% of available balance per withdrawal - true for
-                  FX/CFDs, not for Futures
+                  Maximum: 80% of available balance per withdrawal - for
+                  FX/CFDs, excluding Futures
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>

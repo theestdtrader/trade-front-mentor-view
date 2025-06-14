@@ -516,7 +516,7 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       : faqData.filter((faq) => faq.category === selectedCategory);
 
   return (
-    <section className="container mx-auto px-4 py-16 relative z-10">
+    <section id="faqs" className="container mx-auto px-4 py-16 relative z-10">
       <h2 className="text-3xl font-bold mb-12 text-[#892BFC] text-center">
         Trading Rules - Frequently Asked Questions
       </h2>
@@ -562,17 +562,6 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
             No FAQs found for the selected category.
           </div>
         )}
-
-        <div className="flex justify-center mb-8 mt-3">
-          <Button
-            variant="outline"
-            className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border-[#892BFC]/30 hover:border-[#892BFC]"
-            onClick={() => window.open("/faq-document.pdf", "_blank")}
-          >
-            <FileText className="w-5 h-5" />
-            Download the Complete Guidelines
-          </Button>
-        </div>
       </div>
     </section>
   );
