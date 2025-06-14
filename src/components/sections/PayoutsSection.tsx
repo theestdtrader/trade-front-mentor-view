@@ -83,7 +83,8 @@ const PayoutsSection = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="font-medium text-[#892BFC]">•</span>
-                    Bank Transfer (ACH/Wire)
+                    We offer flat (USD) via Rise and Crypto (BTC, ETH, USDC) to
+                    ERC-20 wallets
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="font-medium text-[#892BFC]">•</span>
@@ -109,67 +110,22 @@ const PayoutsSection = () => {
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  Withdrawals processed within 2-3 business days
+                  24-48 hours, Rise can take longer
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  Minimum withdrawal amount: $100
+                  No minimum
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  Maximum: 80% of available balance per withdrawal
+                  Maximum: 80% of available balance per withdrawal - true for
+                  FX/CFDs, not for Futures
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
                   30-day minimum interval between withdrawals
                 </li>
               </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="max-w-3xl mx-auto mb-10 overflow-hidden rounded-lg">
-          <Card>
-            <CardHeader className="bg-[#892BFC]/10">
-              <CardTitle className="text-center text-gray-800">
-                Fee Structure
-              </CardTitle>
-              <CardDescription className="text-center">
-                Our transparent fee structure for all payouts
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Payment Method</TableHead>
-                    <TableHead>Processing Time</TableHead>
-                    <TableHead>Fee</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>Bank Transfer (ACH)</TableCell>
-                    <TableCell>2-3 business days</TableCell>
-                    <TableCell>1% (min $5)</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Bank Wire</TableCell>
-                    <TableCell>1-2 business days</TableCell>
-                    <TableCell>1.5% (min $25)</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>PayPal</TableCell>
-                    <TableCell>Same day</TableCell>
-                    <TableCell>2% (min $5)</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Cryptocurrency</TableCell>
-                    <TableCell>1-2 hours</TableCell>
-                    <TableCell>0.5% + network fee</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
             </CardContent>
           </Card>
         </div>

@@ -8,11 +8,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">
-              The Established Trader
+              The Established Trader Disclaimer
             </h3>
             <p className="text-gray-400 text-sm">
-              Empowering traders with the resources and support they need to
-              succeed in the financial markets.
+              The Established Trader is an affiliate of Forest Park FX LTD.
+              Forest Park FX LTD offers fee-based simulated trading assessments
+              for Potential Traders. All funding assessments are provided by
+              Forest Park FX LTD and all assessment fees are paid to Forest Park
+              FX LTD. If you qualify for a Funded Account, you will be required
+              to enter into a Trader Agreement with Forest Park FX LTD. Forest
+              Park FX LTD does not provide any trading education or other
+              services.
             </p>
           </div>
 
@@ -104,13 +110,22 @@ const Footer = () => {
             reserved.
           </p>
           <div className="flex justify-center gap-4 mt-4">
-            <a href="#" className="hover:text-[#892BFC]">
+            <a
+              href="https://dashboardanalytix.com/client-terms-and-policies/"
+              className="hover:text-[#892BFC]"
+            >
               Terms of Service
             </a>
-            <a href="#" className="hover:text-[#892BFC]">
+            <a
+              href="https://dashboardanalytix.com/client-terms-and-policies/"
+              className="hover:text-[#892BFC]"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-[#892BFC]">
+            <a
+              href="https://dashboardanalytix.com/client-terms-and-policies/"
+              className="hover:text-[#892BFC]"
+            >
               Cookie Policy
             </a>
           </div>

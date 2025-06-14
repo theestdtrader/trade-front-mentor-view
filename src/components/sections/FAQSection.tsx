@@ -505,9 +505,9 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
 
   const categories = [
     { id: "all", label: "All Questions" },
-    { id: "funded-account", label: "Funded Account" },
-    { id: "general", label: "General Questions" },
-    { id: "trading-rules", label: "Trading Rules" },
+    { id: "funded-account", label: "General Questions" },
+    { id: "general", label: "Forex" },
+    { id: "trading-rules", label: "Futures" },
   ];
 
   const filteredFAQs =

@@ -74,7 +74,9 @@ const Navbar = () => {
             </DropdownMenu>
           </li>
           <li className="hover:text-primary transition">
-            <a href="#pricing">Competition</a>
+            <a href="https://theestablishedtraderdashboard.propaccount.com/challenges">
+              Competition
+            </a>
           </li>
           <li className="hover:text-primary transition">
             <a href="#about">FAQs</a>
@@ -120,7 +122,10 @@ const Navbar = () => {
                 { title: "Home", path: "/" },
                 { title: "Forex", path: "#daily-challenge" },
                 { title: "Future", path: "#weekly-challenge" },
-                { title: "Competition", path: "#pricing" },
+                {
+                  title: "Competition",
+                  path: "https://theestablishedtraderdashboard.propaccount.com/challenges",
+                },
                 { title: "FAQs", path: "#about" },
                 { title: "Affiliate", path: "/affiliate" },
               ].map((item, i) => (
@@ -164,18 +169,20 @@ const Navbar = () => {
                   transition: `all 0.3s ease-in-out 0.6s`,
                 }}
               >
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:text-primary gap-1 hover:scale-105 transition-all"
-                  onClick={() => {
-                    setIsLoginOpen(true);
-                    setIsMobileMenuOpen(false);
-                  }}
+                <a
+                  href="https://theestablishedtraderdashboard.propaccount.com/sign-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <LogIn size={18} />
-                  Login
-                </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-white hover:text-primary gap-1 hover:scale-105 transition-all"
+                  >
+                    <LogIn size={18} />
+                    Login
+                  </Button>
+                </a>
               </li>
               <li
                 style={{
@@ -194,20 +201,23 @@ const Navbar = () => {
 
         {/* Desktop Login/Signup */}
         <div className="hidden md:flex gap-3 items-center">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-white hover:text-primary gap-1 transition-all hover:scale-105"
-            onClick={() => setIsLoginOpen(true)}
+          <a
+            href="https://theestablishedtraderdashboard.propaccount.com/sign-in"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <LogIn size={18} />
-            Login
-          </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:text-primary gap-1 hover:scale-105 transition-all"
+            >
+              <LogIn size={18} />
+              Login
+            </Button>
+          </a>
           <div className="hidden md:block">
             <SignUpForm />
           </div>
-
-          <LoginForm isOpen={isLoginOpen} onOpenChange={setIsLoginOpen} />
         </div>
       </div>
     </nav>

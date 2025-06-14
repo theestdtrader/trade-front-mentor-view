@@ -59,11 +59,12 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     {
       phase: "Phase 5 Payout",
       amounts: [
-        "Live Funded Futures Account. T&C apply",
-        "Live Funded Futures Account. T&C apply",
-        "Live Funded  Futures Account. T&C apply",
-        "Live Funded  Futures Account. T&C apply",
+        " New Live Funded Futures Account. T&C apply Account Size $3,000 Max Loss (Static) $1,500 Profit Split 90%",
+        "New Live Funded Futures Account. T&C apply Account Size $6,000 Max Loss (Static) $3,000 Profit Split 90%",
+        "New Live Funded  Futures Account. T&C apply Account Size $12,000 Max Loss (Static) $6,000 Profit Split 90%",
+        "New Live Funded  Futures Account. T&C apply Account Size $18,000 Max Loss (Static) $9000 Profit Split 90%",
       ],
+      highlighted: true,
     },
   ];
 
@@ -76,26 +77,25 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
       notes: "Funded account has no profit limit",
       highlighted: false,
     },
-    {
-      area: "Daily Loss Limit",
-      assessment: "3%",
-      funded: "3%",
-      notes: "Equity-based, based on prior day balance (Hard Breach)",
-      highlighted: false,
-    },
+
     {
       area: "Max Drawdown",
-      assessment: "6%",
+      assessment: "5%",
       funded: "6%",
-      notes: "Equity-based, does not trail (Hard Breach)",
+      notes: "Trails on EOD (End of Day) Balance(Hard Breach)",
       highlighted: false,
     },
     {
       area: "Inactivity Period",
-      assessment: "30 Days",
-      funded: "30 Days",
+      assessment: "Phase 1-4 14 days | Live Funded 7 days",
+      funded: "Phase 1-4 14 days | Live Funded 7 days",
       notes: "Must place trade (Hard Breach)",
       highlighted: false,
+    },
+    {
+      area: "Max Time",
+      notes: "60 Days",
+      assessment: "60 Days",
     },
     {
       area: "Consistency Score",
@@ -103,7 +103,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
       funded: "25%",
       notes:
         "A single day's profit cannot make up more than 25% of the total profit (Soft Breach)",
-      highlighted: true,
+      highlighted: false,
     },
   ];
 
