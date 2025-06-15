@@ -59,10 +59,10 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     {
       phase: "Phase 5 Payout",
       amounts: [
-        " New Live Funded Futures Account.  Account Size $3,000 Max Loss (Static) $1,500 Profit Split 90%",
-        "New Live Funded Futures Account.  Account Size $6,000 Max Loss (Static) $3,000 Profit Split 90%",
-        "New Live Funded  Futures Account.  Account Size $12,000 Max Loss (Static) $6,000 Profit Split 90%",
-        "New Live Funded  Futures Account.  Account Size $18,000 Max Loss (Static) $9000 Profit Split 90%",
+        " New Live Funded Futures Account.  \nAccount Size $3,000 \nMax Loss (Static) $1,500 \nProfit Split 90%",
+        "New Live Funded Futures Account.  \nAccount Size $6,000 \nMax Loss (Static) $3,000 \nProfit Split 90%",
+        "New Live Funded  Futures Account. \nAccount Size $12,000 \nMax Loss (Static) $6,000 \nProfit Split 90%",
+        "New Live Funded  Futures Account.  \nAccount Size $18,000 \nMax Loss (Static) $9000 \nProfit Split 90%",
       ],
       highlighted: true,
     },
@@ -87,7 +87,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
     {
       area: "Inactivity Period",
-      assessment: "Phase 1-4 14 days \n\nLive Funded 7 days",
+      assessment: "Phase 1-4 14 days Live Funded 7 days",
 
       funded: "Phase 1-4 14 days | Live Funded 7 days",
       notes: "Must place trade (Hard Breach)",
@@ -181,7 +181,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                               <span className="text-white/80">
                                 {phase.phase}
                               </span>
-                              <span className="text-white font-medium">
+                              <span className="text-white font-medium whitespace-pre-wrap">
                                 {phase.amounts[index]}
                               </span>
                             </div>
