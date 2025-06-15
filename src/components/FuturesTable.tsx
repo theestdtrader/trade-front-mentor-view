@@ -87,8 +87,8 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
     {
       area: "Inactivity Period",
-      assessment: "Phase 1-4 14 days",
-      assessment: "Live Funded 7 days",
+      assessment: "Phase 1-4 14 days \n\nLive Funded 7 days",
+
       funded: "Phase 1-4 14 days | Live Funded 7 days",
       notes: "Must place trade (Hard Breach)",
       highlighted: false,
@@ -126,7 +126,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
               className={isMobile ? "basis-full" : "md:basis-1/3"}
             >
               <div className="p-1">
-                <Card className="overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all h-full flex flex-col">
+                <Card className="w-350 overflow-hidden bg-gradient-to-br from-[#35208f] to-[#12032e] border border-purple-500/30 shadow-xl hover:border-purple-500/50 transition-all  h-full flex flex-col">
                   <div className="bg-[#4a307a] py-4 px-6 text-center border-b border-purple-500/20">
                     <h3 className="text-xl font-bold text-white">{size}</h3>
                     <p className="text-white/80 mt-1">Fee: {fees[index]}</p>
@@ -147,7 +147,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                           >
                             {rule.area}
                           </span>
-                          <span className="text-white text-sm">
+                          <span className="text-white text-sm whitespace-pre-wrap">
                             {rule.assessment}
                           </span>
                         </div>

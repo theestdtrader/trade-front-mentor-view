@@ -81,9 +81,6 @@ const Navbar = () => {
           <li className="hover:text-primary transition">
             <a href="#faqs">FAQs</a>
           </li>
-          <li className="hover:text-primary transition">
-            <RouterLink to="/affiliate">Affiliate</RouterLink>
-          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -120,14 +117,13 @@ const Navbar = () => {
             <ul className="flex flex-col items-center gap-6 bg-black font-medium text-white py-8">
               {[
                 { title: "Home", path: "/" },
-                { title: "Forex", path: "#daily-challenge" },
-                { title: "Future", path: "#weekly-challenge" },
+                { title: "Forex", path: "#programs" },
+                { title: "Future", path: "#programs" },
                 {
                   title: "Competition",
                   path: "https://theestablishedtraderdashboard.propaccount.com/challenges",
                 },
-                { title: "FAQs", path: "#about" },
-                { title: "Affiliate", path: "/affiliate" },
+                { title: "FAQs", path: "#faqs" },
               ].map((item, i) => (
                 <li
                   key={item.title}
