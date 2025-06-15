@@ -83,9 +83,12 @@ const PayoutsSection = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="font-medium text-[#892BFC]">•</span>
-                    We offer flat (USD) via Rise and Crypto (BTC, ETH, USDC) to
-                    ERC-20 wallets
+                    We offer flat (USD) via Rise.
                   </li>
+                  <li className="flex items-start gap-2">
+                  <span className="font-medium text-[#892BFC]">•</span>
+                  Cryptocurrency (BTC, ETH, USDC) to ERC-20 wallets
+                </li>
                 </ul>
               </div>
             </CardContent>
