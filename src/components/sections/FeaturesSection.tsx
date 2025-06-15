@@ -24,7 +24,7 @@ const FeaturesSection = () => {
               1. Choose your Program
             </h3>
             <p className="text-gray-300">
-              We offer 1-step evaluations for both futures & Forex.
+              We offer Quick-step evaluations for both futures & Forex.
             </p>
           </CardContent>
         </Card>
@@ -56,7 +56,7 @@ const FeaturesSection = () => {
               3. Trade & Meet the Objectives
             </h3>
             <p className="text-gray-300">
-              Understand the loss limit rules & hit the 10% profit target.
+              Understand the loss limit rules & hit the profit target.
             </p>
           </CardContent>
         </Card>
@@ -72,7 +72,7 @@ const FeaturesSection = () => {
               4. Go Live
             </h3>
             <p className="text-gray-300">
-              Trade the same way & request a healthy withdrawal every 30 days.
+              Trade the same way & request a healthy withdrawal.
             </p>
           </CardContent>
         </Card>
