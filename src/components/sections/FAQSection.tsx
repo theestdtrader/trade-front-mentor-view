@@ -244,9 +244,9 @@ const FAQSection = () => {
       question: "How does the Live Funded account phase differ from Phase 1-4?",
       answer:
         "The Live Funded Futures account operates under a different set of rules compared to Phases 1-4. Once you reach this level, the following changes apply:\n\n\n\nn" +
-        "• Risk Parameters: The Max Loss is capped at 50% of your starting balance. There are no longer any profit targets, consistency rules, or time limits.\n\n\n\nn" +
-        "• Inactivity Rule: You must place at least one executed trade every 7 calendar days to retain your account.\n\n\n\nn" +
-        "• Live Market Conditions: You are now trading in a live environment, which means you may encounter real-market factors such as slippage, partial fills, and varying liquidity.\n\n\n\nn" +
+        " Risk Parameters: The Max Loss is capped at 50% of your starting balance. There are no longer any profit targets, consistency rules, or time limits.\n\n\n\nn" +
+        " Inactivity Rule: You must place at least one executed trade every 7 calendar days to retain your account.\n\n\n\nn" +
+        " Live Market Conditions: You are now trading in a live environment, which means you may encounter real-market factors such as slippage, partial fills, and varying liquidity.\n\n\n\nn" +
         "Profit Split: You no longer have a fixed payout and are eligible to keep 90% of your profits in the Live Funded Futures phase.",
     },
     {
