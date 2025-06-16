@@ -339,7 +339,7 @@ const FAQSection = () => {
       category: "trading-rules",
       question: "What is a Futures contract?",
       answer:
-        "A futures contract represents a standardized amount of an underlying asset. For example, one E-mini S&amp;P 500 futures contract (ES) represents $50 times the index price, while one crude oil (CL) contract represents 1,000 barrels of oil.\n\n\n\n" +
+        "A futures contract represents a standardized amount of an underlying asset. For example, one E-mini S&P 500 futures contract (ES) represents $50 times the index price, while one crude oil (CL) contract represents 1,000 barrels of oil.\n\n\n\n" +
         "Download the Complete Guidelines for the product table",
     },
     {
