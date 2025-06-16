@@ -239,6 +239,28 @@ const FAQSection = () => {
 
     // Trading Rules FAQs
     {
+      id: "item-56",
+      category: "trading-rules",
+      question: "How do the phases work?",
+      answer:
+        " • Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n\n\n\n" +
+        " • At each new Phase, your account will begin with a fresh starting balance.",
+    },
+    {
+      id: "item-55",
+      category: "trading-rules",
+      question: "Who is the counterparty to my trades?",
+      answer:
+        "During the simulated phases, trades are executed against the liquidity provided by your trading platform and are designed to closely mimic real-market pricing and execution. Once you receive your live funded account, the pricing and execution will come directly from the exchange(s) on which you trade",
+    },
+    {
+      id: "item-54",
+      category: "trading-rules",
+      question: "If I have a breach in my Live Funded Account and there are gains in the account, do I forfeit those gains?",
+      answer:
+        "If you have gains in your Live Funded Futures (Phase 5) account at the time of a breach, you will still receive your portion of those gains.",
+    },
+    {
       id: "item-53",
       category: "trading-rules",
       question: "How does the Live Funded account phase differ from Phase 1-4?",
