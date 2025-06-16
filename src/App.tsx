@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,31 +5,32 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/ComingSoon";
 import AffiliatePage from "./pages/AffiliatePage";
 import Preloader from "./components/Preloader";
+import ComingSoon from "./pages/ComingSoon";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     // Hide preloader after resources are loaded
-    window.addEventListener('load', () => {
+    window.addEventListener("load", () => {
       setTimeout(() => setIsLoading(false), 1000);
     });
-    
+
     // Fallback if 'load' event already fired
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       setTimeout(() => setIsLoading(false), 1000);
     }
-    
+
     return () => {
-      window.removeEventListener('load', () => setIsLoading(false));
+      window.removeEventListener("load", () => setIsLoading(false));
     };
   }, []);
-  
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -41,6 +41,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/affiliate" element={<AffiliatePage />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

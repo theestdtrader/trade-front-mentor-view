@@ -147,7 +147,9 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                           >
                             {rule.area}
                           </span>
-                          <span className="text-white text-sm whitespace-pre-wrap">
+                          <span
+                            className={"text-white text-sm whitespace-pre-wrap"}
+                          >
                             {rule.assessment}
                           </span>
                         </div>
@@ -181,7 +183,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
                               <span className="text-white/80">
                                 {phase.phase}
                               </span>
-                              <span className="text-white font-medium whitespace-pre-wrap">
+                              <span className="text-slate-500 font-medium whitespace-pre-wrap">
                                 {phase.amounts[index]}
                               </span>
                             </div>

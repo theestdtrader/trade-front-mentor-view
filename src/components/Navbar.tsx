@@ -11,6 +11,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/drawer";
 import SignUpForm from "@/components/SignUpForm";
 import LoginForm from "@/components/LoginForm";
+import ComingSoon from "@/pages/ComingSoon";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -74,9 +75,7 @@ const Navbar = () => {
             </DropdownMenu>
           </li>
           <li className="hover:text-primary transition">
-            <a href="https://theestablishedtraderdashboard.propaccount.com/challenges">
-              Competition
-            </a>
+            <a href="/coming-soon">Competition</a>
           </li>
           <li className="hover:text-primary transition">
             <a href="#faqs">FAQs</a>
@@ -121,7 +120,7 @@ const Navbar = () => {
                 { title: "Future", path: "#programs" },
                 {
                   title: "Competition",
-                  path: "https://theestablishedtraderdashboard.propaccount.com/challenges",
+                  path: "/coming soon",
                 },
                 { title: "FAQs", path: "#faqs" },
               ].map((item, i) => (
