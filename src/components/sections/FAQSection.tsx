@@ -243,7 +243,7 @@ const FAQSection = () => {
       category: "trading-rules",
       question: "How do the phases work?",
       answer:
-        " Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n" +
+        " Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n\n" +
         " At each new Phase, your account will begin with a fresh starting balance.",
     },
     {
