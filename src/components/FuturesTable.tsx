@@ -57,7 +57,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
       amounts: ["$1,500", "$3,000", "$6,000", "$9,000"],
     },
     {
-      phase: "Phase 5 Payout",
+      phase: "* Phase 5 Payout",
       amounts: [
         " New Live Funded Futures Account.  \nAccount Size $3,000 \nMax Loss (Static) $1,500 \nProfit Split 90%",
         "New Live Funded Futures Account.  \nAccount Size $6,000 \nMax Loss (Static) $3,000 \nProfit Split 90%",
@@ -87,7 +87,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
     {
       area: "Inactivity Period",
-      assessment: "Phase 1-4 14 days | [Live Funded 7 days](color: #1A1F2C)",
+      assessment: "Phase 1-4 14 days | * Live Funded 7 days",
 
       funded: "Phase 1-4 14 days | Live Funded 7 days",
       notes: "Must place trade (Hard Breach)",
