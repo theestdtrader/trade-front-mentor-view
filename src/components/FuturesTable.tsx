@@ -87,7 +87,7 @@ const FuturesTable: React.FC<FuturesTableProps> = ({ onGetPlan }) => {
     },
     {
       area: "Inactivity Period",
-      assessment: "Phase 1-4 14 days \n * Live Funded 7 days",
+      assessment: "Phase 1-4 14 days | *Live Funded 7 days",
 
       funded: "Phase 1-4 14 days | Live Funded 7 days",
       notes: "Must place trade (Hard Breach)",
