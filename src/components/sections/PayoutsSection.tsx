@@ -126,12 +126,18 @@ const PayoutsSection = () => {
         </div>
 
         <div className="flex justify-center">
+           <a
+            href="https://theestablishedtraderdashboard.propaccount.com/sign-in"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Button
             size="lg"
             className="rounded-full px-8 font-bold bg-gradient-to-r from-primary to-indigo-500 shadow hover-scale text-white py-3 hover:bg-primary/80 transition"
           >
             Get Started Now
           </Button>
+             </a>
         </div>
       </div>
     </section>
