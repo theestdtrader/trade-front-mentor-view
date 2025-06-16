@@ -237,7 +237,15 @@ const FAQSection = () => {
         "● You can start with up to $1 million of initial funding and grow the account to any balance you desire, including $10 million, $20 million, and beyond.",
     },
 
-    // Trading Rules FAQs
+    // Futures
+    {
+      id: "item-54",
+      category: "trading-rules",
+      question: "How do the phases work?",
+      answer:
+        " Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n\n" +
+        " At each new Phase, your account will begin with a fresh starting balance.",
+    },
     {
       id: "item-53",
       category: "trading-rules",
@@ -294,6 +302,13 @@ const FAQSection = () => {
         "Do I need to complete KYC or sign a trader contract to start trading in a Funded Futures Plan?",
       answer:
         "You will be required to complete our Know Your Customer (KYC) program and sign our Trader Agreement prior to requesting a payout.",
+    },
+    {
+      id: "item-55",
+      category: "trading-rules",
+      question: "Who is the counterparty to my trades?",
+      answer:
+        "During the simulated phases, trades are executed against the liquidity provided by your trading platform and are designed to closely mimic real-market pricing and execution. Once you receive your live funded account, the pricing and execution will come directly from the exchange(s) on which you trade",
     },
     {
       id: "item-46",
@@ -374,12 +389,19 @@ const FAQSection = () => {
     {
       id: "item-36",
       category: "trading-rules",
+      question: "If I have a breach in my Live Funded Account and there are gains in the account, do I forfeit those gains?",
+      answer:
+        "If you have gains in your Live Funded Futures (Phase 5) account at the time of a breach, you will still receive your portion of those gains.",
+    },
+    {
+      id: "item-35",
+      category: "trading-rules",
       question: "What is a Profit Target?",
       answer:
         "This is the predetermined profit amount you need to achieve in order to pass to the next phase of the program and be eligible to receive the payout.",
     },
     {
-      id: "item-35",
+      id: "item-34",
       category: "trading-rules",
       question:
         "Do I lose my account if I don’t meet the Consistency Requirement?",
@@ -387,7 +409,7 @@ const FAQSection = () => {
         "Once you complete a Phase and meet the 25% consistency rule you will be eligible to make a request for that Phase’s payout. You will not be able to advance to the next phase until the payout is requested and completed.No. But in order to complete the phase and be entitled to receive the payout, you will need to achieve both the profit target and the consistency requirement.",
     },
     {
-      id: "item-34",
+      id: "item-33",
       category: "trading-rules",
       question: "What is the Consistency Requirement**?",
       answer:
@@ -399,14 +421,14 @@ const FAQSection = () => {
         "To meet the consistency requirement of 25%, you would now need to reach a total profit of $12,000 while keeping your best day at or below $3,000.\n\n",
     },
     {
-      id: "item-33",
+      id: "item-32",
       category: "trading-rules",
       question: "When do I get the payout for each Phase?",
       answer:
         "Once you complete a Phase and meet the 25% consistency rule you will be eligible to make a request for that Phase’s payout. You will not be able to advance to the next phase until the payout is requested and completed.",
     },
     {
-      id: "item-32",
+      id: "item-31",
       category: "trading-rules",
       question: "How do the phases work?",
       answer:
