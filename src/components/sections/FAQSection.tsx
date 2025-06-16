@@ -237,14 +237,14 @@ const FAQSection = () => {
         "● You can start with up to $1 million of initial funding and grow the account to any balance you desire, including $10 million, $20 million, and beyond.",
     },
 
-    // Trading Rules FAQs
+    // Futures
     {
       id: "item-56",
       category: "trading-rules",
       question: "How do the phases work?",
       answer:
-        " • Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n\n\n\n" +
-        " • At each new Phase, your account will begin with a fresh starting balance.",
+        " Phase 1 begins once you purchase an account. Once you hit your profit target; while maintaining a 25% consistency, you will be able to request a payout and then advance to the next Phase.\n" +
+        " At each new Phase, your account will begin with a fresh starting balance.",
     },
     {
       id: "item-55",
