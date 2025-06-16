@@ -179,7 +179,7 @@ const FAQSection = () => {
         "  - Trading in any way that jeopardizes the relationship between the Company and a Liquidity Provider or may result in trade cancellations.\n\n" +
         "  - Trading in any way that creates regulatory issues for the Liquidity Provider.\n\n" +
         "  - Utilizing third-party strategies, off-the-shelf strategies, or strategies marketed to pass challenge accounts.\n\n" +
-        "  - Using one strategy to pass an assessment and switching to a different strategy in a funded account (as determined by the Company and Prop Account, LLC).\n\n" +
+        "  - Using one strategy to pass an assessment and switching to a different strategy in a funded account (as determined by the Company).\n\n" +
         "  - Attempting to arbitrage an assessment account with another account (with the Company or any third-party), as determined by the Company.\n\n" +
         "  - Opening a position within 3 minutes before or after a News Event. If this occurs:\n\n" +
         "    - The position may be closed.\n\n" +
@@ -278,7 +278,7 @@ const FAQSection = () => {
       question:
         "Do we manipulate the pricing or executions you receive in your Funded Futures accounts?",
       answer:
-        "No. We operate at arm&#39;s lengths with the liquidity providers/Exchanges. All market pricing and trade executions are provided by third parties and are not changed or modified by us. Additionally, we do not markup transaction costs established through adjusting bid-offer spreads, markups/markdowns, commission charges or swaps.",
+        "No. We operate at arm's lengths with the liquidity providers/Exchanges. All market pricing and trade executions are provided by third parties and are not changed or modified by us. Additionally, we do not markup transaction costs established through adjusting bid-offer spreads, markups/markdowns, commission charges or swaps.",
     },
     {
       id: "item-48",
@@ -314,10 +314,10 @@ const FAQSection = () => {
       category: "trading-rules",
       question: "What is the 60 Day Maximum Time rule?",
       answer:
-        "Each Phase (1-4) has a maximum time limit of 60 calendar days. This means you must meet all the requirements for a given phase within 60 days of starting that phase. If you do not complete a phase within the 60-day window, your account will be deactivated, regardless of your progress or profit level at that point. You will need to purchase a new Futures plan to continue.\n\n\n\nn" +
-        "The timer begins on the day you place your first trade and continues uninterrupted. There are no extensions or pauses.\n\n\n\nn" +
-        "Please plan your trading accordingly to stay on track throughout all four phases.\n\n\n\nn" +
-        "Is there a breach for inactivity in Phases 1-4. For Phases 1-4, you must place an executed trade once every 14 days to retain the account.",
+        "Each Phase (1-4) has a maximum time limit of 60 calendar days. This means you must meet all the requirements for a given phase within 60 days of starting that phase. If you do not complete a phase within the 60-day window, your account will be deactivated, regardless of your progress or profit level at that point. You will need to purchase a new Futures plan to continue.\n\n\n\n" +
+        "The timer begins on the day you place your first trade and continues uninterrupted. There are no extensions or pauses.\n\n\n\n" +
+        "Please plan your trading accordingly to stay on track throughout all four phases.\n\n\n\n" +
+        "Is there a breach for inactivity in Phases 1-4? For Phases 1-4, you must place an executed trade once every 14 days to retain the account.",
     },
     {
       id: "item-43",
@@ -332,14 +332,14 @@ const FAQSection = () => {
       question:
         "How do I complete the CME market data attestation for Rithmic?",
       answer:
-        "You must complete the CME market data attestation using the R | Trader Pro desktop app—this cannot be done through mobile or web platforms. Once you've completed the attestation in R | Trader Pro, you&#39;ll be able to log in and trade through mobile or web apps. Please note: you must attest as a non- professional; we do not accept professional status in this program.",
+        "You must complete the CME market data attestation using the R | Trader Pro desktop app—this cannot be done through mobile or web platforms. Once you've completed the attestation in R | Trader Pro, you'll be able to log in and trade through mobile or web apps. Please note: you must attest as a non- professional; we do not accept professional status in this program.",
     },
     {
       id: "item-41",
       category: "trading-rules",
       question: "What is a Futures contract?",
       answer:
-        "A futures contract represents a standardized amount of an underlying asset. For example, one E-mini S&amp;P 500 futures contract (ES) represents $50 times the index price, while one crude oil (CL) contract represents 1,000 barrels of oil.\n\n\n\nn" +
+        "A futures contract represents a standardized amount of an underlying asset. For example, one E-mini S&amp;P 500 futures contract (ES) represents $50 times the index price, while one crude oil (CL) contract represents 1,000 barrels of oil.\n\n\n\n" +
         "Download the Complete Guidelines for the product table",
     },
     {
@@ -361,7 +361,7 @@ const FAQSection = () => {
       category: "trading-rules",
       question: "How do you calculate the Maximum Trailing Loss?",
       answer:
-        "The Maximum Trailing Loss for each phase trails using End of Day Balance. Example: If your starting balance is $100,000, and there is a 5% Max Trailing Loss, you can drawdown to $95,000 before you violate the Maximum Trailing Loss rule. Then for example let&#39;s say you take your end of day balance to $102,000.\n\n\n\nn" +
+        "The Maximum Trailing Loss for each phase trails using End of Day Balance. Example: If your starting balance is $100,000, and there is a 5% Max Trailing Loss, you can drawdown to $95,000 before you violate the Maximum Trailing Loss rule. Then for example let's say you take your end of day balance to $102,000.\n\n\n\n" +
         "This is your new End of Day High-Water Mark, which would mean your new Maximum Trailing Loss would be $97,000. Once you generate a 5% return in the account, the Max Trailing Loss will lock at the starting balance (i.e. the Max Loss Limit will never increase above your starting balance). For the purpose of all calculations, the end of day is defined as 1600 CST.",
     },
     {
@@ -391,11 +391,11 @@ const FAQSection = () => {
       category: "trading-rules",
       question: "What is the Consistency Requirement**?",
       answer:
-        "We have a Consistency Requirement to ensure traders aren't hitting profit targets through a few lucky trades. This promotes consistent behavior and punishes YOLO style trading. The calculation is: (best trading day PnL/Total PnL) x 100.\n\n\n\nn" +
-        "A lower value means profits are generated more consistently across multiple trading days. A higher value means profits are concentrated on fewer trading days. For example, a consistency requirement of 25% means you cannot achieve your entire profit target in less than 4 days (100% / 25% = 4).\n\n\n\nn" +
-        "You must meet both the profit target and the consistency requirement — maintaining a consistency ratio at or below 25% — to hit your profit target, be eligible for a payout, and to advance to the next Phase.\n\n\n\nn" +
-        "•Example 1: On a $100k account with a profit target of $8,000, if you earn $2,000 per day over 4 days, you meet the consistency requirement. Your best day is $2,000, and total profit is $8,000 — resulting in a consistency ratio of 25% ($2,000 / $8,000).\n\n\n\nn" +
-        "•Example 2: On a $100k account with a profit target of $8,000, if your profits across 4 days are $3,000, $1,000, $2,000, and $2,000, you violate the consistency requirement. Your best day is $3,000, and total profit is $8,000 — which gives a consistency ratio of 37.5% ($3,000 / $8,000).\n\n" +
+        "We have a Consistency Requirement to ensure traders aren't hitting profit targets through a few lucky trades. This promotes consistent behavior and punishes YOLO style trading. The calculation is: (best trading day PnL/Total PnL) x 100.\n\n\n\n" +
+        "A lower value means profits are generated more consistently across multiple trading days. A higher value means profits are concentrated on fewer trading days. For example, a consistency requirement of 25% means you cannot achieve your entire profit target in less than 4 days (100% / 25% = 4).\n\n\n\n" +
+        "You must meet both the profit target and the consistency requirement — maintaining a consistency ratio at or below 25% — to hit your profit target, be eligible for a payout, and to advance to the next Phase.\n\n\n\n" +
+        "• Example 1: On a $100k account with a profit target of $8,000, if you earn $2,000 per day over 4 days, you meet the consistency requirement. Your best day is $2,000, and total profit is $8,000 — resulting in a consistency ratio of 25% ($2,000 / $8,000).\n\n\n\n" +
+        "• Example 2: On a $100k account with a profit target of $8,000, if your profits across 4 days are $3,000, $1,000, $2,000, and $2,000, you violate the consistency requirement. Your best day is $3,000, and total profit is $8,000 — which gives a consistency ratio of 37.5% ($3,000 / $8,000).\n\n" +
         "To meet the consistency requirement of 25%, you would now need to reach a total profit of $12,000 while keeping your best day at or below $3,000.\n\n",
     },
     {
@@ -482,16 +482,16 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
     {
       id: "item-91",
       category: "trading-rules",
-      question: "How do you calculate the 4% Daily Loss Limit?",
+      question: "How do you calculate the Daily Loss Limit?",
       answer:
         "The Daily Loss Limit is the maximum your account can lose in any given day. Daily Loss Limit is calculated using the previous day balance which resets at 5 PM EST. Unlike other firms, we do NOT base our calculations on previous day equity since the balance only model allows you to scale profits without fear of losing your account. The Daily Stop compounds with the increase in your account.",
     },
     {
       id: "item-92",
       category: "trading-rules",
-      question: "How do you calculate the 8% Max Drawdown?",
+      question: "How do you calculate the 6% Max Drawdown?",
       answer:
-        `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 8% of your starting balance. This 8% is static and does not trail.\n\n` +
+        `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 6% of your starting balance. This 6% is static and does not trail.\n\n` +
         `The Maximum Trailing Drawdown is initially set at 6% and trails (using CLOSED BALANCE - NOT equity) your account until you have achieved a 6% return in your account. Once you have achieved a 6% return the Maximum Trailing Drawdown no longer trails and is permanently locked in at your starting balance. This allows for more trading flexibility.`,
     },
     {
