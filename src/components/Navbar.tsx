@@ -11,7 +11,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/drawer";
 import SignUpForm from "@/components/SignUpForm";
 import LoginForm from "@/components/LoginForm";
-import ComingSoon from "@/pages/ComingSoon";
+import Competition from "@/pages/Competition";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -75,8 +75,10 @@ const Navbar = () => {
             </DropdownMenu>
           </li>
           <li className="hover:text-primary transition">
-            <a href="/coming-soon">Competition</a>
+            {" "}
+            <RouterLink to="/competition">Competitions</RouterLink>
           </li>
+
           <li className="hover:text-primary transition">
             <a href="#faqs">FAQs</a>
           </li>

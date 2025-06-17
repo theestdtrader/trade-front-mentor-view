@@ -5,10 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Index from "./pages/Index";
-import NotFound from "./pages/ComingSoon";
+import NotFound from "./pages/Competition";
 import AffiliatePage from "./pages/AffiliatePage";
 import Preloader from "./components/Preloader";
-import ComingSoon from "./pages/ComingSoon";
+import Competition from "./pages/Competition";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +41,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/affiliate" element={<AffiliatePage />} />
-            <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route path="/competition" element={<Competition />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-const ComingSoon = () => {
+const Competition = () => {
   const location = useLocation();
 
   useEffect(() => {
@@ -26,4 +26,4 @@ const ComingSoon = () => {
   );
 };
 
-export default ComingSoon;
+export default Competition;
