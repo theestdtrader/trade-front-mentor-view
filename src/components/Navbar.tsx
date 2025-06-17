@@ -76,7 +76,7 @@ const Navbar = () => {
           </li>
           <li className="hover:text-primary transition">
             {" "}
-            <RouterLink to="/competition">Competitions</RouterLink>
+            <RouterLink to="/competition">Competition</RouterLink>
           </li>
 
           <li className="hover:text-primary transition">
