@@ -15,7 +15,7 @@ const Competition = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 p-6">
       <div className="text-center">
         <h1 className="text-4xl text-white font-bold mb-4">
-          Competition Comings Soon
+          Competition Coming Soon
         </h1>
         <p className="text-xl text-white mb-4">Stay Tuned!!</p>
         <a href="/" className="text-blue-500 hover:text-blue-700 underline">

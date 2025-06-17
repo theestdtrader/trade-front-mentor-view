@@ -122,7 +122,7 @@ const Navbar = () => {
                 { title: "Future", path: "#programs" },
                 {
                   title: "Competition",
-                  path: "/coming soon",
+                  path: "/competition",
                 },
                 { title: "FAQs", path: "#faqs" },
               ].map((item, i) => (
