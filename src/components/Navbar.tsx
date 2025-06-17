@@ -75,7 +75,7 @@ const Navbar = () => {
             </DropdownMenu>
           </li>
           <li className="hover:text-primary transition">
-            <a href="/coming-soon">Competition</a>
+            <a href="/competition">Competition</a>
           </li>
           <li className="hover:text-primary transition">
             <a href="#faqs">FAQs</a>
@@ -120,7 +120,7 @@ const Navbar = () => {
                 { title: "Future", path: "#programs" },
                 {
                   title: "Competition",
-                  path: "/coming soon",
+                  path: "/competition",
                 },
                 { title: "FAQs", path: "#faqs" },
               ].map((item, i) => (
