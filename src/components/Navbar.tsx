@@ -126,6 +126,10 @@ const Navbar = () => {
                   title: "Competition",
                   path: "/competition",
                 },
+                {
+                  title:"Academy",
+                  path:"/https://established-trader-academy.vercel.app/"
+                },
                 { title: "FAQs", path: "#faqs" },
               ].map((item, i) => (
                 <li
