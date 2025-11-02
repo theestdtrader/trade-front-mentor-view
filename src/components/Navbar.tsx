@@ -78,7 +78,9 @@ const Navbar = () => {
             {" "}
             <RouterLink to="/competition">Competition</RouterLink>
           </li>
-
+  <li className="hover:text-primary transition">
+            <a href="https://established-trader-academy.vercel.app/">Academy</a>
+          </li>
           <li className="hover:text-primary transition">
             <a href="#faqs">FAQs</a>
           </li>
