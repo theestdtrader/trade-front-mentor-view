@@ -478,10 +478,11 @@ If a trader finishes the day with open positions that are in profit, the account
 Example: A trader has a $100,000 account with a 5 percent Daily Loss Limit. At the 5:00 PM EST reset, the account balance is $100,000 and there are open positions in profit, resulting in account equity of $102,000. Because the equity is higher than the balance, the Daily Loss Limit is calculated using the $102,000 equity value. Five percent of $102,000 is $5,100, meaning the account will violate the Daily Loss Limit if intraday equity reaches $96,900 at any point during the next trading day. If the trader had no open positions, or open positions that were in a loss, the Daily Loss Limit would instead be based on the $100,000 balance, resulting in a breach level of $95,000.`,
     },
     {
-      id: "item-69",
+      id: "item-91",
       category: "trading-rules",
       question: "How do you calculate the Max Drawdown (STATIC)?",
-      answer: `The Maximum Drawdown is initially set at 6% and is static (using CLOSED BALANCE) and will therefore remain at the same value for as long as the account will remain active.
+      answer:
+        `The Maximum Drawdown is initially set at 6% and is static (using CLOSED BALANCE) and will therefore remain at the same value for as long as the account will remain active.
 
 Example: If your starting balance is $100,000, you can drawdown to $94,000 before you would violate
 the Maximum Drawdown rule. Then for example let's say you take your account to $102,000 in CLOSED BALANCE, your Maximum Drawdown would remain locked at $94,000. So, regardless of how high your account goes, your drawdown will remain the same (note, you can still violate the daily drawdown).
@@ -490,6 +491,14 @@ the Maximum Drawdown rule. Then for example let's say you take your account to $
 
 Example: using the “Lock Upon Payout” default
 A trader has a $100,000 account and grows the balance to $110,000. When the trader submits a payout request, the maximum drawdown becomes permanently locked at the original starting balance of $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.`,
+    },
+    {
+      id: "item-92",
+      category: "trading-rules",
+      question: "How do you calculate the 6% Max Drawdown?",
+      answer:
+        `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 6% of your starting balance. This 6% is static and does not trail.\n\n` +
+        `The Maximum Trailing Drawdown is initially set at 6% and trails (using CLOSED BALANCE - NOT equity) your account until you have achieved a 6% return in your account. Once you have achieved a 6% return the Maximum Trailing Drawdown no longer trails and is permanently locked in at your starting balance. This allows for more trading flexibility.`,
     },
     {
       id: "item-83",
