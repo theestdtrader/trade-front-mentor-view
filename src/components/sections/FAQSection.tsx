@@ -80,7 +80,7 @@ const FAQSection = () => {
         "When can I withdraw the gains in my Funded Account and how does that affect my maximum drawdown?",
       answer:
         "Your first withdrawal can be requested at any time, subject to an 80/20 profit split. Thereafter, you can request a withdrawal of the gains in your account every 30 days. When a withdrawal is approved, we will also withdraw our share of the gains. The drawdown does not reset when you request a withdrawal.
-Example: You have taken an account from $100,000 to $120,000. You then request a withdrawal of $16,000. In this scenario, you will receive $12,800 and we would retain $3,200. This would also take the balance of the account down to $104,000, and your Maximum Drawdown will lock at the starting balance of the account unless you have purchased the add-on to disable it. If you withdraw all of your profits you will violate the Maximum Drawdown rule and lose the account.",
+        Example: You have taken an account from $100,000 to $120,000. You then request a withdrawal of $16,000. In this scenario, you will receive $12,800 and we would retain $3,200. This would also take the balance of the account down to $104,000, and your Maximum Drawdown will lock at the starting balance of the account unless you have purchased the add-on to disable it. If you withdraw all of your profits you will violate the Maximum Drawdown rule and lose the account.",
     },
     {
       id: "item-9",
