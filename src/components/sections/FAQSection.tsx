@@ -79,7 +79,8 @@ const FAQSection = () => {
       question:
         "When can I withdraw the gains in my Funded Account and how does that affect my maximum drawdown?",
       answer:
-        "Your first withdrawal can be requested at any time. Thereafter, you can request a withdrawal of the gains in your account every 30 days. When a withdrawal is approved, we will also withdraw our share of the gains, and your max drawdown will remain unaffected. The drawdown does not reset when you request a withdrawal.",
+        "Your first withdrawal can be requested at any time, subject to an 80/20 profit split. Thereafter, you can request a withdrawal of the gains in your account every 30 days. When a withdrawal is approved, we will also withdraw our share of the gains. The drawdown does not reset when you request a withdrawal.
+Example: You have taken an account from $100,000 to $120,000. You then request a withdrawal of $16,000. In this scenario, you will receive $12,800 and we would retain $3,200. This would also take the balance of the account down to $104,000, and your Maximum Drawdown will lock at the starting balance of the account unless you have purchased the add-on to disable it. If you withdraw all of your profits you will violate the Maximum Drawdown rule and lose the account.",
     },
     {
       id: "item-9",
@@ -480,7 +481,15 @@ Example: A trader has a $100,000 account with a 5 percent Daily Loss Limit. At t
       id: "item-69",
       category: "trading-rules",
       question: "How do you calculate the Max Drawdown (STATIC)?",
-      answer: `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at a defined % of your starting balance. This % is static and does not trail. If you have gains in your funded account at the time of a hard breach, you will still receive your portion of those gains.`,
+      answer: `The Maximum Drawdown is initially set at 6% and is static (using CLOSED BALANCE) and will therefore remain at the same value for as long as the account will remain active.
+
+Example: If your starting balance is $100,000, you can drawdown to $94,000 before you would violate
+the Maximum Drawdown rule. Then for example let's say you take your account to $102,000 in CLOSED BALANCE, your Maximum Drawdown would remain locked at $94,000. So, regardless of how high your account goes, your drawdown will remain the same (note, you can still violate the daily drawdown).
+
+**All plans will have “Lock Upon Payout” enabled by default.  However, traders can elect to purchase an add-on for 25% of the purchase price to disable this feature.
+
+Example: using the “Lock Upon Payout” default
+A trader has a $100,000 account and grows the balance to $110,000. When the trader submits a payout request, the maximum drawdown becomes permanently locked at the original starting balance of $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.`,
     },
     {
       id: "item-83",
@@ -497,21 +506,6 @@ Example: A trader has a $100,000 account with a 5 percent Daily Loss Limit. At t
       answer: `Soft breach means that we will close all trades that have violated the rule. However, you can continue trading in your Assessment or Funded Account.
 
 Hard breach means that you violated either the Daily Loss Limit or Max Drawdown rule. Both rules constitute a hard breach. In the event you have a hard breach, you will fail the Assessment or have your Funded Account taken away.`,
-    },
-    {
-      id: "item-91",
-      category: "trading-rules",
-      question: "How do you calculate the Daily Loss Limit?",
-      answer:
-        "The Daily Loss Limit is the maximum your account can lose in any given day. Daily Loss Limit is calculated using the previous day balance which resets at 5 PM EST. Unlike other firms, we do NOT base our calculations on previous day equity since the balance only model allows you to scale profits without fear of losing your account. The Daily Stop compounds with the increase in your account.",
-    },
-    {
-      id: "item-92",
-      category: "trading-rules",
-      question: "How do you calculate the 6% Max Drawdown?",
-      answer:
-        `Maximum drawdown is the maximum your account can drawdown before you would hard breach your account. When you open the account, your Maximum Drawdown is set at 6% of your starting balance. This 6% is static and does not trail.\n\n` +
-        `The Maximum Trailing Drawdown is initially set at 6% and trails (using CLOSED BALANCE - NOT equity) your account until you have achieved a 6% return in your account. Once you have achieved a 6% return the Maximum Trailing Drawdown no longer trails and is permanently locked in at your starting balance. This allows for more trading flexibility.`,
     },
     {
       id: "item-93",
