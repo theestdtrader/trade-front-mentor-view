@@ -469,9 +469,12 @@ const FAQSection = () => {
       id: "item-67",
       category: "trading-rules",
       question: "How do you calculate the Daily Loss Limit?",
-      answer: `The Daily Loss Limit is the maximum your account can lose in any given day. Daily Loss Limit is calculated using the previous day balance which resets at 5 PM EST. Unlike other firms, we do NOT base our calculations on previous day equity since the balance only model allows you to scale profits without fear of losing your account. The Daily Stop compounds with the increase in your account.
+      answer: `The Daily Loss Limit is the maximum amount an account may lose in a single trading day. This limit resets each day at 5:00 PM EST. The Daily Loss Limit is calculated using the greater of the prior day’s end of day balance, which includes closed P&L only, OR the prior day’s end of day equity, which includes both balance and any open P&L. This approach ensures that unrealized gains at the end of the trading day are properly reflected when determining the allowable loss for the following session.
 
-Example: If your prior day's end of day balance (5pm EST) was $100,000, your account would violate the daily stop loss limit if your equity reached $95,000 during the day. If your floating equity is +$5,000 on a $100,000 account, your new-day (5pm EST) max loss is based on your balance from the previous day ($100,000). So, your daily loss limit would still be $95,000.`,
+If a trader finishes the day with open positions that are in profit, the account equity will be higher than the balance, and equity will be used to calculate the Daily Loss Limit. If a trader finishes the day with no open positions, balance and equity are the same, and the balance will be used. If a trader finishes the day with open positions that are in a loss, equity will be lower than balance, and the balance will be used.
+
+
+Example: A trader has a $100,000 account with a 5 percent Daily Loss Limit. At the 5:00 PM EST reset, the account balance is $100,000 and there are open positions in profit, resulting in account equity of $102,000. Because the equity is higher than the balance, the Daily Loss Limit is calculated using the $102,000 equity value. Five percent of $102,000 is $5,100, meaning the account will violate the Daily Loss Limit if intraday equity reaches $96,900 at any point during the next trading day. If the trader had no open positions, or open positions that were in a loss, the Daily Loss Limit would instead be based on the $100,000 balance, resulting in a breach level of $95,000.`,
     },
     {
       id: "item-69",
