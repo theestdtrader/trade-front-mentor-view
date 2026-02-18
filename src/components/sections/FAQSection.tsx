@@ -486,7 +486,7 @@ Example: A trader has a $100,000 account with a 5 percent Daily Loss Limit. At t
 Example: If your starting balance is $100,000, you can drawdown to $94,000 before you would violate
 the Maximum Drawdown rule. Then for example let's say you take your account to $102,000 in CLOSED BALANCE, your Maximum Drawdown would remain locked at $94,000. So, regardless of how high your account goes, your drawdown will remain the same (note, you can still violate the daily drawdown).
 
-**All plans will have “Lock Upon Payout” enabled by default.  However, traders can elect to purchase an add-on for 25% of the purchase price to disable this feature.
+*All plans will have “Lock Upon Payout” enabled by default.  However, traders can elect to purchase an add-on for 25% of the purchase price to disable this feature.
 
 Example: using the “Lock Upon Payout” default
 A trader has a $100,000 account and grows the balance to $110,000. When the trader submits a payout request, the maximum drawdown becomes permanently locked at the original starting balance of $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.`,
