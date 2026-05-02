@@ -15,8 +15,8 @@ const TypewriterText = ({
 
   useEffect(() => {
     let currentIndex = 0;
-    let intervalId: NodeJS.Timeout;
-    let timeoutId: NodeJS.Timeout;
+    let intervalId: ReturnType<typeof setInterval>;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     const typeText = () => {
       intervalId = setInterval(() => {
