@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-type FAQCategory = "all" | "funded-account" | "general" | "trading-rules";
+type FAQCategory = "all" | "funded-account" | "general" | "trading-rules" | "equities";
 
 interface FAQItem {
   id: string;
@@ -523,6 +523,57 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       answer:
         "We believe in sound risk management using stop losses. To that end, we require a stop loss on every trade. If you fail to place a stop loss at the time of placing the trade/order, we will close the trade. This is only a soft breach rule, so you can continue trading in your account.",
     },
+
+     // Equities
+     {
+      id: "item-100",
+      category: "equities",
+      question: "What is Single Session Equities trading?",
+      answer:
+        "Single Session Equities trading is designed for traders who intend to open and close all positions within the same Trading Session. Positions may not be carried beyond 15:55 ET.",
+    },
+     {
+      id: "item-101",
+      category: "equities",
+      question: "Do I have to close all positions before the session ends?",
+      answer:
+        "Yes. It is the responsibility of the trader to ensure that all positions are closed before 15:55 ET",
+    },
+     {
+      id: "item-102",
+      category: "equities",
+      question: "What happens if I still have an open position at 15:55 ET?",
+      answer:
+        "The platform will attempt to automatically close positions at 15:55 ET. However, it is the responsibility of the trader to ensure all positions are closed on or before this time. If a position remains open past that cutoff, it will be treated as a violation of the Prohibited Practices and result in a hard breach.",
+    },
+         {
+      id: "item-103",
+      category: "equities",
+      question: "What products can I trade ?",
+      answer:
+        "You may trade any S&P 100 equity products made available on the platform for this program.",
+    },
+    {
+      id: "item-105",
+      category: "equities",
+      question: "What platform is available for Equities trading?",
+      answer:
+        "Equities trading is available via the GooeyPro trading platform only.",
+    },
+     {
+      id: "item-106",
+      category: "equities",
+      question: "What leverage is available ?",
+      answer:
+        "Equities trading is offered with 2:1 leverage.",
+    },
+    {
+      id: "item-107",
+      category: "equities",
+      question: "How is a trading session defined (Day Trading program)?",
+      answer:
+        "For Equities trading, the permitted Trading Session is 09:30 ET through 15:55 ET only. Although U.S. equities may trade during Pre-Market, Regular Market, and Extended Hours sessions, trading outside of this permitted window is not allowed.  All Single Session Equities positions must be fully closed by 15:55 ET.",
+    },
   ];
 
   const categories = [
@@ -530,6 +581,7 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
     { id: "funded-account", label: "General Questions" },
     { id: "general", label: "Forex" },
     { id: "trading-rules", label: "Futures" },
+    {id: "equities", label: "Equities"},
   ];
 
   const filteredFAQs =
