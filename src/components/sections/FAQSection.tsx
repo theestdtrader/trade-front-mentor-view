@@ -574,6 +574,126 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       answer:
         "For Equities trading, the permitted Trading Session is 09:30 ET through 15:55 ET only, Although U.S. equities may trade during Pre-Market, Regular Market, and Extended Hours sessions, trading outside of this permitted window is not allowed.  All Single Session Equities positions must be fully closed by 15:55 ET.",
     },
+    {
+      id: "item-108",
+      category: "equities",
+      question: "What commissions apply?",
+      answer:
+        "Commissions are $0.02 per share per side, subject to a minimum commission of $0.50 per transaction.",
+    },
+      {
+      id: "item-109",
+      category: "equities",
+      question: "Where do liquidity, pricing, and execution come from?",
+      answer:
+        "Liquidity, pricing, and execution are sourced and provided directly from Nasdaq.",
+    }, 
+    {
+      id: "item-110",
+      category: "equities",
+      question: "What is the Profit Target (Evaluation phase only)?",
+      answer:
+        "You must achieve 10% returns in the Evaluation phase to progress to the Funded phase (assuming minimum profitable trading days is also met).",
+      
+    }, 
+    {
+      id: "item-111",
+      category: "equities",
+      question: "What is the Max Drawdown (Evaluation and Funded phases)?",
+      answer:
+        "The Max Drawdown is a 3.0% Maximum Trailing Drawdown based on closed balance only, not equity. It begins 3.0% below your starting balance and trails upward as your closed balance reaches new highs. Once the account reaches a 3.0% return, the Max Drawdown stops trailing and is permanently locked at the starting balance. A violation of the Max Drawdown is considered a hard breach.\n\n\n\" +
+        "Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. If your closed balance increases to $102,000, that becomes your new high-water mark and your Max Drawdown threshold moves up to $99,000. If your closed balance then increases to $103,000, the Max Drawdown threshold locks at your starting balance of $100,000 and no longer trails upward."
+      ,
+    },
+     {
+      id: "item-110",
+      category: "equities",
+      question: "What is the Daily Loss Limit (Evaluation and Funded phases)?",
+      answer:
+        "The Daily Loss Limit is the maximum amount an account may lose on a single trading day. A violation of the Daily Loss Limit is considered a hard breach, and the account will be terminated. The Daily Loss Limit follows an intraday trailing drawdown. This level trails the greater of the daily balance high water mark and the daily equity high water mark.\n\n\n\" + 
+        "Example: On a $100,000 account with a 2.5% Daily Loss Limit, the starting breach level for the day is $97,500. If during the day equity reaches $102,000 and balance reaches $101,000, the higher value of $102,000 becomes the daily high-water mark. The new breach threshold becomes $99,450, which is 2.5% below $102,000. If the account equity falls below that amount during the day, the account breaches. If the day ends with both balance and equity at $101,000, then the next day begins with a new breach threshold of $98,475, which is 2.5% below $101,000.",
+       
+    }, 
+    {
+      id: "item-111",
+      category: "equities",
+      question: "What is the Daily Loss Limit (Evaluation and Funded phases)?",
+      answer:
+        "The Daily Profit Cap applies during the Evaluation phase. A violation of this limit is considered a daily pause. If exceeded, any open trades will be closed, all open orders will be cancelled, and the account will be disabled for the remainder of the current session. The account will be re-enabled on the next trading day. This is calculated as a fixed value from the day’s starting equity.\n\n\n\" + 
+        "Example: On a $100,000 account with a 2.5% Daily Profit Cap, assume the day begins with equity of $102,000. The profit cap for that day is $104,500. If account equity exceeds that amount, positions are closed and the account is paused for the rest of the day. If the account settles at $104,600 after liquidation, the account may trade again the next trading day after 17:00 ET, and the new daily cap is then based on the new day’s starting equity.",
+         
+    },
+     {
+      id: "item-112",
+      category: "equities",
+      question: "What is the Consistency Rule (Funded phase only)?",
+      answer:
+        "Funded phases are subject to a 25% consistency requirement. This means that no more than 25% of total profits may be generated on a single trading day to qualify for a payout. Optional add-ons are available at checkout to allow for a higher consistency limit.",
+       
+    },
+      {
+      id: "item-113",
+      category: "equities",
+      question: "What are the minimum profitable trading day requirements (Evaluation and Funded phases)?",
+      answer:
+        "To proceed to the next phase or become eligible for a payout, you must generate at least 0.5% profit per day over three separate trading days in both the Evaluation and Funded phases, in addition to meeting all other applicable requirements.",
+               
+    },
+     {
+      id: "item-114",
+      category: "equities",
+      question: "What is the minimum hold time for positions?",
+      answer:
+        "All trades must be held for at least 1 minute. Any trade that is held for less than this time frame will be deemed a violation and any profits generated from this trade will be forfeited.",
+       
+    },
+     {
+      id: "item-115",
+      category: "equities",
+      question: "What is the minimum hold time for positions?",
+      answer:
+        "Funded accounts are eligible for an 80/20 profit split on gains. This means the trader receives 80% of eligible profits, and the remaining 20% is retained by the firm.",
+       
+    },
+     {
+      id: "item-116",
+      category: "equities",
+      question: "What is the Profit Split (Funded phase only)?",
+      answer:
+        "Funded accounts are eligible for an 80/20 profit split on gains. This means the trader receives 80% of eligible profits, and the remaining 20% is retained by the firm.",
+       
+    },
+    {
+      id: "item-117",
+      category: "equities",
+      question: "What is the Payout Protector add-on?",
+      answer:
+        "Payout Protector is an optional point-of-sale add-on available for an additional 25% cost. It protects a trader’s eligible profit share in a Funded account in the event of a hard breach",
+       
+    },
+    {
+      id: "item-118",
+      category: "equities",
+      question: "How often can I request a payout?",
+      answer:
+        "The first payout may be requested after 14 days in the Funded phase. After that, payouts may be requested every 14 days, provided all applicable payout conditions and program rules have been satisfied.",
+       
+    },
+     {
+      id: "item-119",
+      category: "equities",
+      question: "What is Lock Upon Payout?",
+      answer:
+        "Lock Upon Payout is enabled by default on all plans. This means that once a payout is processed, your Max Drawdown is permanently locked at the original starting balance. Traders may elect to purchase an add-on at checkout for an additional 25% of the plan price to disable this feature\n\n\n\" + 
+        "Example: If a trader has a $100,000 account and grows the balance to $110,000, once a payout is processed the Max Drawdown becomes permanently locked at $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.",
+    },
+      {
+      id: "item-120",
+      category: "equities",
+      question: "Is there a minimum withdrawal amount?",
+      answer: "Yes. The minimum withdrawal amount is $100 when requesting a payout through the platform."
+       ,
+      }
   ];
 
   const categories = [
