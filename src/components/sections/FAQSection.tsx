@@ -572,7 +572,7 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       category: "equities",
       question: "How is a trading session defined (Day Trading program)?",
       answer:
-        "For Equities trading, the permitted Trading Session is 09:30 ET through 15:55 ET only. Although U.S. equities may trade during Pre-Market, Regular Market, and Extended Hours sessions, trading outside of this permitted window is not allowed.  All Single Session Equities positions must be fully closed by 15:55 ET.",
+        "For Equities trading, the permitted Trading Session is 09:30 ET through 15:55 ET only, Although U.S. equities may trade during Pre-Market, Regular Market, and Extended Hours sessions, trading outside of this permitted window is not allowed.  All Single Session Equities positions must be fully closed by 15:55 ET.",
     },
   ];
 
