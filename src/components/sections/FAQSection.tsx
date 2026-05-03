@@ -688,6 +688,7 @@ Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. 
       question: "What is Lock Upon Payout?",
       answer:
         `Lock Upon Payout is enabled by default on all plans. This means that once a payout is processed, your Max Drawdown is permanently locked at the original starting balance. Traders may elect to purchase an add-on at checkout for an additional 25% of the plan price to disable this feature
+        
         Example: If a trader has a $100,000 account and grows the balance to $110,000, once a payout is processed the Max Drawdown becomes permanently locked at $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.`,
     },
       {
