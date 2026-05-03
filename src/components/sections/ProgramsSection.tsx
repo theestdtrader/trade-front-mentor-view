@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
+import EquitiesTable from "@/components/EquitiesTable";
 import PlanSignupModal from "@/components/PlanSignupModal";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
