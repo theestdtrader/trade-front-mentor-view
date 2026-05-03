@@ -59,7 +59,7 @@ const ProgramsSection = () => {
       <div className="flex justify-center mb-4 md:mb-6">
         <Tabs 
           value={activeTab} 
-          onValueChange={(value) => setActiveTab(value as "forex" | "futures")} 
+          onValueChange={(value) => setActiveTab(value as "forex" | "futures" | "equities")} 
           className="w-full transition-all duration-300"
         >
           <div className="flex justify-center">
