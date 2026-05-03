@@ -601,8 +601,9 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       category: "equities",
       question: "What is the Max Drawdown (Evaluation and Funded phases)?",
       answer:
-        "The Max Drawdown is a 3.0% Maximum Trailing Drawdown based on closed balance only, not equity. It begins 3.0% below your starting balance and trails upward as your closed balance reaches new highs. Once the account reaches a 3.0% return, the Max Drawdown stops trailing and is permanently locked at the starting balance. A violation of the Max Drawdown is considered a hard breach.\n\n\n\" +
-        "Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. If your closed balance increases to $102,000, that becomes your new high-water mark and your Max Drawdown threshold moves up to $99,000. If your closed balance then increases to $103,000, the Max Drawdown threshold locks at your starting balance of $100,000 and no longer trails upward."
+      `The Max Drawdown is a 3.0% Maximum Trailing Drawdown based on closed balance only, not equity. It begins 3.0% below your starting balance and trails upward as your closed balance reaches new highs. Once the account reaches a 3.0% return, the Max Drawdown stops trailing and is permanently locked at the starting balance. A violation of the Max Drawdown is considered a hard breach.
+
+Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. If your closed balance increases to $102,000, that becomes your new high-water mark and your Max Drawdown threshold moves up to $99,000. If your closed balance then increases to $103,000, the Max Drawdown threshold locks at your starting balance of $100,000 and no longer trails upward.`
       ,
     },
      {
