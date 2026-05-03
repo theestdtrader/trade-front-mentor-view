@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
+import EquitiesTable from "@/components/EquitiesTable";
 import PlanSignupModal from "@/components/PlanSignupModal";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProgramsSection = () => {
-  const [activeTab, setActiveTab] = useState<"forex" | "futures">("forex");
+  const [activeTab, setActiveTab] = useState<"forex" | "futures" | "equities">("forex");
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState({
     size: "",
@@ -58,7 +59,7 @@ const ProgramsSection = () => {
       <div className="flex justify-center mb-4 md:mb-6">
         <Tabs 
           value={activeTab} 
-          onValueChange={(value) => setActiveTab(value as "forex" | "futures")} 
+          onValueChange={(value) => setActiveTab(value as "forex" | "futures" | "equities")} 
           className="w-full transition-all duration-300"
         >
           <div className="flex justify-center">
@@ -74,6 +75,12 @@ const ProgramsSection = () => {
                 className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
               >
                 Futures
+              </TabsTrigger>
+              <TabsTrigger 
+                value="equities"
+                className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
+              >
+                Equities
               </TabsTrigger>
             </TabsList>
           </div>
@@ -91,15 +98,17 @@ const ProgramsSection = () => {
       >
         {activeTab === "forex" ? (
           <ForexTable onGetPlan={handleGetPlan} />
-        ) : (
+        ) : activeTab === "futures" ? (
           <FuturesTable onGetPlan={handleGetPlan} />
+        ) : (
+          <EquitiesTable onGetPlan={handleGetPlan} />
         )}
       </div>
 
       <PlanSignupModal 
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        planType={activeTab}
+        planType={activeTab === "equities" ? "forex" : activeTab}
         planSize={selectedPlan.size}
         planFee={selectedPlan.fee}
       />
