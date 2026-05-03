@@ -76,6 +76,12 @@ const ProgramsSection = () => {
               >
                 Futures
               </TabsTrigger>
+              <TabsTrigger 
+                value="equities"
+                className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
+              >
+                Equities
+              </TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
@@ -92,15 +98,17 @@ const ProgramsSection = () => {
       >
         {activeTab === "forex" ? (
           <ForexTable onGetPlan={handleGetPlan} />
-        ) : (
+        ) : activeTab === "futures" ? (
           <FuturesTable onGetPlan={handleGetPlan} />
+        ) : (
+          <EquitiesTable onGetPlan={handleGetPlan} />
         )}
       </div>
 
       <PlanSignupModal 
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        planType={activeTab}
+        planType={activeTab === "equities" ? "forex" : activeTab}
         planSize={selectedPlan.size}
         planFee={selectedPlan.fee}
       />
