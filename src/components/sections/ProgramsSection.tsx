@@ -8,7 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProgramsSection = () => {
-  const [activeTab, setActiveTab] = useState<"forex" | "futures">("forex");
+  const [activeTab, setActiveTab] = useState<"forex" | "futures" | "equities">("forex");
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState({
     size: "",
