@@ -589,7 +589,7 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
         "Liquidity, pricing, and execution are sourced and provided directly from Nasdaq.",
     }, 
     {
-      id: "item-110",
+      id: "item-121",
       category: "equities",
       question: "What is the Profit Target (Evaluation phase only)?",
       answer:
@@ -597,7 +597,7 @@ Hard breach means that you violated either the Daily Loss Limit or Max Drawdown 
       
     }, 
     {
-      id: "item-111",
+      id: "item-122",
       category: "equities",
       question: "What is the Max Drawdown (Evaluation and Funded phases)?",
       answer:
@@ -622,6 +622,7 @@ Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. 
       question: "What is the Daily Loss Limit (Evaluation and Funded phases)?",
       answer:
         `The Daily Profit Cap applies during the Evaluation phase. A violation of this limit is considered a daily pause. If exceeded, any open trades will be closed, all open orders will be cancelled, and the account will be disabled for the remainder of the current session. The account will be re-enabled on the next trading day. This is calculated as a fixed value from the day’s starting equity.
+        
         Example: On a $100,000 account with a 2.5% Daily Profit Cap, assume the day begins with equity of $102,000. The profit cap for that day is $104,500. If account equity exceeds that amount, positions are closed and the account is paused for the rest of the day. If the account settles at $104,600 after liquidation, the account may trade again the next trading day after 17:00 ET, and the new daily cap is then based on the new day’s starting equity.`,
          
     },
