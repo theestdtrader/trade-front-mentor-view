@@ -611,8 +611,9 @@ Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. 
       category: "equities",
       question: "What is the Daily Loss Limit (Evaluation and Funded phases)?",
       answer:
-        "The Daily Loss Limit is the maximum amount an account may lose on a single trading day. A violation of the Daily Loss Limit is considered a hard breach, and the account will be terminated. The Daily Loss Limit follows an intraday trailing drawdown. This level trails the greater of the daily balance high water mark and the daily equity high water mark.\n\n\n\" + 
-        "Example: On a $100,000 account with a 2.5% Daily Loss Limit, the starting breach level for the day is $97,500. If during the day equity reaches $102,000 and balance reaches $101,000, the higher value of $102,000 becomes the daily high-water mark. The new breach threshold becomes $99,450, which is 2.5% below $102,000. If the account equity falls below that amount during the day, the account breaches. If the day ends with both balance and equity at $101,000, then the next day begins with a new breach threshold of $98,475, which is 2.5% below $101,000.",
+      `The Daily Loss Limit is the maximum amount an account may lose on a single trading day. A violation of the Daily Loss Limit is considered a hard breach, and the account will be terminated. The Daily Loss Limit follows an intraday trailing drawdown. This level trails the greater of the daily balance high water mark and the daily equity high water mark. 
+        
+        Example: On a $100,000 account with a 2.5% Daily Loss Limit, the starting breach level for the day is $97,500. If during the day equity reaches $102,000 and balance reaches $101,000, the higher value of $102,000 becomes the daily high-water mark. The new breach threshold becomes $99,450, which is 2.5% below $102,000. If the account equity falls below that amount during the day, the account breaches. If the day ends with both balance and equity at $101,000, then the next day begins with a new breach threshold of $98,475, which is 2.5% below $101,000.`,
        
     }, 
     {
@@ -620,8 +621,8 @@ Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. 
       category: "equities",
       question: "What is the Daily Loss Limit (Evaluation and Funded phases)?",
       answer:
-        "The Daily Profit Cap applies during the Evaluation phase. A violation of this limit is considered a daily pause. If exceeded, any open trades will be closed, all open orders will be cancelled, and the account will be disabled for the remainder of the current session. The account will be re-enabled on the next trading day. This is calculated as a fixed value from the day’s starting equity.\n\n\n\" + 
-        "Example: On a $100,000 account with a 2.5% Daily Profit Cap, assume the day begins with equity of $102,000. The profit cap for that day is $104,500. If account equity exceeds that amount, positions are closed and the account is paused for the rest of the day. If the account settles at $104,600 after liquidation, the account may trade again the next trading day after 17:00 ET, and the new daily cap is then based on the new day’s starting equity.",
+        `The Daily Profit Cap applies during the Evaluation phase. A violation of this limit is considered a daily pause. If exceeded, any open trades will be closed, all open orders will be cancelled, and the account will be disabled for the remainder of the current session. The account will be re-enabled on the next trading day. This is calculated as a fixed value from the day’s starting equity.
+        Example: On a $100,000 account with a 2.5% Daily Profit Cap, assume the day begins with equity of $102,000. The profit cap for that day is $104,500. If account equity exceeds that amount, positions are closed and the account is paused for the rest of the day. If the account settles at $104,600 after liquidation, the account may trade again the next trading day after 17:00 ET, and the new daily cap is then based on the new day’s starting equity.`,
          
     },
      {
@@ -685,8 +686,8 @@ Example: On a $100,000 account, the starting Max Drawdown threshold is $97,000. 
       category: "equities",
       question: "What is Lock Upon Payout?",
       answer:
-        "Lock Upon Payout is enabled by default on all plans. This means that once a payout is processed, your Max Drawdown is permanently locked at the original starting balance. Traders may elect to purchase an add-on at checkout for an additional 25% of the plan price to disable this feature\n\n\n\" + 
-        "Example: If a trader has a $100,000 account and grows the balance to $110,000, once a payout is processed the Max Drawdown becomes permanently locked at $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.",
+        `Lock Upon Payout is enabled by default on all plans. This means that once a payout is processed, your Max Drawdown is permanently locked at the original starting balance. Traders may elect to purchase an add-on at checkout for an additional 25% of the plan price to disable this feature
+        Example: If a trader has a $100,000 account and grows the balance to $110,000, once a payout is processed the Max Drawdown becomes permanently locked at $100,000. From that point forward, the account balance may not fall below $100,000. If it does, the account will be considered breached.`,
     },
       {
       id: "item-120",
