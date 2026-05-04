@@ -81,7 +81,7 @@ const EquitiesTable: React.FC<EquitiesTableProps> = ({ onGetPlan }) => {
 
                   <div className="p-4 space-y-3 flex-1">
                     {rows.map((row, ri) => {
-                      const value = row.values[index] ?? row.values[0];
+                      const value = row.values[index];
                       return (
                         <div
                           key={ri}
