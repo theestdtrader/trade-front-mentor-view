@@ -35,6 +35,23 @@ const ProgramsSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const tab = (e as CustomEvent).detail as "forex" | "futures" | "equities";
+      if (tab) setActiveTab(tab);
+    };
+    window.addEventListener("select-program-tab", handler);
+    const pending = sessionStorage.getItem("pendingProgramTab");
+    if (pending === "forex" || pending === "futures" || pending === "equities") {
+      setActiveTab(pending);
+      sessionStorage.removeItem("pendingProgramTab");
+      setTimeout(() => {
+        document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    return () => window.removeEventListener("select-program-tab", handler);
+  }, []);
+
   const handleGetPlan = (planSize: string, planFee: string) => {
     setSelectedPlan({
       size: planSize,
