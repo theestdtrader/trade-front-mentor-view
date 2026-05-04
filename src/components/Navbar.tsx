@@ -15,6 +15,18 @@ import Competition from "@/pages/Competition";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+const selectProgramTab = (tab: "forex" | "futures" | "equities") => {
+  if (window.location.pathname !== "/") {
+    sessionStorage.setItem("pendingProgramTab", tab);
+    window.location.href = `/#programs`;
+    return;
+  }
+  window.dispatchEvent(new CustomEvent("select-program-tab", { detail: tab }));
+  setTimeout(() => {
+    document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" });
+  }, 50);
+};
+
 const Navbar = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
