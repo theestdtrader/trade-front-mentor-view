@@ -61,16 +61,13 @@ const Navbar = () => {
                 align="start"
                 className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40"
               >
-                <DropdownMenuItem>
-                  <a href="#programs" className="w-full block">
-                    Forex
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#programs" className="w-full block">
-                    Future
-                  </a>
-                </DropdownMenuItem>
+                {(["forex", "futures", "equities"] as const).map((tab) => (
+                  <DropdownMenuItem key={tab} onSelect={() => selectProgramTab(tab)}>
+                    <span className="w-full block capitalize cursor-pointer">
+                      {tab}
+                    </span>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
