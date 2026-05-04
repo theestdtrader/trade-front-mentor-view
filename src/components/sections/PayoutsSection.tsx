@@ -109,16 +109,15 @@ const PayoutsSection = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  No minimum
+                  No minimum ($100 minimum on Equities)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  Maximum: 80% of available balance per withdrawal - for
-                  FX/CFDs, excluding Futures
+                 Maximum: 80% of available balance per withdrawal - for FX/CFDs & Equities, excluding Futures
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-medium text-[#892BFC]">•</span>
-                  30-day minimum interval between withdrawals
+                30-day minimum interval between withdrawals (14 Days for Equities)
                 </li>
               </ul>
             </CardContent>
