@@ -129,8 +129,9 @@ const Navbar = () => {
             <ul className="flex flex-col items-center gap-6 bg-black font-medium text-white py-8">
               {[
                 { title: "Home", path: "/" },
-                { title: "Forex", path: "#programs" },
-                { title: "Future", path: "#programs" },
+                { title: "Forex", path: "#programs", tab: "forex" as const },
+                { title: "Futures", path: "#programs", tab: "futures" as const },
+                { title: "Equities", path: "#programs", tab: "equities" as const },
                 {
                   title: "Competition",
                   path: "/competition",
@@ -140,7 +141,7 @@ const Navbar = () => {
                   path:"https://established-trader-academy.vercel.app"
                 },
                 { title: "FAQs", path: "#faqs" },
-              ].map((item, i) => (
+              ].map((item: any, i) => (
                 <li
                   key={item.title}
                   className="hover:text-primary transition text-lg transform hover:scale-105"
