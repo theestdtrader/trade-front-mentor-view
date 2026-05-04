@@ -156,6 +156,22 @@ const Navbar = () => {
                   {item.path.startsWith("#") ? (
                     <a
                       href={item.path}
+                      onClick={(e) => {
+                        if (item.tab) {
+                          e.preventDefault();
+                          selectProgramTab(item.tab);
+                        }
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="nav-link-hover"
+                    >
+                      {item.title}
+                    </a>
+                  ) : item.path.startsWith("http") ? (
+                    <a
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="nav-link-hover"
                     >
