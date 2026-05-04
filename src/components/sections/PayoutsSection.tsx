@@ -34,7 +34,7 @@ const PayoutsSection = () => {
           <p className="text-white text-center mb-4 max-w-2xl mx-auto">
             Traders can request a withdrawal of the gains in their funded
             account at anytime through their trader dashboard, but no more
-            frequently than once every (30) days.
+            frequently than once every (30) days/(14 Days for Equities)*. 
           </p>
         </div>
 
