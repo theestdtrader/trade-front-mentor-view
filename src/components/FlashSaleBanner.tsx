@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Zap, Clock } from "lucide-react";
+import { X, Zap, Clock, TrendingUp, BarChart3, CandlestickChart, ArrowRight } from "lucide-react";
 
 const SALE_END = new Date("2026-07-31T23:59:59");
 
@@ -31,6 +31,23 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
     <span className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1">
       {label}
     </span>
+  </div>
+);
+
+const TradingIllustration = () => (
+  <div className="relative hidden lg:flex items-center justify-center w-28 h-28 flex-shrink-0">
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#892BFC]/30 to-[#6B21A8]/20 rotate-6" />
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#892BFC]/20 to-[#6B21A8]/30 -rotate-3" />
+    <div className="relative z-10 flex flex-col items-center gap-2">
+      <div className="flex items-end gap-1 h-12">
+        <div className="w-2 bg-[#892BFC] rounded-t-sm h-5" />
+        <div className="w-2 bg-[#892BFC] rounded-t-sm h-8" />
+        <div className="w-2 bg-[#892BFC] rounded-t-sm h-6" />
+        <div className="w-2 bg-[#892BFC] rounded-t-sm h-10" />
+        <div className="w-2 bg-[#892BFC] rounded-t-sm h-12" />
+      </div>
+      <TrendingUp className="w-8 h-8 text-[#892BFC]" />
+    </div>
   </div>
 );
 
@@ -68,15 +85,24 @@ const FlashSaleBanner = () => {
         <div className="absolute bottom-2 left-1/2 w-2 h-2 bg-[#892BFC] rounded-full opacity-50 animate-bounce" style={{ animationDelay: "1s" }} />
       </div>
 
-      <div className="container mx-auto px-4 py-6 sm:py-8 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-5 flex-1 w-full">
-            <div className="hidden sm:flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#892BFC] to-[#6B21A8] shadow-lg shadow-[#892BFC]/30 flex-shrink-0 animate-pulse">
-              <Zap className="w-8 h-8 text-white" fill="currentColor" />
+      {/* Decorative trading icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+        <BarChart3 className="absolute top-4 left-[10%] w-16 h-16 text-[#892BFC]" />
+        <CandlestickChart className="absolute bottom-4 right-[12%] w-20 h-20 text-[#892BFC]" />
+        <TrendingUp className="absolute top-1/2 right-[30%] w-12 h-12 text-[#892BFC]" />
+      </div>
+
+      <div className="container mx-auto px-4 py-10 sm:py-12 md:py-14 lg:py-16 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-6 flex-1 w-full">
+            <div className="hidden sm:flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#892BFC] to-[#6B21A8] shadow-lg shadow-[#892BFC]/30 flex-shrink-0 animate-pulse">
+              <Zap className="w-10 h-10 text-white" fill="currentColor" />
             </div>
 
+            <TradingIllustration />
+
             <div className="flex-1 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2 flex-wrap">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-3 flex-wrap">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#892BFC] text-white text-sm font-bold uppercase tracking-wider">
                   <Zap className="w-4 h-4" fill="currentColor" />
                   Flash Sale
@@ -86,18 +112,18 @@ const FlashSaleBanner = () => {
                   July 29-31, 2026
                 </span>
               </div>
-              <p className="text-white font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight">
                 <span className="text-[#892BFC]">1 Step</span> for{" "}
                 <span className="text-[#892BFC]">$1</span>, gets you a{" "}
                 <span className="text-[#892BFC]">$1,000 Account</span>
               </p>
-              <p className="text-gray-400 text-sm sm:text-base mt-1">
+              <p className="text-gray-400 text-sm sm:text-base mt-2">
                 Limited time offer — grab your funded account before it is gone!
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-6 flex-shrink-0">
             <div className="flex items-center gap-2 sm:gap-3">
               <CountdownUnit value={timeLeft.days} label="Days" />
               <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#892BFC] -mt-4">:</span>
@@ -107,6 +133,19 @@ const FlashSaleBanner = () => {
               <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#892BFC] -mt-4">:</span>
               <CountdownUnit value={timeLeft.seconds} label="Sec" />
             </div>
+
+            <button
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#892BFC] hover:bg-[#9F4BFF] text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-[#892BFC]/30 hover:shadow-[#892BFC]/50 hover:scale-105"
+              onClick={() => {
+                const element = document.getElementById("programs");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              Claim My Account
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
 
             <button
               onClick={() => setIsVisible(false)}
