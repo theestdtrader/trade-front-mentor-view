@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Zap, Clock, TrendingUp, BarChart3, CandlestickChart, ArrowRight } from "lucide-react";
+import { X, Zap, Clock, Star, ArrowRight, TrendingUp, CandlestickChart } from "lucide-react";
 
 const SALE_END = new Date("2026-07-31T23:59:59");
 
@@ -24,29 +24,37 @@ const calculateTimeLeft = (): TimeLeft => {
 };
 
 const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center min-w-[3rem] sm:min-w-[4rem]">
-    <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white tabular-nums leading-none">
+  <div className="flex flex-col items-center min-w-[2.5rem] sm:min-w-[3.5rem]">
+    <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F7EF8A] tabular-nums leading-none drop-shadow-[0_0_10px_rgba(247,239,138,0.25)]">
       {value.toString().padStart(2, "0")}
     </span>
-    <span className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1">
+    <span className="text-[10px] sm:text-xs text-[#F7EF8A]/70 uppercase tracking-wider mt-1">
       {label}
     </span>
   </div>
 );
 
-const TradingIllustration = () => (
-  <div className="relative hidden lg:flex items-center justify-center w-28 h-28 flex-shrink-0">
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#892BFC]/30 to-[#6B21A8]/20 rotate-6" />
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#892BFC]/20 to-[#6B21A8]/30 -rotate-3" />
-    <div className="relative z-10 flex flex-col items-center gap-2">
-      <div className="flex items-end gap-1 h-12">
-        <div className="w-2 bg-[#892BFC] rounded-t-sm h-5" />
-        <div className="w-2 bg-[#892BFC] rounded-t-sm h-8" />
-        <div className="w-2 bg-[#892BFC] rounded-t-sm h-6" />
-        <div className="w-2 bg-[#892BFC] rounded-t-sm h-10" />
-        <div className="w-2 bg-[#892BFC] rounded-t-sm h-12" />
-      </div>
-      <TrendingUp className="w-8 h-8 text-[#892BFC]" />
+const BackgroundPattern = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+    <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dotGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#D4AF37" opacity="0.4" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotGrid)" />
+    </svg>
+    <div className="absolute left-0 bottom-0 w-1/2 h-full opacity-30">
+      <svg viewBox="0 0 400 200" className="w-full h-full" preserveAspectRatio="none">
+        <path d="M0 180 L40 140 L80 160 L120 100 L160 120 L200 60 L240 80 L280 40 L320 70 L360 30 L400 50" 
+          stroke="#D4AF37" strokeWidth="2" fill="none" opacity="0.5" />
+      </svg>
+    </div>
+    <div className="absolute right-0 top-0 w-1/2 h-full opacity-30">
+      <svg viewBox="0 0 400 200" className="w-full h-full" preserveAspectRatio="none">
+        <path d="M0 120 L40 100 L80 140 L120 80 L160 110 L200 50 L240 90 L280 60 L320 100 L360 40 L400 70" 
+          stroke="#D4AF37" strokeWidth="2" fill="none" opacity="0.5" />
+      </svg>
     </div>
   </div>
 );
@@ -71,98 +79,93 @@ const FlashSaleBanner = () => {
 
   return (
     <div
-      className={`w-full bg-[#1A1F2C] border-y-2 border-[#892BFC]/40 relative overflow-hidden transition-all duration-700 ease-out ${
+      className={`w-full relative overflow-hidden transition-all duration-700 ease-out bg-gradient-to-br from-[#0a0e17] via-[#0d1320] to-[#0a0e17] ${
         isMounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
       }`}
     >
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#892BFC]/25 via-[#892BFC]/15 to-[#892BFC]/25 animate-pulse" />
-
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-2 left-1/4 w-3 h-3 bg-[#892BFC] rounded-full opacity-40 animate-bounce" style={{ animationDelay: "0s" }} />
-        <div className="absolute top-1/2 right-1/4 w-2.5 h-2.5 bg-[#892BFC] rounded-full opacity-30 animate-bounce" style={{ animationDelay: "0.5s" }} />
-        <div className="absolute bottom-2 left-1/2 w-2 h-2 bg-[#892BFC] rounded-full opacity-50 animate-bounce" style={{ animationDelay: "1s" }} />
-      </div>
-
-      {/* Decorative trading icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-        <BarChart3 className="absolute top-4 left-[10%] w-16 h-16 text-[#892BFC]" />
-        <CandlestickChart className="absolute bottom-4 right-[12%] w-20 h-20 text-[#892BFC]" />
-        <TrendingUp className="absolute top-1/2 right-[30%] w-12 h-12 text-[#892BFC]" />
-      </div>
+      {/* Top and bottom gold accent borders */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+      
+      <BackgroundPattern />
+      
+      {/* Animated gold glow */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/5 via-[#D4AF37]/10 to-[#D4AF37]/5 animate-pulse" />
 
       <div className="container mx-auto px-4 py-10 sm:py-12 md:py-14 lg:py-16 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-6 flex-1 w-full">
-            <div className="hidden sm:flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#892BFC] to-[#6B21A8] shadow-lg shadow-[#892BFC]/30 flex-shrink-0 animate-pulse">
-              <Zap className="w-10 h-10 text-white" fill="currentColor" />
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          {/* Trust badge */}
+          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+            <div className="hidden sm:block h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#F7EF8A] fill-[#F7EF8A]" />
+              ))}
             </div>
-
-            <TradingIllustration />
-
-            <div className="flex-1 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start gap-2 mb-3 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#892BFC] text-white text-sm font-bold uppercase tracking-wider">
-                  <Zap className="w-4 h-4" fill="currentColor" />
-                  Flash Sale
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-[#892BFC] text-sm font-semibold">
-                  <Clock className="w-4 h-4" />
-                  July 29-31, 2026
-                </span>
-              </div>
-              <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight">
-                <span className="text-[#892BFC]">1 Step</span> for{" "}
-                <span className="text-[#892BFC]">$1</span>, gets you a{" "}
-                <span className="text-[#892BFC]">$1,000 Account</span>
-              </p>
-              <p className="text-gray-400 text-sm sm:text-base mt-2">
-                Limited time offer — grab your funded account before it is gone!
-              </p>
-            </div>
+            <span className="text-[#F7EF8A]/90 text-xs sm:text-sm font-medium tracking-wide uppercase">
+              Rated 4.9/5 | Used by over 150,000 traders
+            </span>
+            <div className="hidden sm:block h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-[#D4AF37]" />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-6 flex-shrink-0">
-            <div className="flex items-center gap-2 sm:gap-3">
+          {/* Main headline */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight leading-[1.1] mb-6 sm:mb-8">
+            <span className="bg-gradient-to-r from-[#F7EF8A] via-[#D4AF37] to-[#F7EF8A] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.2)]">
+              Get Your $1000 Instant
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-[#F7EF8A] via-[#D4AF37] to-[#F7EF8A] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.2)]">
+              Funded Account For $1
+            </span>
+          </h2>
+
+          {/* Countdown Timer */}
+          <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-4 py-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30">
+              <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#F7EF8A]" />
+              <span className="text-[#F7EF8A] text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                Flash Sale Ends In
+              </span>
+            </div>
+            <div className="flex items-center gap-1 sm:gap-2">
               <CountdownUnit value={timeLeft.days} label="Days" />
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#892BFC] -mt-4">:</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#F7EF8A] -mt-4">:</span>
               <CountdownUnit value={timeLeft.hours} label="Hrs" />
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#892BFC] -mt-4">:</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#F7EF8A] -mt-4">:</span>
               <CountdownUnit value={timeLeft.minutes} label="Min" />
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#892BFC] -mt-4">:</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#F7EF8A] -mt-4">:</span>
               <CountdownUnit value={timeLeft.seconds} label="Sec" />
             </div>
-
-            <button
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#892BFC] hover:bg-[#9F4BFF] text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-[#892BFC]/30 hover:shadow-[#892BFC]/50 hover:scale-105"
-              onClick={() => {
-                const element = document.getElementById("programs");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              Claim My Account
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button
-              onClick={() => setIsVisible(false)}
-              className="hidden sm:flex flex-shrink-0 p-2.5 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors duration-200"
-              aria-label="Close flash sale banner"
-            >
-              <X className="w-6 h-6" />
-            </button>
           </div>
+
+          {/* CTA Button */}
+          <button
+            className="group inline-flex items-center gap-2 px-8 sm:px-10 py-4 sm:py-5 rounded-lg bg-gradient-to-r from-[#F7EF8A] via-[#D4AF37] to-[#B8860B] hover:from-[#FFF8B0] hover:via-[#E5C048] hover:to-[#C99A1E] text-[#0a0e17] font-extrabold text-sm sm:text-base md:text-lg uppercase tracking-wide transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.35)] hover:shadow-[0_0_40px_rgba(212,175,55,0.55)] hover:scale-105"
+            onClick={() => {
+              const element = document.getElementById("programs");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            <Zap className="w-5 h-5 fill-current" />
+            Claim Your $1 Account Now
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          {/* Subheading */}
+          <p className="mt-4 sm:mt-6 text-[#D4AF37]/80 text-sm sm:text-base font-medium tracking-wide uppercase">
+            Start Your Trading Journey For Just One Dollar
+          </p>
         </div>
 
+        {/* Close button */}
         <button
           onClick={() => setIsVisible(false)}
-          className="sm:hidden absolute top-2 right-2 p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors duration-200"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-full text-[#D4AF37]/60 hover:text-[#F7EF8A] hover:bg-[#D4AF37]/10 transition-colors duration-200"
           aria-label="Close flash sale banner"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
       </div>
     </div>
