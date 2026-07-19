@@ -163,6 +163,9 @@ const FlashSaleBanner = () => {
                 <span><strong className="text-white">$100</strong> maximum lifetime payout per account</span>
               </li>
             </ul>
+            <p className="mt-3 sm:mt-4 text-[#A855F7]/70 text-[10px] sm:text-xs font-medium tracking-normal italic text-center">
+              *Ts and Cs apply
+            </p>
           </div>
         </div>
 
