@@ -132,7 +132,7 @@ const FlashSaleBanner = () => {
             className="group inline-flex items-center gap-2 px-8 sm:px-10 py-4 sm:py-5 rounded-lg bg-gradient-to-r from-[#A855F7] via-[#892BFC] to-[#7C3AED] hover:from-[#B46BFF] hover:via-[#9B4DFF] hover:to-[#8B5CF6] text-white font-extrabold text-sm sm:text-base md:text-lg uppercase tracking-wide transition-all duration-300 shadow-[0_0_30px_rgba(137,43,252,0.35)] hover:shadow-[0_0_40px_rgba(137,43,252,0.55)] hover:scale-105"
           >
             <Zap className="w-5 h-5 fill-current" />
-            Claim Your $1 Account Now
+            Claim your account now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
 
