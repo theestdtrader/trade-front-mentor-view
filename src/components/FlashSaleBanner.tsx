@@ -136,10 +136,34 @@ const FlashSaleBanner = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
 
-          {/* Subheading */}
-          <p className="mt-5 sm:mt-7 text-[#A855F7]/70 text-xs sm:text-sm font-medium tracking-normal italic">
-            *Ts and Cs apply
-          </p>
+          {/* Terms */}
+          <div className="mt-6 sm:mt-8 w-full max-w-2xl rounded-xl border border-[#892BFC]/20 bg-[#1A1F2C]/60 backdrop-blur-sm p-4 sm:p-5 text-left">
+            <p className="text-[#A855F7] text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              For traders:
+            </p>
+            <ul className="space-y-1.5 sm:space-y-2 text-white/80 text-xs sm:text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-[#A855F7] mt-0.5">•</span>
+                <span><strong className="text-white">$1 Fee</strong> — <strong className="text-white">$1K Plan</strong> — <strong className="text-white">1-Step Evaluation</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#A855F7] mt-0.5">•</span>
+                <span><strong className="text-white">30-day</strong> evaluation period, <strong className="text-white">90-day</strong> funded account duration</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#A855F7] mt-0.5">•</span>
+                <span>Available to <strong className="text-white">new customers only</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#A855F7] mt-0.5">•</span>
+                <span>Valid exclusively on <strong className="text-white">GooeyPro</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#A855F7] mt-0.5">•</span>
+                <span><strong className="text-white">$100</strong> maximum lifetime payout per account</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Close button */}
