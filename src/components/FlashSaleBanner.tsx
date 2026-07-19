@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X, Zap, Clock, ArrowRight } from "lucide-react";
 
-const SALE_END = new Date("2026-07-31T23:59:59");
+const SALE_STARTS = new Date("2026-07-31T23:59:59");
 
 interface TimeLeft {
   days: number;
@@ -11,7 +11,7 @@ interface TimeLeft {
 }
 
 const calculateTimeLeft = (): TimeLeft => {
-  const difference = +SALE_END - +new Date();
+  const difference = +SALE_STARTS - +new Date();
   if (difference <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
@@ -97,11 +97,11 @@ const FlashSaleBanner = () => {
           {/* Main headline */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight leading-[1.1] mb-6 sm:mb-8">
             <span className="bg-gradient-to-r from-[#A855F7] via-[#892BFC] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(137,43,252,0.2)]">
-              Get Your $1000 Instant
+              Get Your $1000 One
             </span>
             <br />
             <span className="bg-gradient-to-r from-[#A855F7] via-[#892BFC] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(137,43,252,0.2)]">
-              Funded Account For $1
+              Step Account For $1
             </span>
           </h2>
 
@@ -110,7 +110,7 @@ const FlashSaleBanner = () => {
             <div className="flex items-center gap-1.5 sm:gap-2 px-4 py-2 rounded-lg bg-[#892BFC]/10 border border-[#892BFC]/30">
               <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#A855F7]" />
               <span className="text-[#A855F7] text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                Flash Sale Ends In
+                Flash Sale Starts In
               </span>
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
