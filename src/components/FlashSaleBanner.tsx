@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X, Zap, Clock, ArrowRight } from "lucide-react";
 
-const SALE_STARTS = new Date("2026-07-31T23:59:59");
+const SALE_STARTS = new Date("2026-07-29T23:59:59");
 
 interface TimeLeft {
   days: number;
