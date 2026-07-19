@@ -137,8 +137,8 @@ const FlashSaleBanner = () => {
           </a>
 
           {/* Subheading */}
-          <p className="mt-4 sm:mt-6 text-[#A855F7]/80 text-sm sm:text-base font-medium tracking-wide uppercase">
-            Ts and Cs apply
+          <p className="mt-5 sm:mt-7 text-[#A855F7]/70 text-xs sm:text-sm font-medium tracking-normal italic">
+            *Ts and Cs apply
           </p>
         </div>
 
