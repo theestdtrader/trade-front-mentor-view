@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Zap, Clock, Star, ArrowRight } from "lucide-react";
+import { X, Zap, Clock, ArrowRight } from "lucide-react";
 
 const SALE_END = new Date("2026-07-31T23:59:59");
 
