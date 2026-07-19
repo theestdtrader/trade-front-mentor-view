@@ -94,20 +94,6 @@ const FlashSaleBanner = () => {
 
       <div className="container mx-auto px-4 py-10 sm:py-12 md:py-14 lg:py-16 relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          {/* Trust badge */}
-          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
-            <div className="hidden sm:block h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-[#892BFC]" />
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#A855F7] fill-[#A855F7]" />
-              ))}
-            </div>
-            <span className="text-[#A855F7]/90 text-xs sm:text-sm font-medium tracking-wide uppercase">
-              Rated 4.9/5 | Used by over 150,000 traders
-            </span>
-            <div className="hidden sm:block h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-[#892BFC]" />
-          </div>
-
           {/* Main headline */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight leading-[1.1] mb-6 sm:mb-8">
             <span className="bg-gradient-to-r from-[#A855F7] via-[#892BFC] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(137,43,252,0.2)]">
