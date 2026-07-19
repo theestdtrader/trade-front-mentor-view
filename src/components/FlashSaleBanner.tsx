@@ -138,7 +138,7 @@ const FlashSaleBanner = () => {
 
           {/* Subheading */}
           <p className="mt-4 sm:mt-6 text-[#A855F7]/80 text-sm sm:text-base font-medium tracking-wide uppercase">
-            Start Your Trading Journey For Just One Dollar
+            Ts and Cs apply
           </p>
         </div>
 
