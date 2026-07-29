@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X, Zap, Clock, ArrowRight } from "lucide-react";
 
-const SALE_STARTS = new Date("2026-07-29T23:59:59");
+const SALE_ENDS = new Date("2026-07-31T23:59:59");
 
 interface TimeLeft {
   days: number;
@@ -11,7 +11,7 @@ interface TimeLeft {
 }
 
 const calculateTimeLeft = (): TimeLeft => {
-  const difference = +SALE_STARTS - +new Date();
+  const difference = +SALE_ENDS - +new Date();
   if (difference <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
@@ -108,9 +108,12 @@ const FlashSaleBanner = () => {
           {/* Countdown Timer */}
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
             <div className="flex items-center gap-1.5 sm:gap-2 px-4 py-2 rounded-lg bg-[#892BFC]/10 border border-[#892BFC]/30">
-              <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#A855F7]" />
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A855F7] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#A855F7]" />
+              </span>
               <span className="text-[#A855F7] text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                Flash Sale Starts In
+                Flash Sale Live Now — Ends In
               </span>
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
