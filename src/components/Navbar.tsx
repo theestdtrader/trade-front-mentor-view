@@ -15,7 +15,7 @@ import Competition from "@/pages/Competition";
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const selectProgramTab = (tab: "forex" | "futures" | "equities") => {
+const selectProgramTab = (tab: "forex" | "futures" | "equities" | "dxfutures") => {
   if (window.location.pathname !== "/") {
     sessionStorage.setItem("pendingProgramTab", tab);
     window.location.href = `/#programs`;
@@ -73,10 +73,10 @@ const Navbar = () => {
                 align="start"
                 className="z-50 bg-white shadow-lg border rounded-md mt-2 w-40"
               >
-                {(["forex", "futures", "equities"] as const).map((tab) => (
+                {(["forex", "futures", "equities", "dxfutures"] as const).map((tab) => (
                   <DropdownMenuItem key={tab} onSelect={() => selectProgramTab(tab)}>
                     <span className="w-full block capitalize cursor-pointer">
-                      {tab}
+                      {tab === "dxfutures" ? "DX Futures" : tab}
                     </span>
                   </DropdownMenuItem>
                 ))}
@@ -132,6 +132,7 @@ const Navbar = () => {
                 { title: "Forex", path: "#programs", tab: "forex" as const },
                 { title: "Futures", path: "#programs", tab: "futures" as const },
                 { title: "Equities", path: "#programs", tab: "equities" as const },
+                { title: "DX Futures", path: "#programs", tab: "dxfutures" as const },
                 {
                   title: "Competition",
                   path: "/competition",
