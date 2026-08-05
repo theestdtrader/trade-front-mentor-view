@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import ForexTable from "@/components/ForexTable";
 import FuturesTable from "@/components/FuturesTable";
 import EquitiesTable from "@/components/EquitiesTable";
+import DXFuturesTable from "@/components/DXFuturesTable";
 import PlanSignupModal from "@/components/PlanSignupModal";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProgramsSection = () => {
-  const [activeTab, setActiveTab] = useState<"forex" | "futures" | "equities">("forex");
+  const [activeTab, setActiveTab] = useState<"forex" | "futures" | "equities" | "dxfutures">("forex");
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState({
     size: "",
@@ -37,12 +38,12 @@ const ProgramsSection = () => {
 
   useEffect(() => {
     const handler = (e: Event) => {
-      const tab = (e as CustomEvent).detail as "forex" | "futures" | "equities";
+      const tab = (e as CustomEvent).detail as "forex" | "futures" | "equities" | "dxfutures";
       if (tab) setActiveTab(tab);
     };
     window.addEventListener("select-program-tab", handler);
     const pending = sessionStorage.getItem("pendingProgramTab");
-    if (pending === "forex" || pending === "futures" || pending === "equities") {
+    if (pending === "forex" || pending === "futures" || pending === "equities" || pending === "dxfutures") {
       setActiveTab(pending);
       sessionStorage.removeItem("pendingProgramTab");
       setTimeout(() => {
@@ -76,11 +77,11 @@ const ProgramsSection = () => {
       <div className="flex justify-center mb-4 md:mb-6">
         <Tabs 
           value={activeTab} 
-          onValueChange={(value) => setActiveTab(value as "forex" | "futures" | "equities")} 
+          onValueChange={(value) => setActiveTab(value as "forex" | "futures" | "equities" | "dxfutures")} 
           className="w-full transition-all duration-300"
         >
           <div className="flex justify-center">
-            <TabsList className="w-full max-w-[280px] md:max-w-md">
+            <TabsList className="w-full max-w-[320px] md:max-w-xl">
               <TabsTrigger 
                 value="forex" 
                 className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
@@ -98,6 +99,12 @@ const ProgramsSection = () => {
                 className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
               >
                 Equities
+              </TabsTrigger>
+              <TabsTrigger 
+                value="dxfutures"
+                className="flex-1 text-xs md:text-sm lg:text-base py-1.5 transition-all duration-300"
+              >
+                DX Futures
               </TabsTrigger>
             </TabsList>
           </div>
@@ -117,15 +124,17 @@ const ProgramsSection = () => {
           <ForexTable onGetPlan={handleGetPlan} />
         ) : activeTab === "futures" ? (
           <FuturesTable onGetPlan={handleGetPlan} />
-        ) : (
+        ) : activeTab === "equities" ? (
           <EquitiesTable onGetPlan={handleGetPlan} />
+        ) : (
+          <DXFuturesTable onGetPlan={handleGetPlan} />
         )}
       </div>
 
       <PlanSignupModal 
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        planType={activeTab === "equities" ? "forex" : activeTab}
+        planType={activeTab === "futures" || activeTab === "dxfutures" ? "futures" : "forex"}
         planSize={selectedPlan.size}
         planFee={selectedPlan.fee}
       />
