@@ -141,19 +141,20 @@ const DXFuturesTable: React.FC<DXFuturesTableProps> = ({ onGetPlan }) => {
                       )}
                     </div>
 
-                    {rows.slice(4).map((row, ri) => (
-                      <div
-                        key={ri}
-                        className="pb-3 border-b border-purple-500/10 last:border-b-0 flex justify-between items-start gap-3"
-                      >
-                        <span className="text-white/90 font-medium text-sm">
-                          {row.label}
-                        </span>
-                        <span className="text-white text-sm text-right">
-                          {row.values[index]}
-                        </span>
-                      </div>
-                    ))}
+                    {openDropdown === index &&
+                      rows.slice(4).map((row, ri) => (
+                        <div
+                          key={ri}
+                          className="pb-3 border-b border-purple-500/10 last:border-b-0 flex justify-between items-start gap-3"
+                        >
+                          <span className="text-white/90 font-medium text-sm">
+                            {row.label}
+                          </span>
+                          <span className="text-white text-sm text-right">
+                            {row.values[index]}
+                          </span>
+                        </div>
+                      ))}
                   </div>
 
                   <div className="bg-[#38225b]/50 p-4 flex justify-center border-t border-purple-500/20 mt-auto">
