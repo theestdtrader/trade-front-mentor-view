@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
-import FlashSaleBanner from "@/components/FlashSaleBanner";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import ProgramsSection from "@/components/sections/ProgramsSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -14,7 +13,6 @@ const Index = () => {
     <div className="bg-[#1A1F2C] text-white flex flex-col">
       <Navbar />
       <HeroSection />
-      <FlashSaleBanner />
       <FeaturesSection />
       <ProgramsSection />
       <PayoutsSection />
